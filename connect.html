@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			html,body{margin:0;padding:0;}
+			.iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+			.iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+		</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=xVgt5rTHm69UCGLq3oBf53L0neA9Xkuo"></script>
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		var arrLang = new Array();
+		arrLang['en'] = new Array();
+		arrLang['km'] = new Array();
+
+		// English content
+		arrLang['en']['home'] = 'Home';
+		arrLang['en']['about'] = 'About Us';
+		arrLang['en']['contact'] = 'Contact Us';
+		arrLang['en']['desc'] = 'This is my description';
+
+		// Khmer content (Cambodian Language) 
+		// Please change to your own language
+		arrLang['km']['home'] = 'ទំព័រដើម';
+		arrLang['km']['about'] = 'អំពីយើង';
+		arrLang['km']['contact'] = 'ទំនាក់ទំនងយើងខ្ញុំ';
+		arrLang['km']['desc'] = 'នេះគឺជាអត្ថបទរបស់ខ្ញុំ';
+
+		// Process translation
+		$(function() {
+		$('.translate').click(function() {
+			var lang = $(this).attr('id');
+
+			$('.lang').each(function(index, item) {
+			$(this).text(arrLang[lang][$(this).attr('key')]);
+			});
+		});
+		});
+	</script>
+
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/education.css" />
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div class="header">
+			<div class="mainWrap">
+				<div class="topLine"></div>
+				<div class="topWrap">
+					<a href="" class="logo">
+						<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;"/>
+					</a>
+					<section class="search">
+						<img src='img/rightlogo.png' style="width: 80px; height: 80px;"/>
+						
+					</section>
+				</div>
+				<div class="clearfix"></div>
+				<div class="menu">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-collapse">
+								  <span class="sr-only">导航</span>
+			                      <span class="icon-bar"></span>
+			                      <span class="icon-bar"></span>
+			                      <span class="icon-bar"></span>
+			                 </button>
+							<a href="" class="navbar-brand anav">导航</a>
+						</div>
+						<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
+							<ul class="nav-tabs nav-justified" style="padding:0 ;">
+								<li key="home">
+									<a href="index.html" class="lang" key="home">首页</a>
+								</li>
+								<li>
+									<a class="" href="introduction.html">实验室概况</a>
+								</li>
+								<li class="">
+									<a href="news.html">实验室新闻<span class="glyphicon glyphicon-menu-down"></span></a>
+									
+								</li>
+								<li>
+									<a href="students.html">成员组成</a>
+								</li>
+								<li>
+									<a href="paper.html">成果展示</a>
+								</li>
+								<li>
+									<a href="connect.html">联系我们</a>
+								</li>
+								
+							</div>
+						</nav>
+				</div>
+			</div>
+		</div>
+
+<article class="content clearfix">
+			<section class="topImg">
+				<img src="img/tu3.png"/>
+			</section>
+ <section class="mainWrap">
+	<div class="detailContent">
+	  <div class="col_1"style="padding: 0;">
+		<section class="leftNav">
+				 <h3>联系方式</h3>
+					<nav class="navbar navbar-default">
+						<div class="navbar-header eduHeader">
+							<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse" data-target="#example-navbar-collapse-1">
+								  <span class="sr-only">导航</span>
+			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
+			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
+			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
+			                 </button>
+							<a href="" class="navbar-brand edubrand">在读硕士</a>
+						</div>
+						<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1" aria-expanded="false">
+							<ul class="navTotal" style="padding:0 ;">
+								<li class="current">
+									<i class="glyphicon glyphicon-minus"></i>
+										<a href="#">联系我们</a>
+								</li>
+
+								</ul>
+							</div>
+					</nav>
+			</section>
+		</div>
+	  <div class="col_2">
+	  	<article class="mainContent">
+	  		<header class="headerNav">
+	  			<nav class="hnav">
+	  				<a>首页.</a>
+	  				<a>联系我们.</a>
+	  			</nav>
+	  			<h1>联系方式</h1>
+	  		</header>
+
+			  <font size="4">
+				<b>通信地址:</b>广东省深圳市南山区西丽大学城清华校区信息大楼19楼1901<br>
+				<b>联系电话:</b> 0755-26032525<br>
+				
+				<b>电子邮箱: </b> li.xiu@sz.tsinghua.edu.cn<br>
+				<b>微信公众号: </b> THUSIGSCLUB<br>
+			</font>
+			<div align="center" >
+				<a><img src="img/Wechat.png" style="width: 200px; height: 200px;"/><br>欢迎关注 THUSIGSCLUB 微信公众号
+			</a></div>
+			<br>
+			<br>
+				
+
+	  		<section>
+				<div align="center"  style="width:697px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+
+         </section>
+         
+         
+	  	</article>
+	  </div>	
+		
+ </div>		
+</section>
+			
+ </article>
+
+<footer>
+
+	
+	<section class="copyrights">
+		<section class="mainWrap">
+            <span class="info">
+                 <span>电话查号台：010-62793001</span>
+                 <span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
+                 <span>地址：广东省深圳市南山区西丽大学城清华校区</span>
+            </span>
+            <span class="icp">京公网安备 110402430053 号</span>
+            <div class="clearfix"></div>
+            <span class="copy">版权所有 © 清华大学　　</span>
+       </section>
+	</section>
+
+</footer>
+	</body>
+	<script type="text/javascript">
+		//创建和初始化地图函数：
+		function initMap(){
+			createMap();//创建地图
+			setMapEvent();//设置地图事件
+			addMapControl();//向地图添加控件
+		}
+		
+		//创建地图函数：
+		function createMap(){
+			var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+			var point = new BMap.Point(113.976006,22.598699);//定义一个中心点坐标
+			map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+			window.map = map;//将map变量存储在全局
+		}
+		
+		//地图事件设置函数：
+		function setMapEvent(){
+			map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+			map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+			map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+			map.enableKeyboard();//启用键盘上下左右键移动地图
+		}
+		
+		//地图控件添加函数：
+		function addMapControl(){
+			//向地图中添加缩放控件
+		var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+		map.addControl(ctrl_nav);
+			//向地图中添加缩略图控件
+		var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+		map.addControl(ctrl_ove);
+			//向地图中添加比例尺控件
+		var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+		map.addControl(ctrl_sca);
+		}
+		
+		
+		initMap();//创建和初始化地图
+</script>
+</html>

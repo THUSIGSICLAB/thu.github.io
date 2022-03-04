@@ -1,1 +1,273 @@
-<h1>测试马跃网站</h1>
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		
+  <script type="text/javascript">
+    var arrLang = new Array();
+    arrLang['en'] = new Array();
+    arrLang['km'] = new Array();
+
+    // English content
+    arrLang['en']['home'] = 'Home';
+    arrLang['en']['about'] = 'About Us';
+    arrLang['en']['contact'] = 'Contact Us';
+    arrLang['en']['desc'] = 'This is my description';
+
+    // Khmer content (Cambodian Language) 
+    // Please change to your own language
+    arrLang['km']['home'] = '首页';
+    arrLang['km']['about'] = 'អំពីយើង';
+    arrLang['km']['contact'] = 'ទំនាក់ទំនងយើងខ្ញុំ';
+    arrLang['km']['desc'] = 'នេះគឺជាអត្ថបទរបស់ខ្ញុំ';
+
+    // Process translation
+    $(function() {
+      $('.translate').click(function() {
+        var lang = $(this).attr('id');
+
+        $('.lang').each(function(index, item) {
+          $(this).text(arrLang[lang][$(this).attr('key')]);
+        });
+      });
+    });
+  </script>
+
+	</head>
+
+	<body>
+		<script src="https://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/language.js"></script>
+
+        <script>
+            $("#change").click(function() {
+                translate();
+            })
+        </script>
+		<div class="header">
+			<div class="mainWrap">
+				<div class="topLine"></div>
+				<div class="topWrap">
+					<a href="" class="logo">
+						<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;"/>
+					</a>
+					<section class="search">
+						<img src='img/rightlogo.png' style="width: 80px; height: 80px;"/>
+						
+					</section>
+				</div>
+				<div class="clearfix"></div>
+				<div class="menu">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-collapse">
+								  <span class="sr-only">导航</span>
+			                      <span class="icon-bar"></span>
+			                      <span class="icon-bar"></span>
+			                      <span class="icon-bar"></span>
+			                 </button>
+							<a href="" class="navbar-brand anav">导航</a>
+						</div>
+						<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
+							<ul class="nav-tabs nav-justified" style="padding:0 ;">
+								<li key="home">
+									<a href="index.html" class="lang" key="home">首页</a>
+								</li>
+								<li>
+									<a class="" href="introduction.html">实验室概况</a>
+								</li>
+								<li class="">
+									<a href="news.html">实验室新闻<span class="glyphicon glyphicon-menu-down"></span></a>
+									
+								</li>
+								<li>
+									<a href="students.html">成员组成</a>
+								</li>
+								<li>
+									<a href="paper.html">成果展示</a>
+								</li>
+								<li>
+									<a href="connect.html">联系我们</a>
+								</li>
+								
+							</div>
+						</nav>
+				</div>
+			</div>
+		</div>
+
+<div class="content">
+	
+        <div class="imgWrap">
+ <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+
+    <div class="item active"><img src="img/test2.png" alt="...">
+    	<div class=" carousel-caption">
+       实验室2021年9月10日教师节合照
+      </div>
+    </div>
+    <div class="item"><img src="img/test1.png" alt="...">
+    	<div class=" carousel-caption">
+       实验室2022年春节聚餐留影
+      </div>
+    </div>
+
+  </div>
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	<span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	<span class="sr-only">Next</span>
+  </a> 
+ </div>
+       </div>
+		<div class="mainWrap">
+					<div class="month clearfix">
+						<a href="" class="arrow arrowleft"><span class="glyphicon glyphicon-chevron-left"></span></a>
+						<a href="" class="arrow arrowright"><span class="glyphicon glyphicon-chevron-right"></span></a>
+						<div class="monthTxt">
+							<span id="calendarYear">2022</span>
+							<span id="demo"></span>月
+						</div>
+						<ul class="day">
+							<li data-target="#carousel-example-generic" data-slide-to="0"><a>1</a></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"><a>2</a></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2"><a>3</a></li>
+							<li data-target="#carousel-example-generic" data-slide-to="3"><a>4</a></li>
+							<li><a>5</a></li>
+							<li><a>6</a></li>
+							<li><a>7</a></li>
+							<li><a>8</a></li>
+							<li><a>9</a></li>
+							<li><a>10</a></li>
+							<li><a>11</a></li>
+							<li><a>12</a></li>
+							<li><a>13</a></li>
+							<li><a>14</a></li>
+							<li><a>15</a></li>
+							<li><a>16</a></li>
+							<li><a>17</a></li>
+							<li><a>18</a></li>
+							<li><a>19</a></li>
+							<li><a>20</a></li>
+							<li><a>21</a></li>
+							<li><a>22</a></li>
+							<li><a>23</a></li>
+							<li><a>24</a></li>
+							<li><a>25</a></li>
+							<li><a>26</a></li>
+							<li><a>27</a></li>
+							<li><a>28</a></li>
+							<li><a>29</a></li>
+							<li><a>30</a></li>
+							<li><a>31</a></li>
+						</ul>
+					</div>
+
+				</div>
+        <div class="mainWrap">
+        	<section class="news clearfix">
+        		<h2 class="yahei"><a href="news.html" class="more">更多 &gt;</a>头条新闻</h2>
+        		<ul class="newslist">
+        			<li class="col-sm-4">
+        				<div class="ydate ydate_2" id="div_ydate_1">
+        					<span>03</span>2021.11
+        				</div>
+        				<div class="tn">                
+        					<h3><a href="https://mp.weixin.qq.com/s/5D3VPNZr2qy73U8qI2W4jg">【科研成果】ICCV视频多模态理解VALUE Challenge 冠军方案 </a></h3>                                  
+        					<p id="news_summary_1">今年初，OpenAI发表了CLIP和DALL-E，在图像-文本的跨模态语义匹配、文本生成图像等领域取得令人震惊的突破，......</p>                         
+        				</div>
+        			</li>
+        			<li class="col-sm-4">
+        				<div class="ydate ydate_2" id="div_ydate_1">
+        					<span>12</span>2021.11
+        				</div>
+        				<div class="tn">                
+        					<h3><a href="https://mp.weixin.qq.com/s/hYfs_4NMHE9Eae53S_Z0Mw">【文献综述】水下图像增强和修复算法综述 </a></h3>                                  
+        					<p id="news_summary_2">因受到光线散射和吸收、水体杂质、人工光源等因素影响，水下成像质量较低，很难满足生产作业的需求，而水下图像的增强和复原技术有助于......</p>                        
+        				</div>
+        			</li>
+        			<li class="col-sm-4">
+        				<div class="ydate ydate_2" id="div_ydate_1">
+        					<span>25</span>2021.11
+        				</div>
+        				<div class="tn">                
+        					<h3><a href="https://mp.weixin.qq.com/s/4G81Fq59r-LZwSSC3sXPzQ">【文献综述】深度医学图像配准研究进展:迈向无监督学习 </a></h3>                                  
+        					<p id="news_summary_3">实验室发表论文，进行无监督学习方向的调研作者：马露凡、罗凤、严江鹏、徐哲、罗捷、李秀......</p>                         
+        				</div>
+        			</li>
+        		</ul>
+        	</section>
+        	<section class="focus clearfix">
+        		<h2 class="yahei">焦点关注</h2>
+        		<ul class="focuslist">
+        			<li class="li_1_1">
+        				<div class="tn">                
+        					<h3><a href="https://mp.weixin.qq.com/s/OEb-YcK9yracdXetW9PZRA">【科研成果】智能计算实验室吕加飞同学成果被AAAI2022接收</a></h3>                                  
+        					<p class="tnp">本文主要探索了double actors在连续动作控制任务中的优点及好处。Double Actors可以增强智能体的探索能力，同时提供给智能体两个策略路径去优化，进而避免了在策略优化过程中被困在局部最优。基于double actors的值函数估计的修正可以减小Q值估计的偏差。进一步本文提出对critic网络进行正则约束进而减小值函数估计的不确定度，保证了Q值估计的可靠性...</p>                         
+        				</div>
+        			</li>
+        			<li class="li_img bdcolor">
+        				<img src="img/iccv.png"/>
+        				<div class="tn">                
+        					<h3><a href="https://mp.weixin.qq.com/s/tqT9c8NEmvR7JGxM-irwBA">【科研成果】唐铭康、王占宇同学ACM MM 2021视频理解大赛亚军方案</a></h3>                                  
+        					<p class="tnp">今年初，OpenAI发表了CLIP和DALL-E，在图像-文本的跨模态语义匹配、文本生成图像等领域取得令人震惊的突破，与此同时，预训练技术研发新范式在NLP领域扎根之后正向CV领域全面渗透。...  </p>                       
+        				</div>
+        			</li>
+        			<li class="li_1_2">
+        				<div class="tn">                
+        					<h3><a href="https://mp.weixin.qq.com/s/ECbATn6hIaE3tnLG57YQPA">【科研成果】智能计算实验室陈胜杰同学论文成果被ACM MM 2021录用</a></h3>                                  
+        					<p class="tnp">图像的修复（Inpainting）是计算机视觉领域内的一个经典任务，具体指根据图像的纹理、语义等信息生成指定掩膜内的缺失内容。近年来，深度学习方法依靠卷积神经网络出色的语义推理能力取得了远超传统方法的表现，但是对于大面积、复杂场景的图像修复仍然是一个难题。因此，在控制模型计算量的前提下提升其语义理解和推理能力，是该领域内研究的重点问题。基于此...</p>                         
+        				</div>
+        			</li>
+        		</ul>
+        		
+        	</section>
+        </div>      
+        
+</div>
+
+<footer>
+
+	
+	
+	
+	<section class="copyrights">
+		<section class="mainWrap">
+            <span class="info">
+                 <span>电话查号台：010-62793001</span>
+                 <span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
+                 <span>地址：广东省深圳市南山区西丽大学城清华校区</span>
+            </span>
+            <span class="icp">京公网安备 110402430053 号</span>
+            <div class="clearfix"></div>
+            <span class="copy">版权所有 © 清华大学　　</span>
+       </section>
+	</section>
+
+</footer>
+
+	</body>
+	<script>
+		function time(){
+		var time = new Date();
+		tmp = time.getMonth()+1;
+		return tmp;
+		}
+		document.getElementById("demo").innerHTML = time();
+	
+		
+	</script>
+</html>

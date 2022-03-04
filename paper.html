@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		var arrLang = new Array();
+		arrLang['en'] = new Array();
+		arrLang['km'] = new Array();
+
+		// English content
+		arrLang['en']['home'] = 'Home';
+		arrLang['en']['about'] = 'About Us';
+		arrLang['en']['contact'] = 'Contact Us';
+		arrLang['en']['desc'] = 'This is my description';
+
+		// Khmer content (Cambodian Language) 
+		// Please change to your own language
+		arrLang['km']['home'] = 'ទំព័រដើម';
+		arrLang['km']['about'] = 'អំពីយើង';
+		arrLang['km']['contact'] = 'ទំនាក់ទំនងយើងខ្ញុំ';
+		arrLang['km']['desc'] = 'នេះគឺជាអត្ថបទរបស់ខ្ញុំ';
+
+		// Process translation
+		$(function() {
+		$('.translate').click(function() {
+			var lang = $(this).attr('id');
+
+			$('.lang').each(function(index, item) {
+			$(this).text(arrLang[lang][$(this).attr('key')]);
+			});
+		});
+		});
+	</script>
+
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/education.css" />
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div class="header">
+			<div class="mainWrap">
+				<div class="topLine"></div>
+				<div class="topWrap">
+					<a href="" class="logo">
+						<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;"/>
+					</a>
+					<section class="search">
+						<img src='img/rightlogo.png' style="width: 80px; height: 80px;"/>
+						
+					</section>
+				</div>
+				<div class="clearfix"></div>
+				<div class="menu">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-collapse">
+								  <span class="sr-only">导航</span>
+			                      <span class="icon-bar"></span>
+			                      <span class="icon-bar"></span>
+			                      <span class="icon-bar"></span>
+			                 </button>
+							<a href="" class="navbar-brand anav">导航</a>
+						</div>
+						<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
+							<ul class="nav-tabs nav-justified" style="padding:0 ;">
+								<li key="home">
+									<a href="index.html" class="lang" key="home">首页</a>
+								</li>
+								<li>
+									<a class="" href="introduction.html">实验室概况</a>
+								</li>
+								<li class="">
+									<a href="news.html">实验室新闻<span class="glyphicon glyphicon-menu-down"></span></a>
+									
+								</li>
+								<li>
+									<a href="students.html">成员组成</a>
+								</li>
+								<li>
+									<a href="paper.html">成果展示</a>
+								</li>
+								<li>
+									<a href="connect.html">联系我们</a>
+								</li>
+								
+							</div>
+						</nav>
+				</div>
+			</div>
+		</div>
+
+<article class="content clearfix">
+			<section class="topImg">
+				<img src="img/tu3.png"/>
+			</section>
+ <section class="mainWrap">
+	<div class="detailContent">
+	  <div class="col_1"style="padding: 0;">
+		<section class="leftNav">
+				 <h3>成果产出</h3>
+					<nav class="navbar navbar-default">
+						<div class="navbar-header eduHeader">
+							<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse" data-target="#example-navbar-collapse-1">
+								  <span class="sr-only">导航</span>
+			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
+			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
+			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
+			                 </button>
+							<a href="" class="navbar-brand edubrand">教育教学</a>
+						</div>
+						<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1" aria-expanded="false">
+							<ul class="navTotal" style="padding:0 ;">
+								<li class="current">
+									<i class="glyphicon glyphicon-minus"></i>
+									<a href="paper.html">论文专利</span></a>
+								</li>
+								<li>
+									<i class="glyphicon glyphicon-minus"></i>
+										<a href="bisai.html">比赛获奖</a>
+								</li>
+							</div>
+					</nav>
+			</section>
+			
+		</div>
+	  <div class="col_2">
+	  	<article class="mainContent">
+	  		<header class="headerNav">
+	  			<nav class="hnav">
+	  				<a>首页.</a>
+	  				<a>成果展示.</a>
+	  				<a>论文专利</a>
+	  			</nav>
+	  			<h1>论文</h1>
+	  		</header>
+	  		   
+	  		<section class="article">
+				<style>
+					::marker{
+						content: "[" counter(list-item) "]  ";
+					}	
+				.paperp {
+					margin: 0px 13% 0px 3%;
+				}		
+				</style>
+				  
+				  <ol >
+					<li>Zhang Y, Liu Y, Jiang S, et al. Neural network model assisted Fourier ptychography with Zernike aberration recovery and total variation constraint[J].<b> Journal of Biomedical Optics</b>, 2021, 26(3): 036502.<br></li>
+					<li>Li X, Dong J, Li B, et al. Fast confocal microscopy imaging based on deep learning[C]//<b>2020 IEEE International Conference on Computational Photography (ICCP).</b> <br></li>
+					<li>Li S, Chen Z, Li X, et al. Unsupervised variational video hashing with 1D-CNN-LSTM networks[J]. <b>IEEE Transactions on Multimedia, 2019, 22(6): 1542-1554.</b> <br></li>
+					<li>Yin B H, Li X. Cross-modal retrieval by an end to end way[C]//<b>IOP Conference Series: Materials Science and Engineering.</b> <br></li>
+					<li>Liu Y, Gu K, Li X, et al. Blind image quality assessment by natural scene statistics and perceptual characteristics[J]. <b>ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM)</b>, 2020, 16(3): 91-111.<br></li>
+					<li>Lu C, Cao X, Zhu Y, et al. Procedure2Command: an AI-based Nuclear Power Plant Control Command Code Generation Prototype System[C]//<b>2020 5th International Conference on Mechanical, Control and Computer Engineering (ICMCCE). </b>IEEE, 2020: 653-659. INSPEC:20692590<br></li>
+					<li>Li X, Fan Z, Liu Y, et al. 3d pose detection of closely interactive humans using multi-view cameras[J]. <b>Sensors, </b>2019, 19(12): 2831. <br></li>
+					<li>Xue W, Li X, Huang B. Health diagnosis of nuclear power plant[J]. <b>International Journal of Advanced Robotic Systems,</b> 2019, 16(5): 1729881419880654. <br></li>
+					<li>Li X, Long R, Yan J, et al. TANet: a tiny plankton classification network for mobile devices[J].<b>Mobile Information Systems,</b>  2019, 2019, 6536925. <br></li>
+					<li>Li X, Jin K, Long R. End-to-end semantic-aware object retrieval based on region-wise attention[J]. <b>Neurocomputing, </b>2019, 359: 219-226. <br></li>
+					<li>Li X, Duan G, Wang Z, et al. Recovering extremely degraded faces by joint super-resolution and facial composite[C]//<b>2019 IEEE 31st International Conference on Tools with Artificial Intelligence (ICTAI).</b> IEEE, 2019: 524-530. WOS:000553441500070<br></li>
+					<li>Zhang F, Tang X, Li X, et al. Quantifying cloud elasticity with container-based autoscaling[J]. <b>Future Generation Computer Systems, </b>2019, 98: 672-681. <br></li>
+					<li>Li G, Liang B, Wang X, et al. Multivariable modeling and nonlinear coordination control of nuclear reactor cores with/without xenon oscillation using  hadoop shaping approach[J]. <b>Annals of Nuclear Energy, </b>2018, 111: 82-100. <br></li>
+					<li>Li X, Li H, Joo H, et al. Structure from recurrent motion: From rigidity to recurrency[C]// <b>Proceedings of the IEEE conference on computer vision and pattern recognition. </b>2018: 3032-3040. WOS:000457843603018<br></li>
+					<li>Li X, Men C, Zhang F, et al. A smart visual analysis solution for MOOC data[C]//<b>2017 IEEE 15th Intl Conf on Dependable, Autonomic and Secure Computing, 15th Intl Conf on Pervasive Intelligence and Computing, 3rd Intl Conf on Big Data Intelligence and Computing and Cyber Science and Technology Congress (DASC/PiCom/DataCom/CyberSciTech). IEEE,</b> 2017: 101-106. INSPEC:17661542<br></li>
+					<li>Li X, Men C, Du Z, et al. Investigating the statistical distribution of learning coverage in MOOCs[J].  <b>Information,</b> 2017, 8(4): 150. <br></li>
+					<li>Qin H, Li X, Wang Y, et al. Depth estimation by parameter transfer with a lightweight model for single still images[J].   <b>IEEE Transactions on Circuits and Systems for Video Technology,</b> 2016, 27(4): 748-759. <br></li>
+					<li>Li X, Tang Y, Gao T. Deep but lightweight neural networks for fish detection[C]//<b>OCEANS 2017-Aberdeen. IEEE, </b>2017: 1-5. INSPEC:17290486<br></li>
+					<li>Li X, Xie L, Zhang F, et al. Online Deceptive Product Review Detection Leveraging Word Embedding[C]//<b>2017 IEEE 15th Intl Conf on Dependable, Autonomic and Secure Computing, 15th Intl Conf on Pervasive Intelligence and Computing, 3rd Intl Conf on Big Data Intelligence and Computing and Cyber Science and Technology Congress (DASC/PiCom/DataCom/CyberSciTech). IEEE,</b> 2017: 867-870. INSPEC:17661525<br></li>
+					<li>Hao R, Lu B, Cheng Y, et al. A steel surface defect inspection approach towards smart industrial monitoring[J]. <b>Journal of Intelligent Manufacturing, </b>2021, 32(7): 1833-1843. <br></li>
+					<li>Hu R, Liu Y, Wang Z, et al. Blind quality assessment of night-time image[J]. <b>Displays,</b> 2021, 69: 102045.<br></li>
+					<li>Xu X, Wu Q, Li X, et al. Dilated convolution neural network for remaining useful life prediction[J]. <b>Journal of Computing and Information Science in Engineering, </b>2020, 20(2): 021004. <br></li>
+					<li>Yan J, Chen H, Wang K, et al. Hierarchical Attention Guided Framework for Multi-resolution Collaborative Whole Slide Image Segmentation[C]//<b>International Conference on Medical Image Computing and Computer-Assisted Intervention. Springer, Cham, 2021: 153-163. </b><br></li>
+					<li>Xu J, Li H, Li X. MS-ANet: deep learning for automated multi-label thoracic disease detection and classification[J]. <b>PeerJ Computer Science, 2021 </b><br></li>
+					<li>Yan J, Chen S, Zhang Y, et al. Neural Architecture Search for compressed sensing Magnetic Resonance image reconstruction[J].  <b>Computerized Medical Imaging and Graphics,</b> 2020, 85: 101784. <br></li>
+					<li>Li X, Qi H, Jiang S, et al. Quantitative phase imaging via a cGAN network with dual intensity images captured under centrosymmetric illumination[J].<b>Optics Letters, </b> 2019, 44(11): 2879-2882. <br></li>
+					<li>Mo Y, Wu Q, Li X, et al. Remaining useful life estimation via transformer encoder enhanced by a gated convolutional unit[J].  <b>Journal of Intelligent Manufacturing, </b> 2021: 1-10. <br></li>
+				</ol>
+
+
+	  			
+			<header class="headerNav">
+			
+				<h1>专利</h1>
+			</header>	
+			<ol>
+				<li>基于动态模型与事后经验回放的多目标机器人控制方法。所有人：李秀，杨瑞，吕加飞，杨宇。类别：发明专利。公开 号：CN112518742A <br></li>
+				<li>一种对抗式模仿学习中奖励函数的选择方法。所有人：李秀，王亚伟，张明。类别：发明专利。公开号：CN111401556A<br></li>
+				<li>一种基于强化学习的压水堆堆芯自动控制方法。所有人：李秀，吕加飞，杨瑞。类别：发明专利。公开号：CN112886039B<br></li>
+				<li>减少过估计的模型化强化学习机器人控制方法及系统。所有人：李秀，贾若楠。类别：发明专利。公开号：CN113419424A<br></li>
+				<li>基于一致性约束建模的强化学习机器人控制方法及系统。所有人：李秀，贾若楠。类别：发明专利。公开号：CN113485107A<br></li>
+				<li>一种基于深度学习的欠采样核磁共振图像重建方法。所有人：李秀，严江鹏。类别：发明专利。公开号：CN110570486A<br></li>
+				<li>一种基于循环正则训练的跨模态医学图像配准方法及装置。所有人：李秀，徐哲，罗凤，马露凡，严江鹏 。类别：发明专利。公开 号：CN111862175A<br></li>
+				<li>一种跨模态医学图像配准方法及装置。所有人：李秀，徐哲，马露凡，罗凤，严江鹏 。类别：发明专利。公开号：CN111862174A<br></li>
+				<li>一种跨模态医学图像配准方法及计算机可读存储介质。所有人：李秀，徐哲，许菁，严江鹏 。类别：发明专利。公开 号：CN112232362A<br>		</li>
+				<li>一种动态分辨率实例分割方法及计算机可读存储介质。所有人：李秀，马露凡，陶佳琪。类别：发明专利。公开号：CN113111885A<br></li>
+				<li>基于多尺度特征迭代融合网络的图像分类方法和装置。所有人：李秀，许菁。类别：发明专利。公开号：CN113076960A<br></li>
+				<li>基于多尺度感知损失的医学图像分类方法和装置。所有人：李秀，许菁。类别：发明专利。公开号：CN113077466A<br></li>
+				<li>用于生成图像描述信息的方法和装置。所有人：韩宏炜、张永华。类别：发明专利。公开号：CN111611420A<br></li>
+			</ol>	
+
+			<header class="headerNav">
+			
+				<h1>重大科研项目</h1>
+			</header>	
+			<ol >
+				<li>国家重点研发计划科技创新2030-“脑科学与脑类研究”重大项目“类脑仿生智能无人系统”项目，课题名称：“非配合异构多智能体类脑学习与博弈理论”。执行期：2022-2026.<br></li>
+				<li>国家重点研发计划科技创新2030-“新一代人工智能”重大项目，课题名称：缺陷甄别技能在线增强与多任务高效迁移（课题编号：2020AAA0108303）。课题负责人：李秀。执行期：2020-2023。<br></li>
+				<li>国家自然科学基金项目，项目名称：水下影像智能处理的关键技术研究	项目负责人：李秀。执行期：2019-2022<br></li>
+				<li>国家863重大项目，项目名称：海底观测网岸基控制运行与数据管理系统，执行期：2012-2015 ，技术负责人：李秀 （已完成）<br></li>
+
+			</ol>
+
+			
+         
+	  	</article>
+	  </div>	
+		
+ </div>		
+</section>
+			
+ </article>
+
+<footer>
+
+	
+	<section class="copyrights">
+		<section class="mainWrap">
+            <span class="info">
+                 <span>电话查号台：010-62793001</span>
+                 <span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
+                 <span>地址：广东省深圳市南山区西丽大学城清华校区</span>
+            </span>
+            <span class="icp">京公网安备 110402430053 号</span>
+            <div class="clearfix"></div>
+            <span class="copy">版权所有 © 清华大学　　</span>
+       </section>
+	</section>
+
+</footer>
+	</body>
+
+</html>
