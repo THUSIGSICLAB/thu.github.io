@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-		
+	<link href="css/style.css" rel="stylesheet">
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
@@ -144,6 +144,31 @@
 	  		</header>
 	  		   
 	  		<section class="article">
+				<label for="type">Type:</label>
+				<select name="type" id="type" onchange="setType(this.options[this.options.selectedIndex].value)">
+					<option value="all">All</option>
+					<option value="C">Conference</option>
+					<option value="J">Journal</option>
+				</select>
+				<label for="Area">Area:</label>
+				<select name="Area" id="Area" onchange="setArea(this.options[this.options.selectedIndex].value)">
+					<option value="all">All</option>
+					<option value="CV">Computer Vision</option>
+					<option value="RL">Reinforcement Learning</option>
+					<option value="Others">Others</option>
+				</select> 
+				<label for="type">Year:</label>
+				<select name="type" id="type" onchange="setYear(this.options[this.options.selectedIndex].value)">
+					<option value="all">All</option>
+					<option value="2022">2022</option>
+					<option value="2021">2021</option>
+					<option value="2020">2020</option>
+					<option value="2019">2019</option>
+					<option value="2018">2018</option>
+					<option value="2017">2017</option>
+					<option value="2016">2016</option>
+				</select>
+				<div id="paper_list"></div>
 				<style>
 					::marker{
 						content: "[" counter(list-item) "]  ";
@@ -152,7 +177,68 @@
 					margin: 0px 13% 0px 3%;
 				}		
 				</style>
-				<ol >
+				<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+				<script src="js/papers.js"></script>
+				<script type="text/javascript">
+					var type = "all"
+					var area = "all"
+					var year = "all"
+					$(document).ready(function(){
+						// load data
+						for(let i in papers){
+							var buttons = ''
+							if(papers[i].paper !== "")
+								buttons = buttons + '<button class="list-inline-item"><a class="d-inline-block" style="width:110%;height:100%;border-radius:5px;text-align: center;" href='+ papers[i].paper +'>Paper</a></button>'
+							if(papers[i].code !== "")
+								buttons = buttons + '<button class="list-inline-item"><a class="d-inline-block" style="width:110%;height:100%;border-radius:5px;text-align: center;" href='+ papers[i].code +'>Code</a></button>'	
+							if(papers[i].demo !== "")
+								buttons = buttons + '<button class="list-inline-item"><a class="d-inline-block" style="width:110%;height:100%;border-radius:5px;text-align: center;" href='+ papers[i].demo +'>Demo</a></button>'	
+							buttons = '<ul class="list-inline bg-gray mt-1" style="text-align: right;">' + buttons + '</ul>'
+							var note = '<span class="text-lighten">(' + papers[i].note +' )</span>'
+							var paper = '<div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2"><div class="text-dark">' + papers[i].cite + note + buttons +'</div></div>'
+							$("#paper_list").append(paper);
+						}});
+					function clear(){
+						$("#paper_list").empty();
+					}
+					function setType(v){
+						this.type = v
+						searchPapers()
+					}
+					function setArea(v){
+						this.area = v
+						searchPapers()
+					}
+					function setYear(v){
+						this.year = v
+						searchPapers()
+					}
+					function searchPapers(){
+						clear()
+						// load data
+						for(let i in papers){
+							console.log(papers[i].type == this.type, papers[i].area == this.area, papers[i].year == this.year)
+							if(papers[i].type !== this.type && this.type !== "all")
+								continue
+							if(papers[i].area !== this.area && this.area !== "all")
+								continue
+							if(papers[i].year !== this.year && this.year !== "all")
+								continue
+							var buttons = ""
+							if(papers[i].paper !== "")
+								buttons = buttons + '<button class="list-inline-item"><a class="d-inline-block" style="width:110%;height:100%;border-radius:5px;text-align: center;" href='+ papers[i].paper +'>Paper</a></button>'
+							if(papers[i].code !== "")
+								buttons = buttons + '<button class="list-inline-item"><a class="d-inline-block" style="width:110%;height:100%;border-radius:5px;text-align: center;" href='+ papers[i].code +'>Code</a></button>'	
+							if(papers[i].demo !== "")
+								buttons = buttons + '<button class="list-inline-item"><a class="d-inline-block" style="width:110%;height:100%;border-radius:5px;text-align: center;" href='+ papers[i].demo +'>Demo</a></button>'	
+							buttons = '<ul class="list-inline bg-gray mt-1" style="text-align: right;">' + buttons + '</ul>'
+							var note = '<span class="text-lighten">(' + papers[i].note +' )</span>'
+							var paper = '<div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2"><div class="text-dark">' + papers[i].cite + note + buttons +'</div></div>'
+							$("#paper_list").append(paper);
+						}
+					}
+				</script>
+				<!-- <ol >
 					<li>Chen S, Guo Z, <b>Li X</b>, et al. Query2Set: Single-to-Multiple Partial Fingerprint Recognition Based on Attention Mechanism[J]. <b><i>IEEE Transactions on Information Forensics and Security</i></b>, 2022, 17: 1243-1253. JCR Q1.</li>
 					<li>Yan J, Chen H, <b>Li X</b>, et al. Deep contrastive learning based tissue clustering for annotation-free histopathology image analysis[J]. <b><i>Computerized Medical Imaging and Graphics</i></b>, 2022, 97: 102053. JCR Q1.</li>
 					<li>Mazandarani M, <b>Li X</b>. Interval type-2 fractional fuzzy inference systems: Towards an evolution in fuzzy inference systems[J]. <b><i>Expert Systems with Applications</i></b>, 2022, 189: 115947. JCR Q1.</li>
@@ -193,7 +279,7 @@
 					<li>Ma L, Dong B, Yan J, et al. Matting enhanced mask R-CNN[C] <b><i>In Proceedings of the 2021 IEEE International Conference on Multimedia and Expo (ICME-21).</i></b> IEEE, 2021: 1-6.</li>
 					<li>Xu Z, Luo J, Yan J, <b>Li X</b>，et al. Adversarial uni-and multi-modal stream networks for multimodal image registration. [C] <b><i>In Proceedings of the International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI-20)</i></b>. 2020: 222-232.</li>
 					<li>Li, S; <b>Li X</b>, et al ; Neighborhood preserving hashing for scalable video retrieval. [C] <b><i>In Proceedings of the IEEE International Conference on Computer Vision (ICCV-19)</i></b>, 2019, 8211:8220.</li>
-				</ol>
+				</ol> -->
 	  			
 			<header class="headerNav">
 			
