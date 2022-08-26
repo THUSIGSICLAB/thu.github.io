@@ -144,7 +144,14 @@
 	  		</header>
 	  		   
 	  		<section class="article">
-				<label for="type">Type:</label>
+				<style>
+					::marker{
+						content: "[" counter(list-item) "]  ";
+					}	
+				.paperp {
+					margin: 0px 13% 0px 3%;
+				}	</style>
+				<!-- <label for="type">Type:</label>
 				<select name="type" id="type" onchange="setType(this.options[this.options.selectedIndex].value)">
 					<option value="all">All</option>
 					<option value="C">Conference</option>
@@ -237,8 +244,8 @@
 							$("#paper_list").append(paper);
 						}
 					}
-				</script>
-				<!-- <ol >
+				</script> -->
+				<ol>
 					<li>Chen S, Guo Z, <b>Li X</b>, et al. Query2Set: Single-to-Multiple Partial Fingerprint Recognition Based on Attention Mechanism[J]. <b><i>IEEE Transactions on Information Forensics and Security</i></b>, 2022, 17: 1243-1253. JCR Q1.</li>
 					<li>Yan J, Chen H, <b>Li X</b>, et al. Deep contrastive learning based tissue clustering for annotation-free histopathology image analysis[J]. <b><i>Computerized Medical Imaging and Graphics</i></b>, 2022, 97: 102053. JCR Q1.</li>
 					<li>Mazandarani M, <b>Li X</b>. Interval type-2 fractional fuzzy inference systems: Towards an evolution in fuzzy inference systems[J]. <b><i>Expert Systems with Applications</i></b>, 2022, 189: 115947. JCR Q1.</li>
@@ -279,7 +286,7 @@
 					<li>Ma L, Dong B, Yan J, et al. Matting enhanced mask R-CNN[C] <b><i>In Proceedings of the 2021 IEEE International Conference on Multimedia and Expo (ICME-21).</i></b> IEEE, 2021: 1-6.</li>
 					<li>Xu Z, Luo J, Yan J, <b>Li X</b>，et al. Adversarial uni-and multi-modal stream networks for multimodal image registration. [C] <b><i>In Proceedings of the International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI-20)</i></b>. 2020: 222-232.</li>
 					<li>Li, S; <b>Li X</b>, et al ; Neighborhood preserving hashing for scalable video retrieval. [C] <b><i>In Proceedings of the IEEE International Conference on Computer Vision (ICCV-19)</i></b>, 2019, 8211:8220.</li>
-				</ol> -->
+				</ol> 
 	  			
 			<header class="headerNav">
 			
