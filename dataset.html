@@ -176,6 +176,23 @@
 					<p>When the subjective experiments were completed, we carried out the process of outliers detection and removal based on the three-sigma rule of thumb. The final mean opinion score (MOS) of each image was then computed by averaging the remaining scores. Figure 4 shows the MOS distribution. We can observe that the MOS values span the quality scale [1, 5] and spread at different visual levels. The distribution is close to the Gaussian distribution, with most of the score values between 3.0 and 4.0.
 				</section>
 				
+				<section class="data_title-style">
+					2. Fine-grained Choreography Dance dataset<br>
+					
+				</section>
+				<section class="data_content-style">
+					We introduce a Fine-grained Choreography Dance dataset(FineDance). It comprises over 14.6 hours of data collected from 346 paired songs and dances, was created by 27 professional dancers and a motion capture system, which has accurate body and hand motions. The fine-grained 22 dance genres of FineDance spanning traditional and modern styles, which make the genre-matching of generated dance sequences and given music become more challenging. The part(7.7 hours) of FineDance dataset can be downloaded at <a href="https://pan.baidu.com/s/1DdJjfXWZZvnUmqPUrOTf7g?pwd=dkqn" class="bold font16">BaiduNetDisk</a>.<p>
+					For the fine-grained dataset, we take the following regulations into account for our dataset acquisition. We give the flowchart of the process shown in Figure. We summarized the comparison of FineDance and existing 3D dance datasets in the Table blow.
+					<p><a><img src="img/data_fine-dance.png"/></a><p>
+					<br><b>Fine-grained motions</b>. Our data store the information of the skeleton joints in 3D space in each frame including fingers, which can help to improve the artistry and reality of the dance motion. For easy to utilize, we use the standard 52 joints to represent the dance data.
+					<br><b>Fine-grained dance genres</b>. We improve the diversity of our dataset from two aspects: more genres and more dancers. Our FineDance is reasonably classified under the advice of dance artists, covering hip-hop and Chinese classical dance more completely. To the best of our knowledge, it also includes folk dance motions for the first time, expanding the dance genres of the choreography dataset. Totally, FineDance has up to 22 genres of dance defined by professional dance artists. And we obtained more than 14 hours of data. It is worth noting that FineDance contains the most genres. Details are given in the supplementary materials.
+					<br><b>Accurate posture</b>. In FineDance, all motions are captured by the Vicon optical motion capture system and retargeted to a standard skeleton in MotionBuilder by engineers. Therefore, FineDance can donate accurate postures. Moreover, FineDance will be the largest fully available 3D musicdance paired dataset, and it will be available.
+					<br><b>Well-paired dance and music</b>. Dance fragments are strongly associated with the rhythm and style of music. However, due to the lack of enough well-paired data, the generative model is hard to fit the relevance of the motion rhythm and music rhythm. Therefore, we asked the professional dancers to pay attention to the matching of rhythm and style when dancing.
+					<br><b>Professional dancer</b>. We invited 27 professional dancers, and each dancer was asked to dance to the music while his/her motions were captured utilizing the capture system.
+					<p><a><img src="img/data_finedance-table.png"/></a>
+				</section>
+				
+				
          
 	  	</article>
 	  </div>	
