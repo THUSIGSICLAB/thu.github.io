@@ -148,6 +148,7 @@
 					<li><a href="#section1" style="font-size: 26px; color: rgb(102,8,116)">1. Underwater Image Database</a></li>
 					<li><a href="#section2" style="font-size: 26px; color: rgb(102,8,116)">2. Fine-grained Choreography Dance dataset</a></li>
 					<li><a href="#section3" style="font-size: 26px; color: rgb(102,8,116)">3. Sewer Defect Detection Dataset</a></li>
+					<li><a href="#section4" style="font-size: 26px; color: rgb(102,8,116)">4. Fundus and Colonoscopy datasets</a></li>
 				</ul>
 	  		</header>
 			  
@@ -160,6 +161,7 @@
 				</style>
 				<style>
 					.data_content-style {
+						display: flex;
 						font-size: 20px;
 						text-align: justify;
 						display: inline-block;
@@ -203,6 +205,16 @@
 						Surface defect detection is a crucial step to guarantee industrial production quality. The defects not only influence the appearance but also harm the fatigue strength and wear resistance of products. If the defective products are not discovered timely, it probably results in a major safety accident and economic loss.<br>
 						We release Sewer Defect Detection Dataset (SEDD) dataset used in this paper. The SEDD contains 7563 images with a resolution of 1920 × 1080. It collects sewer pipeline images of three typical surface defects crack, root, and deposit. One distinct characteristic of SEDD is that it has a high proportion of defect-free images (nearly two-thirds), which makes the detection scene more consistent with the real world. Here are some examples about ground truth of three defective images from the SEDD dataset. Download the dataset from <a href="https://pan.baidu.com/s/1t-tsVguZpaL8h-7RqQtvtQ?pwd=wq28#list/path=%2F" class="bold font16">BaiduNetDisk</a>.<p>
 						<p><a><img src="img/data_SEDD.png"/></a><p>
+					</section>
+				</p>
+
+				<h2 id="section4" class="data_title-style">4. Fundus and Colonoscopy datasets</h2>
+					<p>
+					<section class="data_content-style">
+						Due to the variability of light transmission and clinical imaging conditions, medical images often exhibit uneven illumination or blurry texture details. These low-quality (LQ) images can significantly impede automated disease screening, examination, and diagnosis. Medical image ehancement aims to transform an LQ image to a high-quality (HQ) one that fulfills the modality-specific HQ definitions, such as enhanced illumination quality and texture details.
+						<br>We employ three datasets, i.e., the CCM dataset, the Fundus dataset, and the Colonoscopy dataset, to evaluate enhancement performance under complex degeneration conditions. CCM dataset is publicly available, while Fundus and Colonoscopy datasets are the private datasets collected and relabeled by our collaborative clinicians into HQ and LQ subsets from the iSee dataset and the CVCEndoSceneStill dataset, Fundus dataset is used for training the compared networks with 640 HQ images and 700 LQ images. Details of the three datasets are presented in Table I. Note that CCM and Colonoscopy contain paired segmentation labels for the HQ and LQ images, which enables us to quantitatively evaluate the enhancement quality by taking segmentation as the downstream task and retrain our framework with the proposed cooperative training strategy for a BLO. Download the dataset from <a href="https://pan.baidu.com/s/1zmHwsxMWo_QoW9PnhKcNqA?pwd=h8mw#list/path=%2F" class="bold font16">BaiduNetDisk</a>.
+						<p><p>Index Terms: Bi-level optimization(BLO), High-quality(HQ), Low-quality(LQ).
+						<p><img src="img/data_HQG-NET_table.png"/><p>
 					</section>
 				</p>
 	  	</article>
