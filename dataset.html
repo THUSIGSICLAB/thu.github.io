@@ -149,6 +149,7 @@
 					<li><a href="#section2" style="font-size: 26px; color: rgb(102,8,116)">2. Fine-grained Choreography Dance Dataset</a></li>
 					<li><a href="#section3" style="font-size: 26px; color: rgb(102,8,116)">3. Sewer Defect Detection Dataset</a></li>
 					<li><a href="#section4" style="font-size: 26px; color: rgb(102,8,116)">4. Fundus and Colonoscopy Datasets</a></li>
+					<li><a href="#section5" style="font-size: 26px; color: rgb(102,8,116)">5. ROV6D</a></li>
 				</ul>
 	  		</header>
 			  
@@ -216,6 +217,15 @@
 					<br>We employ three datasets, i.e., the CCM dataset, the Fundus dataset, and the Colonoscopy dataset, to evaluate enhancement performance under complex degeneration conditions. CCM dataset is publicly available, while Fundus and Colonoscopy datasets are the private datasets collected and relabeled by our collaborative clinicians into HQ and LQ subsets from the iSee dataset and the CVCEndoSceneStill dataset, Fundus dataset is used for training the compared networks with 640 HQ images and 700 LQ images. Details of the three datasets are presented in Table I. Note that CCM and Colonoscopy contain paired segmentation labels for the HQ and LQ images, which enables us to quantitatively evaluate the enhancement quality by taking segmentation as the downstream task and retrain our framework with the proposed cooperative training strategy for a BLO. Download the dataset from <a href="https://pan.baidu.com/s/1zmHwsxMWo_QoW9PnhKcNqA?pwd=h8mw#list/path=%2F" class="bold font16">BaiduNetDisk</a>.
 					<p><p>Index Terms: Bi-level optimization(BLO), High-quality(HQ), Low-quality(LQ).
 					<p><img src="img/data_HQG-NET_table.png"/><p>
+				</section>
+			</p>
+
+			<p>
+				<section class="data_content-style">
+					<h2 id="section5" class="data_title-style">5. ROV6D</h2>
+					We introduce a benchmark dataset, ROV6D, for 6D pose estimation of remotely operated vehicles (ROVs). The proposed dataset includes the training synthetic data generation and the testing data collection in both a pool and the open lake at Maoming, totally 3985 images and related ground-truth poses. The training subset consists of a large number of synthetic images with 6D ground-truth poses. The testing subsets, including the Pool subset and Maoming subset, focus on challenging cases with various levels of occlusion and visibility.
+					<br><br>Our dataset ROV6D can be found in the <a href="https://pan.baidu.com/s/1ynoU7Ajmd7dUdI55CHOwXg?pwd=venp#list/path=%2F" class="bold font16">BaiduNetDisk</a>.
+					<p><p></p><img src="img/data_ROV6D_raw.jpg" height="400" width="800"/><p><p><img src="img/data_ROV6D_mask.png" height="400" width="800"/>
 				</section>
 			</p>
 	  	</article>
