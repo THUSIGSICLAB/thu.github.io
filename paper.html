@@ -66,6 +66,25 @@
 		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
+		<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
+		<script src="js/translate.js"></script>
+		<style>
+			.language_button {
+					position: fixed;
+					margin-top: 50px;
+					right: 50px;
+					font-size: 15px;
+					background-color: rgb(102,8,116);
+					color: white;
+					padding: 5px;
+					border-radius: 15px;
+				}
+			</style>
+		<div class="language_button">
+			<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> | 
+			<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');" style="color: white;">简体中文</a>
+		</div>
+
 		<button id="backToTop" onclick="topFunction()">↑</button>
 		<script>
 			// 获取返回顶部按钮元素
@@ -970,6 +989,14 @@
 	</section>
 
 </footer>
+		<script>
+			// translate.ignore.tag.push('span');
+			translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
+			translate.service.use('client.edge');
+			translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
+			translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
+			translate.execute();
+		</script>
 	</body>
 
 </html>

@@ -45,8 +45,26 @@
 	</head>
 
 	<body>
-		<script src="https://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
-        <script src="js/language.js"></script>
+		<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
+		<script src="js/translate.js"></script>
+		<style>
+			.language_button {
+					position: fixed;
+					margin-top: 50px;
+					right: 50px;
+					font-size: 15px;
+					background-color: rgb(102,8,116);
+					color: white;
+					padding: 5px;
+					border-radius: 15px;
+				}
+			</style>
+		<div class="language_button">
+			<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> | 
+			<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');" style="color: white;">简体中文</a>
+		</div>
+		<!-- <script src="https://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/language.js"></script> -->
 
         <script>
             $("#change").click(function() {
@@ -65,6 +83,7 @@
 						
 					</section>
 				</div>
+				
 				<div class="clearfix"></div>
 				<div class="menu">
 					<nav class="navbar navbar-default">
@@ -80,26 +99,27 @@
 						<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
 							<ul class="nav-tabs nav-justified" style="padding:0 ;">
 								<li key="home">
-									<a href="index.html" class="lang" key="home">首页</a>
+									<a href="index.html" class="lang" key="home" style="line-height: 1.5;">首页</a>
 								</li>
 								<li>
-									<a class="" href="introduction.html">课题组概况</a>
+									<a class="" href="introduction.html" style="line-height: 1.5;">课题组概况</a>
 								</li>
 								<li class="">
-									<a href="news.html">课题组新闻<span class="glyphicon glyphicon-menu-down"></span></a>
+									<a href="news.html" style="line-height: 1.5;">课题组新闻<span class="glyphicon glyphicon-menu-down"></span></a>
 									
 								</li>
 								<li>
-									<a href="students.html">成员组成</a>
+									<a href="students.html" style="line-height: 1.5;">成员组成</a>
 								</li>
 								<li>
-									<a href="paper.html">成果展示</a>
+									<a href="paper.html" style="line-height: 1.5;">成果展示</a>
 								</li>
 								<li>
-									<a href="connect.html">联系我们</a>
+									<a href="connect.html" style="line-height: 1.5;">联系我们</a>
 								</li>
 								
 							</div>
+							
 						</nav>
 				</div>
 			</div>
@@ -155,7 +175,7 @@
 						<a href="" class="arrow arrowleft"><span class="glyphicon glyphicon-chevron-left"></span></a>
 						<a href="" class="arrow arrowright"><span class="glyphicon glyphicon-chevron-right"></span></a>
 						<div class="monthTxt">
-							<span id="calendarYear">2023</span>
+							<span id="calendarYear">2024</span>
 							<span id="demo"></span>月
 						</div>
 						<ul class="day">
@@ -264,10 +284,6 @@
 </div>
 
 <footer>
-
-	
-	
-	
 	<section class="copyrights">
 		<section class="mainWrap">
             <span class="info">
@@ -280,9 +296,15 @@
             <span class="copy">版权所有 © 清华大学　　</span>
        </section>
 	</section>
-
 </footer>
-
+		<script>
+			// translate.ignore.tag.push('span');
+			translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
+			translate.service.use('client.edge');
+			translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
+			translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
+			translate.execute();
+		</script>
 	</body>
 	<script>
 		function time(){
