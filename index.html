@@ -101,14 +101,14 @@
 									<a href="index.html" class="lang" key="home" style="line-height: 1.5;">首页</a>
 								</li>
 								<li>
-									<a class="" href="introduction.html" style="line-height: 1.5;">课题组概况</a>
+									<a class="" href="introduction.html" style="line-height: 1.5;">概况</a>
 								</li>
 								<li class="">
-									<a href="news.html" style="line-height: 1.5;">课题组新闻<span class="glyphicon glyphicon-menu-down"></span></a>
+									<a href="news.html" style="line-height: 1.5;">新闻<span class="glyphicon glyphicon-menu-down"></span></a>
 									
 								</li>
 								<li>
-									<a href="students.html" style="line-height: 1.5;">成员组成</a>
+									<a href="students.html" style="line-height: 1.5;">成员</a>
 								</li>
 								<li>
 									<a href="paper.html" style="line-height: 1.5;">成果展示</a>
@@ -148,11 +148,11 @@
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner" role="listbox">
 			<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
-				<div class="item"><img src="img/test2.png" alt="...">
+				<!-- <div class="item"><img src="img/test2.png" alt="...">
 					<div class=" carousel-caption">
 						课题组2021年9月10日教师节合照
 					</div>
-				</div>
+				</div> -->
 				<div class="item"><img src="img/test7.png" alt="...">
 					<div class=" carousel-caption">
 						课题组2023年9月10日教师节合照
@@ -290,7 +290,135 @@
 			</ul>
 		</section>
 	</div>
+	
+	<div>
+		<style>
+			.video-carousel {
+			position: absolute; /* 设置内层div为绝对定位 */
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%); 
+			width: 640px;
+			margin: 0 auto;
+			}
+			video {
+			width: 100%;
+			display: block;
+			}
+			.arrow {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 50px;
+			cursor: pointer;
+			color: rgb(102,8,116);
+			border: none;
+			background-color: transparent;
+			}
+			.arrow:hover {
+			color: #000;
+			}
+			.left-arrow {
+			left: 10px;
+			}
+			.right-arrow {
+			right: 10px;
+			}
+			.small-text {
+			position: relative;
+			top: -5px; /* 向上移动小字 */
+			right: -5px; /* 向右移动小字 */
+			font-size: 12px; /* 小字的字体大小 */
+			font-style: italic; /* 字体倾斜 */
+			color: red; /* 小字的颜色 */
+			}
+			a {
+				text-decoration: none; /* 移除链接默认的下划线 */
+			}
 		
+			.video-background {
+				position: relative;
+				/* padding-top: 100px; */
+				width: 700px;
+				height: 500px;
+				background-color: rgba(102,8,116, 0.3); /* 示例背景颜色 */
+				margin: 0 auto;
+				padding: 0;
+				border: none;
+				box-sizing: border-box;
+			}
+			.background-text {
+				padding-top: 6px;
+				text-align: center;
+				vertical-align: middle;
+				font-weight: bold;
+				border: 0px;
+				font-size: 24px; /* 设置字体大小 */
+				color: white;
+		}
+			.gray-bg {
+			margin: 0;
+			padding: 0;
+			background-color: rgba(191, 191, 191, 0.3); /* 浅灰色透明度为30% */
+			height: 510px;
+			width: 100%;
+			position: relative; /* 固定定位，随页面滚动 fixed */
+			/* top: 0;
+			left: 0; */
+			margin-bottom: 20px;
+			}
+		</style>
+		<div class="gray-bg">
+			<div class="video-background">
+				<div class="background-text">
+					Algorithm Demo
+				</div>
+				<div class="video-carousel">
+					<video id="video" width="640" height="360" controls>
+						<source src="https://github.com/mayuelala/FollowYourPose/assets/38033523/e021bce6-b9bd-474d-a35a-7ddff4ab8e75" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+					<div class="background-text" style="padding-top: 20px;">
+						<span id="text" class="background-text">FollowYourPose</span><a href="https://github.com/THUSIGSICLAB?tab=repositories"><span class="small-text">TRY NOW</span></a>
+					</div>
+					<button class="arrow left-arrow" onclick="leftArrow()">&#10094;</button>
+					<button class="arrow right-arrow" onclick="rightArrow()">&#10095;</button>
+				</div>
+			</div>
+		</div>
+	  
+		<script>
+			const video = document.getElementById('video');
+			const text = document.getElementById("text");
+		//   const leftArrow = document.getElementById('left-arrow');
+		//   const rightArrow = document.getElementById('right-arrow');
+			
+			let videoIndex = 0;
+			const videoSources = [
+			{ title: '', description: 'FollowYourPose', src: 'https://github.com/mayuelala/FollowYourPose/assets/38033523/e021bce6-b9bd-474d-a35a-7ddff4ab8e75' }, // initial video
+			{ title: '', description: 'FineDance', src: 'https://li-ronghui.github.io/finedance/teaser/datasetshow.mp4' },
+			{ title: '', description: 'FLAG3D', src: 'https://cdn2.mywave.video/embed/638b3d6e929ed54796d655d0/638b41fab537e5583a5255db.mp4' }
+			];
+		
+			function leftArrow() {
+				videoIndex = (videoIndex - 1 + videoSources.length) % videoSources.length;
+				video.src = videoSources[videoIndex].src;
+				// video.src = videoSources[videoIndex];
+				text.textContent = videoSources[videoIndex].description
+				video.load();
+				video.play();
+		}
+		
+			function rightArrow() {
+				videoIndex = (videoIndex + 1) % videoSources.length;
+				video.src = videoSources[videoIndex].src;
+				// video.src = videoSources[videoIndex];
+				text.textContent = videoSources[videoIndex].description
+				video.load();
+				video.play();
+			}
+		</script>
+	</div>
 <footer>
 	<section class="copyrights">
 		<section class="mainWrap">
