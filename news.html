@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-	<head>
 
-		
+<head>
+
+	<title>THUSIGSICLAB</title>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
@@ -24,255 +25,341 @@
 		arrLang['km']['desc'] = 'នេះគឺជាអត្ថបទរបស់ខ្ញុំ';
 
 		// Process translation
-		$(function() {
-		$('.translate').click(function() {
-			var lang = $(this).attr('id');
+		$(function () {
+			$('.translate').click(function () {
+				var lang = $(this).attr('id');
 
-			$('.lang').each(function(index, item) {
-			$(this).text(arrLang[lang][$(this).attr('key')]);
+				$('.lang').each(function (index, item) {
+					$(this).text(arrLang[lang][$(this).attr('key')]);
+				});
 			});
-		});
 		});
 	</script>
 
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="css/education.css" />
-		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
-	</head>
-	<body>
-				<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
-		<script src="js/translate.js"></script>
-		<style>
-			.language_button {
-					position: absolute;
-					margin-top: 50px;
-					right: 20px;
-					font-size: 15px;
-					background-color: rgb(102,8,116);
-					color: white;
-					padding: 5px;
-					border-radius: 15px;
-				}
-			</style>
-		<div class="language_button">
-			<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> | 
-			<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');" style="color: white;">简体中文</a>
-		</div>
-		<div class="header">
-			<div class="mainWrap">
-				<div class="topLine"></div>
-				<div class="topWrap">
-					<a href="" class="logo">
-						<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;"/>
-					</a>
-					<section class="search">
-						<img src='img/right_tu2.png' style="width: 250px; height: 80px;"/>
-						
-					</section>
-				</div>
-				<div class="clearfix"></div>
-				<div class="menu">
-					<nav class="navbar navbar-default">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-collapse">
-								  <span class="sr-only">导航</span>
-			                      <span class="icon-bar"></span>
-			                      <span class="icon-bar"></span>
-			                      <span class="icon-bar"></span>
-			                 </button>
-							<a href="" class="navbar-brand anav">导航</a>
-						</div>
-						<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
-							<ul class="nav-tabs nav-justified" style="padding:0 ;">
-								<li key="home">
-									<a href="index.html" class="lang" key="home">首页</a>
-								</li>
-								<li>
-									<a class="" href="introduction.html">概况</a>
-								</li>
-								<li class="">
-									<a href="news.html">新闻<span class="glyphicon glyphicon-menu-down"></span></a>
-									
-								</li>
-								<li>
-									<a href="students.html">成员</a>
-								</li>
-								<li>
-									<a href="paper.html">成果展示</a>
-								</li>
-								<li>
-									<a href="connect.html">联系我们</a>
-								</li>
-								
-							</div>
-						</nav>
-				</div>
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/education.css" />
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
+	<script src="js/translate.js"></script>
+	<style>
+		.language_button {
+			position: absolute;
+			margin-top: 50px;
+			right: 20px;
+			font-size: 15px;
+			background-color: rgb(102, 8, 116);
+			color: white;
+			padding: 5px;
+			border-radius: 15px;
+		}
+	</style>
+	<div class="language_button">
+		<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> |
+		<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');"
+			style="color: white;">简体中文</a>
+	</div>
+	<div class="header">
+		<div class="mainWrap">
+			<div class="topLine"></div>
+			<div class="topWrap">
+				<a href="" class="logo">
+					<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;" />
+				</a>
+				<section class="search">
+					<img src='img/right_tu2.png' style="width: 250px; height: 80px;" />
+
+				</section>
+			</div>
+			<div class="clearfix"></div>
+			<div class="menu">
+				<nav class="navbar navbar-default">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#example-navbar-collapse">
+							<span class="sr-only">导航</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="" class="navbar-brand anav">导航</a>
+					</div>
+					<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
+						<ul class="nav-tabs nav-justified" style="padding:0 ;">
+							<li key="home">
+								<a href="index.html" class="lang" key="home">首页</a>
+							</li>
+							<li>
+								<a class="" href="introduction.html">概况</a>
+							</li>
+							<li class="">
+								<a href="news.html">新闻<span class="glyphicon glyphicon-menu-down"></span></a>
+
+							</li>
+							<li>
+								<a href="students.html">成员</a>
+							</li>
+							<li>
+								<a href="paper.html">成果展示</a>
+							</li>
+							<li>
+								<a href="connect.html">联系我们</a>
+							</li>
+
+					</div>
+				</nav>
 			</div>
 		</div>
+	</div>
 
-<article class="content clearfix">
-			<section class="topImg">
-				<img src="img/tu5.png"/>
-			</section>
- <section class="mainWrap">
-	<div class="detailContent">
-	  <div class="col_1"style="padding: 0;">
-		<section class="leftNav">
-				 <h3>课题组新闻</h3>
-					<nav class="navbar navbar-default">
-						<div class="navbar-header eduHeader">
-							<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse" data-target="#example-navbar-collapse-1">
-								  <span class="sr-only">导航</span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                 </button>
-							<a href="" class="navbar-brand edubrand">教育教学</a>
-						</div>
-						<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1" aria-expanded="false">
-							<ul class="navTotal" style="padding:0 ;">
-								<li class="current">
-									<i class="glyphicon glyphicon-minus"></i>
-									<a href="#">新  闻</span></a>
-								</li>
+	<article class="content clearfix">
+		<section class="topImg">
+			<img src="img/tu5.png" />
+		</section>
+		<section class="mainWrap">
+			<div class="detailContent">
+				<div class="col_1" style="padding: 0;">
+					<section class="leftNav">
+						<h3>课题组新闻</h3>
+						<nav class="navbar navbar-default">
+							<div class="navbar-header eduHeader">
+								<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse"
+									data-target="#example-navbar-collapse-1">
+									<span class="sr-only">导航</span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+								</button>
+								<a href="" class="navbar-brand edubrand">教育教学</a>
+							</div>
+							<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1"
+								aria-expanded="false">
+								<ul class="navTotal" style="padding:0 ;">
+									<li class="current">
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="#">新 闻</span></a>
+									</li>
 
 
 								</ul>
 							</div>
-					</nav>
-			</section>
-		</div>
-	  <div class="col_2">
-	  	<article class="mainContent">
-	  		<header class="headerNav">
-	  			<nav class="hnav">
-	  				<a>首页.</a>
-	  				<a>课题组新闻.</a>
-	  				<a>新闻</a>
-	  			</nav>
-	  			<h1>目录</h1>
-	  		</header>
-	  		<style>
-				.small-text {
-				position: relative;
-				top: -5px; /* 向上移动小字 */
-				right: -5px; /* 向右移动小字 */
-				font-size: 12px; /* 小字的字体大小 */
-				font-style: italic; /* 字体倾斜 */
-				color: red; /* 小字的颜色 */
-			  }
-			</style>
-	  		<section class="article"></section>
-			  <a href="https://mp.weixin.qq.com/s/f_GjD8E30vRjAfYT4ghG1g">【科研成果】2024-03-30 智能计算实验室杨恺同学成果被CVPR2024接收<span class="small-text">new~</span> </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/qqFSy4_U5OlvLYvwtfxs3w">【科研成果】2024-03-29 智能计算实验室肖伊乘同学成果被CVPR2024接收<span class="small-text">new~</span> </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/5fqynVXvqk9QJHP9OUiAjw">【科研成果】2024-03-12 智能计算实验室吕加飞同学成果被Information Sciences期刊接收<span class="small-text">new~</span> </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/kPxSRjUlcMniLZycv_MeGA">【科研成果】2024-03-01 智能计算实验室李镕辉同学成果被ICASSP2024接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/zdXSpUWWKTgNVx_7COmZhg">【科研成果】2024-01-26 智能计算实验室吕加飞同学成果被ICLR2024接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/US5ChSVjjpxxM9KGwRPklQ">【科研成果】2024-01-25 智能计算实验室何春明同学成果被ICLR2024接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/oOlEF83dmDjGMTWUKXIVwA">【科研成果】2024-01-23 智能计算实验室吕加飞同学两项成果被AAMAS2024接收（二） </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/uLnDeOcVKIG7kpha9E0omA">【科研成果】2024-01-22 智能计算实验室吕加飞同学两项成果被AAMAS2024接收（一） </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/OqvSaTvHshJ7VNUN2itr1g">【科研成果】2024-01-16 智能计算实验室许遵楠同学成果被AAAI2024接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/8uWJSkcrR0SE0W9hnqvVyw">【科研成果】2023-12-28 智能计算实验室张亚超博士成果被AAAI2024接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/6-u9mo0CE_JRzzlSQ6TsLA">【科研成果】2023-12-23 智能计算实验室唐龙翔同学成果被ICCV2023 Workshop接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/5b1QGiVhjK75i3kpDkNFSw">【科研成果】2023-12-16 智能计算实验室杨锐同学成果被ICCV2023接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/FHLdcq2PQDdCroA6WJydFw">【科研成果】2023-12-15 智能计算实验室何春明同学成果被NeurIPS2023接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/Vo-XMS8c9Qxo3jpHJIDR5Q">【科研成果】2023-12-14 智能计算实验室马跃同学成果被AAAI2024接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/iQ50mv1-tq1kkay3e0CMyQ">【科研成果】2023-12-13 智能计算实验室唐婧仪同学成果被RAL2023接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/mFq_EHnv7gdA-dW1dMHvKw">【科研成果】2023-12-11 智能计算实验室李镕辉同学成果被ICCV2023接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/rmTnExvZzOjT7MEFr4lgbg">【科研成果】2023-11-23 智能计算实验室何春明同学成果被TNNLS接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/RDPh-7MVQMicqUhecLnLFQ">【科研成果】2023-11-22 智能计算实验室肖伊乘同学成果被NeurIPS 2023接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/BX-B0CHY1e2EjivHGEE4yA">【科研成果】2023-11-21 智能计算实验室周涵涛同学成果被IEEE TIM接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/mDy_yb8xa1dZnWKfaUzCcg">【科研成果】2023-09-26 智能计算实验室孟昶、翟晨昊同学成果被CIKM2023接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/N4L4MiTHIgNN9I-_EEX7Nw">【科研成果】2023-09-25 智能计算实验室孟昶、张恒煜同学成果被KDD2023接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/Kqc_XiaeMfpTTmyj-1-8-w">【科研成果】2023-09-24 智能计算实验室何春明同学成果被ICCV2023接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/hiZngBzCMYsR8aWI-YRGqA">【科研成果】2023-08-03 智能计算实验室张俊杰同学成果被ECAI 2023接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/jM2pGCNIhqtyfVdZsbDCuw">【科研成果】2023-08-02 智能计算实验室唐龙翔同学成果被MICCAI2023接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/GtDdwpDtnUGmecej97Phwg">【科研成果】2023-08-01 智能计算实验室孟昶同学成果被ACM TOIS接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/YBd1ttMy3H22gzESCVd54A">【科研成果】2023-06-19 智能计算实验室孟昶同学成果被WWW2023接收 </a> <br>
-			  <a href="https://mp.weixin.qq.com/s/Ftyos5GLVcZFFDQ_OsPzFg">【科研成果】2023-05-18 智能计算实验室吕加飞同学成果被Neurocomputing接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/hyiTk8C7KK2ud8PJTxaoeQ">【科研成果】2023-05-12 智能计算实验室金孟群同学成果被ICASSP 2023接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/T4XB0ePIfpAjmntHIDMmmw">【科研成果】2023-04-26 智能计算实验室陈阳昆、张俊杰同学成果被AAMAS 2023接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/UDHYGPoWcKe_xeiciHLaoA">【科研成果】2023-04-25 智能计算实验室何春明同学成果被CVPR 2023接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/wwBhywA8NMjJmpVSoiNejA">【科研成果】2023-04-20 智能计算实验室韩宏炜同学成果被ICLR 2023接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/LtQ2z7PcDSr7MCh-H0Tolw">【科研成果】2023-04-11 智能计算实验室韩昊男同学成果被ICASSP 2023接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/utDzxq7AeFb83VVZI6ZgOg">【科研成果】2023-03-13 智能计算实验室肖伊乘、马跃同学科研成果被ICASSP 2023接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/-9X7G5g0UisMBvORNMz4kA">【科研成果】2023-03-10 智能计算实验室褚峤松同学成果被AAAI 2023接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/07oHAd2JMgBXe3ZpMrCo6w">【科研成果】2022-11-03 智能计算实验室吕加飞同学两项成果被NeurIPS 2022接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/xVxBKCldEyXAUc5_r3hbpw">【科研成果】2022-10-20 智能计算实验室张恒煜同学成果被CIKM 2022接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/oI3v-IQwdBwsmkYhmNn1Ng">【招   聘】2022-09-14 2022清华大学SIGS智能计算实验室李秀教授课题组招收科研助理/博士后</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/Oqc3vzozpR9U4HmCTO-vMg">【科研成果】2022-08-23 智能计算实验室李曦辉、乔钟建同学成果被PRICAI 2022接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/N4SoDskMSbs5bGIiNsT-NQ">【科研成果】2022-08-01 智能计算实验室毕业生徐哲同学成果被MICCAI 2022接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/G77VhM8fdzlO6Kd0klib4g">【科研成果】2022-07-22 陈胜杰：基于注意力机制的单对多部分指纹识别</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/_3BdRcfey-VLqyZ91CDhzQ">【科研成果】2022-07-21 智能计算实验室杨锐同学成果被ECCV 2022接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/4EwybKP1Bwiv6BoBcPO8Ow">【科研成果】2022-07-12 智能计算实验室陈卓同学成果被ACM MM2022接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/5gnn-iTSVOqh0gRz-UDe3A">【科研成果】2022-07-11 智能计算实验室马跃同学成果被ACM MM2022接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/DKKhCsrBfUtPk8iXzyqiQQ">【科研成果】2022-07-08 陈胜杰：基于注意力机制的单对多部分指纹识别</a> <br> 
-			  <a href="https://mp.weixin.qq.com/s/dQIOMeGyzhcJnroAj9BXbw">【毕业微展】2022-07-06 贾若楠：强化学习中环境模型误差问题的算法研究</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/n7epqlzbsfBupkFYT-AE8w">【招   聘】2022-06-22 2022清华大学SIGS智能计算实验室李秀教授课题组招收暑期实习生/科研助理/博士后</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/edp6VcNYN9jhNdU9q8u1xA">【毕业微展】2022-06-20 成斌：基于解耦表征学习的高效可控人脸生成技术研究</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/7zkelFTVLlh8BvU0X8woow">【毕业微展】2022-06-14 李帅斌：基于多智能体强化学习的智能体协作算法研究</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/z6CQ5xptpUoTragcAlryRA">【毕业微展】2022-06-12 马露凡：基于深度学习的实例分割技术及医疗场景应用研究</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/gH32fpZ81J6T5gsfW5KsxA">【科研成果】2022-05-21 智能计算实验室王占宇同学成果被IEEE TMI接收</a> <br>
-			  <a href="https://mp.weixin.qq.com/s/D8qztPj_4CfmQ2cJ4N_pRg">【科研成果】2022-05-09 智能计算实验室于炳耀同学成果被SCI源刊接收</a> <br> 
-			  <a href="https://mp.weixin.qq.com/s/m0sHtA-lP5tR-Qg1Ne5GDQ">【比赛介绍】2022-04-25 智能计算实验室同学在MICCAI Learn2Reg比赛中获得第四名</a> <br> 
-				<a href="https://mp.weixin.qq.com/s/qoEL7nnJ9QJJDDklHPi2lQ">【新闻介绍】2022-04-18 智能计算实验室5名同学入选“腾讯犀牛鸟精英人才计划”</a> <br>  
-				<a href="https://mp.weixin.qq.com/s/QGgCv_9krP-aed7JyOrnmQ">【采访实录】2022-04-10 智能计算实验室马露凡</a> <br>				
-				<a href="https://mp.weixin.qq.com/s/MZm0n5YuEjsZpGkHbfpWXA">【科研成果】2022-03-17 智能计算实验室严江鹏同学成果被SCI源刊接收</a> <br>				
-				<a href="https://mp.weixin.qq.com/s/fPwQwsaENUqAlY7OWC-cvw">【科研成果】2022-03-16 智能计算实验室杨瑞同学成果被ICLR2022接收</a> <a href="https://arxiv.org/abs/2202.04478" align="right"> [PDF] </a><br>				
-				<a href="https://mp.weixin.qq.com/s/CrEeWtOuqJzqXtGHTf0E2w">【有趣科普】2022-01-14 什么是元宇宙？</a><br>
-				<a href="https://mp.weixin.qq.com/s/oFHXOcvUbTLNBTIhsjh-6A">【采访实录】2021-12-14 智能计算实验室韩宏炜</a><br>
-				<a href="https://mp.weixin.qq.com/s/YF9-TK8WoiX1lejoXUN_DQ">【科研成果】2021-12-09 智能计算实验室王占宇同学成果被CVPR2021接收 </a> <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_A_Self-Boosting_Framework_for_Automated_Radiographic_Report_Generation_CVPR_2021_paper.pdf" align="right"> [PDF] </a><br>
-				<a href="https://mp.weixin.qq.com/s/OEb-YcK9yracdXetW9PZRA">【科研成果】2021-12-02 智能计算实验室吕加飞同学成果被AAAI2022接收 </a> <a href="https://arxiv.org/abs/2106.03050"> [PDF]</a><br>
-				<a href="https://mp.weixin.qq.com/s/ECbATn6hIaE3tnLG57YQPA">【科研成果】2021-12-01 智能计算实验室陈胜杰同学论文成果被ACM MM 2021录用</a> <a href="https://dl.acm.org/doi/abs/10.1145/3474085.3475475"> [PDF] </a><br>
-				<a href="https://mp.weixin.qq.com/s/4G81Fq59r-LZwSSC3sXPzQ">【文献综述】2021-11-25 深度医学图像配准研究进展:迈向无监督学习</a> <a href="https://d.wanfangdata.com.cn/periodical/zgtxtxxb-a202109001"> [PDF] </a><br>
-				<a href="https://mp.weixin.qq.com/s/tqT9c8NEmvR7JGxM-irwBA">【科研成果】2021-11-24 唐铭康、王占宇同学ACMMM2021视频理解大赛亚军方案</a> <br>
-				<a href="https://mp.weixin.qq.com/s/7fhR7yXIUy-p--S8exQoRA">【科研成果】2021-11-21 智能计算实验室曹鑫同学成果被ICONIP接收</a> <a href="https://www.researchgate.net/profile/Xiu-Li-2/amp"> [PDF] </a> <br>
-				<a href="https://mp.weixin.qq.com/s/dDzGO3gM47pp4urc3AkKrQ">【科研成果】2021-11-20 智能计算实验室贾若楠同学成果被PRICAI接收</a> <a href="https://link.springer.com/book/10.1007/978-3-030-89370-5"> [PDF] </a><br>
-				<a href="https://mp.weixin.qq.com/s/1nsVRJ_3zXpfV6l9IPUm-w">【文献综述】2021-11-15 强化学习稀疏奖励算法研究——理论与实验</a> <a href="http://html.rhhz.net/tis/html/202003031.htm"> [PDF] </a><br>
-				<a href="https://mp.weixin.qq.com/s/hYfs_4NMHE9Eae53S_Z0Mw">【文献综述】2021-11-12 水下图像增强和修复算法综述</a> <a href="https://www.arocmag.com/article/01-2021-09-001.html"> [PDF] </a><br>
-				<a href="https://mp.weixin.qq.com/s/fQvXsqnb4W5081YtlYf5cw">【科研成果】2021-11-05 智能计算实验室马露凡同学学术成果被ACMMM接收</a><a href="http://arxiv.org/abs/2112.04709"> [PDF]</a>	<br>
-				<a href="https://mp.weixin.qq.com/s/5D3VPNZr2qy73U8qI2W4jg">【科研成果】2021-11-03 ICCV视频多模态理解VALUE Challenge 冠军方案</a><br>
-				</section>
-         
-         
-	  	</article>
-	  </div>	
-		
- </div>		
-</section>
-			
- </article>
+						</nav>
+					</section>
+				</div>
+				<div class="col_2">
+					<article class="mainContent">
+						<header class="headerNav">
+							<nav class="hnav">
+								<a>首页.</a>
+								<a>课题组新闻.</a>
+								<a>新闻</a>
+							</nav>
+							<h1>目录</h1>
+						</header>
+						<style>
+							.small-text {
+								position: relative;
+								top: -5px;
+								/* 向上移动小字 */
+								right: -5px;
+								/* 向右移动小字 */
+								font-size: 12px;
+								/* 小字的字体大小 */
+								font-style: italic;
+								/* 字体倾斜 */
+								color: red;
+								/* 小字的颜色 */
+							}
+						</style>
+						<section class="article"></section>
+						<a href="https://mp.weixin.qq.com/s/f_GjD8E30vRjAfYT4ghG1g">【科研成果】2024-03-30
+							智能计算实验室杨恺同学成果被CVPR2024接收<span class="small-text">new~</span> </a> <br>
+						<a href="https://mp.weixin.qq.com/s/qqFSy4_U5OlvLYvwtfxs3w">【科研成果】2024-03-29
+							智能计算实验室肖伊乘同学成果被CVPR2024接收<span class="small-text">new~</span> </a> <br>
+						<a href="https://mp.weixin.qq.com/s/5fqynVXvqk9QJHP9OUiAjw">【科研成果】2024-03-12
+							智能计算实验室吕加飞同学成果被Information Sciences期刊接收<span class="small-text">new~</span> </a> <br>
+						<a href="https://mp.weixin.qq.com/s/kPxSRjUlcMniLZycv_MeGA">【科研成果】2024-03-01
+							智能计算实验室李镕辉同学成果被ICASSP2024接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/zdXSpUWWKTgNVx_7COmZhg">【科研成果】2024-01-26
+							智能计算实验室吕加飞同学成果被ICLR2024接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/US5ChSVjjpxxM9KGwRPklQ">【科研成果】2024-01-25
+							智能计算实验室何春明同学成果被ICLR2024接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/oOlEF83dmDjGMTWUKXIVwA">【科研成果】2024-01-23
+							智能计算实验室吕加飞同学两项成果被AAMAS2024接收（二） </a> <br>
+						<a href="https://mp.weixin.qq.com/s/uLnDeOcVKIG7kpha9E0omA">【科研成果】2024-01-22
+							智能计算实验室吕加飞同学两项成果被AAMAS2024接收（一） </a> <br>
+						<a href="https://mp.weixin.qq.com/s/OqvSaTvHshJ7VNUN2itr1g">【科研成果】2024-01-16
+							智能计算实验室许遵楠同学成果被AAAI2024接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/8uWJSkcrR0SE0W9hnqvVyw">【科研成果】2023-12-28
+							智能计算实验室张亚超博士成果被AAAI2024接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/6-u9mo0CE_JRzzlSQ6TsLA">【科研成果】2023-12-23
+							智能计算实验室唐龙翔同学成果被ICCV2023 Workshop接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/5b1QGiVhjK75i3kpDkNFSw">【科研成果】2023-12-16
+							智能计算实验室杨锐同学成果被ICCV2023接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/FHLdcq2PQDdCroA6WJydFw">【科研成果】2023-12-15
+							智能计算实验室何春明同学成果被NeurIPS2023接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/Vo-XMS8c9Qxo3jpHJIDR5Q">【科研成果】2023-12-14
+							智能计算实验室马跃同学成果被AAAI2024接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/iQ50mv1-tq1kkay3e0CMyQ">【科研成果】2023-12-13
+							智能计算实验室唐婧仪同学成果被RAL2023接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/mFq_EHnv7gdA-dW1dMHvKw">【科研成果】2023-12-11
+							智能计算实验室李镕辉同学成果被ICCV2023接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/rmTnExvZzOjT7MEFr4lgbg">【科研成果】2023-11-23
+							智能计算实验室何春明同学成果被TNNLS接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/RDPh-7MVQMicqUhecLnLFQ">【科研成果】2023-11-22
+							智能计算实验室肖伊乘同学成果被NeurIPS 2023接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/BX-B0CHY1e2EjivHGEE4yA">【科研成果】2023-11-21 智能计算实验室周涵涛同学成果被IEEE
+							TIM接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/mDy_yb8xa1dZnWKfaUzCcg">【科研成果】2023-09-26
+							智能计算实验室孟昶、翟晨昊同学成果被CIKM2023接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/N4L4MiTHIgNN9I-_EEX7Nw">【科研成果】2023-09-25
+							智能计算实验室孟昶、张恒煜同学成果被KDD2023接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/Kqc_XiaeMfpTTmyj-1-8-w">【科研成果】2023-09-24
+							智能计算实验室何春明同学成果被ICCV2023接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/hiZngBzCMYsR8aWI-YRGqA">【科研成果】2023-08-03 智能计算实验室张俊杰同学成果被ECAI
+							2023接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/jM2pGCNIhqtyfVdZsbDCuw">【科研成果】2023-08-02
+							智能计算实验室唐龙翔同学成果被MICCAI2023接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/GtDdwpDtnUGmecej97Phwg">【科研成果】2023-08-01 智能计算实验室孟昶同学成果被ACM
+							TOIS接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/YBd1ttMy3H22gzESCVd54A">【科研成果】2023-06-19
+							智能计算实验室孟昶同学成果被WWW2023接收 </a> <br>
+						<a href="https://mp.weixin.qq.com/s/Ftyos5GLVcZFFDQ_OsPzFg">【科研成果】2023-05-18
+							智能计算实验室吕加飞同学成果被Neurocomputing接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/hyiTk8C7KK2ud8PJTxaoeQ">【科研成果】2023-05-12
+							智能计算实验室金孟群同学成果被ICASSP 2023接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/T4XB0ePIfpAjmntHIDMmmw">【科研成果】2023-04-26
+							智能计算实验室陈阳昆、张俊杰同学成果被AAMAS 2023接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/UDHYGPoWcKe_xeiciHLaoA">【科研成果】2023-04-25 智能计算实验室何春明同学成果被CVPR
+							2023接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/wwBhywA8NMjJmpVSoiNejA">【科研成果】2023-04-20 智能计算实验室韩宏炜同学成果被ICLR
+							2023接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/LtQ2z7PcDSr7MCh-H0Tolw">【科研成果】2023-04-11
+							智能计算实验室韩昊男同学成果被ICASSP 2023接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/utDzxq7AeFb83VVZI6ZgOg">【科研成果】2023-03-13
+							智能计算实验室肖伊乘、马跃同学科研成果被ICASSP 2023接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/-9X7G5g0UisMBvORNMz4kA">【科研成果】2023-03-10 智能计算实验室褚峤松同学成果被AAAI
+							2023接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/07oHAd2JMgBXe3ZpMrCo6w">【科研成果】2022-11-03
+							智能计算实验室吕加飞同学两项成果被NeurIPS 2022接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/xVxBKCldEyXAUc5_r3hbpw">【科研成果】2022-10-20 智能计算实验室张恒煜同学成果被CIKM
+							2022接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/oI3v-IQwdBwsmkYhmNn1Ng">【招 聘】2022-09-14
+							2022清华大学SIGS智能计算实验室李秀教授课题组招收科研助理/博士后</a> <br>
+						<a href="https://mp.weixin.qq.com/s/Oqc3vzozpR9U4HmCTO-vMg">【科研成果】2022-08-23
+							智能计算实验室李曦辉、乔钟建同学成果被PRICAI 2022接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/N4SoDskMSbs5bGIiNsT-NQ">【科研成果】2022-08-01
+							智能计算实验室毕业生徐哲同学成果被MICCAI 2022接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/G77VhM8fdzlO6Kd0klib4g">【科研成果】2022-07-22
+							陈胜杰：基于注意力机制的单对多部分指纹识别</a> <br>
+						<a href="https://mp.weixin.qq.com/s/_3BdRcfey-VLqyZ91CDhzQ">【科研成果】2022-07-21 智能计算实验室杨锐同学成果被ECCV
+							2022接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/4EwybKP1Bwiv6BoBcPO8Ow">【科研成果】2022-07-12 智能计算实验室陈卓同学成果被ACM
+							MM2022接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/5gnn-iTSVOqh0gRz-UDe3A">【科研成果】2022-07-11 智能计算实验室马跃同学成果被ACM
+							MM2022接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/DKKhCsrBfUtPk8iXzyqiQQ">【科研成果】2022-07-08
+							陈胜杰：基于注意力机制的单对多部分指纹识别</a> <br>
+						<a href="https://mp.weixin.qq.com/s/dQIOMeGyzhcJnroAj9BXbw">【毕业微展】2022-07-06
+							贾若楠：强化学习中环境模型误差问题的算法研究</a> <br>
+						<a href="https://mp.weixin.qq.com/s/n7epqlzbsfBupkFYT-AE8w">【招 聘】2022-06-22
+							2022清华大学SIGS智能计算实验室李秀教授课题组招收暑期实习生/科研助理/博士后</a> <br>
+						<a href="https://mp.weixin.qq.com/s/edp6VcNYN9jhNdU9q8u1xA">【毕业微展】2022-06-20
+							成斌：基于解耦表征学习的高效可控人脸生成技术研究</a> <br>
+						<a href="https://mp.weixin.qq.com/s/7zkelFTVLlh8BvU0X8woow">【毕业微展】2022-06-14
+							李帅斌：基于多智能体强化学习的智能体协作算法研究</a> <br>
+						<a href="https://mp.weixin.qq.com/s/z6CQ5xptpUoTragcAlryRA">【毕业微展】2022-06-12
+							马露凡：基于深度学习的实例分割技术及医疗场景应用研究</a> <br>
+						<a href="https://mp.weixin.qq.com/s/gH32fpZ81J6T5gsfW5KsxA">【科研成果】2022-05-21 智能计算实验室王占宇同学成果被IEEE
+							TMI接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/D8qztPj_4CfmQ2cJ4N_pRg">【科研成果】2022-05-09
+							智能计算实验室于炳耀同学成果被SCI源刊接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/m0sHtA-lP5tR-Qg1Ne5GDQ">【比赛介绍】2022-04-25 智能计算实验室同学在MICCAI
+							Learn2Reg比赛中获得第四名</a> <br>
+						<a href="https://mp.weixin.qq.com/s/qoEL7nnJ9QJJDDklHPi2lQ">【新闻介绍】2022-04-18
+							智能计算实验室5名同学入选“腾讯犀牛鸟精英人才计划”</a> <br>
+						<a href="https://mp.weixin.qq.com/s/QGgCv_9krP-aed7JyOrnmQ">【采访实录】2022-04-10 智能计算实验室马露凡</a> <br>
+						<a href="https://mp.weixin.qq.com/s/MZm0n5YuEjsZpGkHbfpWXA">【科研成果】2022-03-17
+							智能计算实验室严江鹏同学成果被SCI源刊接收</a> <br>
+						<a href="https://mp.weixin.qq.com/s/fPwQwsaENUqAlY7OWC-cvw">【科研成果】2022-03-16
+							智能计算实验室杨瑞同学成果被ICLR2022接收</a> <a href="https://arxiv.org/abs/2202.04478" align="right"> [PDF]
+						</a><br>
+						<a href="https://mp.weixin.qq.com/s/CrEeWtOuqJzqXtGHTf0E2w">【有趣科普】2022-01-14 什么是元宇宙？</a><br>
+						<a href="https://mp.weixin.qq.com/s/oFHXOcvUbTLNBTIhsjh-6A">【采访实录】2021-12-14 智能计算实验室韩宏炜</a><br>
+						<a href="https://mp.weixin.qq.com/s/YF9-TK8WoiX1lejoXUN_DQ">【科研成果】2021-12-09
+							智能计算实验室王占宇同学成果被CVPR2021接收 </a> <a
+							href="https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_A_Self-Boosting_Framework_for_Automated_Radiographic_Report_Generation_CVPR_2021_paper.pdf"
+							align="right"> [PDF] </a><br>
+						<a href="https://mp.weixin.qq.com/s/OEb-YcK9yracdXetW9PZRA">【科研成果】2021-12-02
+							智能计算实验室吕加飞同学成果被AAAI2022接收 </a> <a href="https://arxiv.org/abs/2106.03050"> [PDF]</a><br>
+						<a href="https://mp.weixin.qq.com/s/ECbATn6hIaE3tnLG57YQPA">【科研成果】2021-12-01
+							智能计算实验室陈胜杰同学论文成果被ACM MM 2021录用</a> <a
+							href="https://dl.acm.org/doi/abs/10.1145/3474085.3475475"> [PDF] </a><br>
+						<a href="https://mp.weixin.qq.com/s/4G81Fq59r-LZwSSC3sXPzQ">【文献综述】2021-11-25
+							深度医学图像配准研究进展:迈向无监督学习</a> <a
+							href="https://d.wanfangdata.com.cn/periodical/zgtxtxxb-a202109001"> [PDF] </a><br>
+						<a href="https://mp.weixin.qq.com/s/tqT9c8NEmvR7JGxM-irwBA">【科研成果】2021-11-24
+							唐铭康、王占宇同学ACMMM2021视频理解大赛亚军方案</a> <br>
+						<a href="https://mp.weixin.qq.com/s/7fhR7yXIUy-p--S8exQoRA">【科研成果】2021-11-21
+							智能计算实验室曹鑫同学成果被ICONIP接收</a> <a href="https://www.researchgate.net/profile/Xiu-Li-2/amp">
+							[PDF] </a> <br>
+						<a href="https://mp.weixin.qq.com/s/dDzGO3gM47pp4urc3AkKrQ">【科研成果】2021-11-20
+							智能计算实验室贾若楠同学成果被PRICAI接收</a> <a
+							href="https://link.springer.com/book/10.1007/978-3-030-89370-5"> [PDF] </a><br>
+						<a href="https://mp.weixin.qq.com/s/1nsVRJ_3zXpfV6l9IPUm-w">【文献综述】2021-11-15
+							强化学习稀疏奖励算法研究——理论与实验</a> <a href="http://html.rhhz.net/tis/html/202003031.htm"> [PDF]
+						</a><br>
+						<a href="https://mp.weixin.qq.com/s/hYfs_4NMHE9Eae53S_Z0Mw">【文献综述】2021-11-12 水下图像增强和修复算法综述</a>
+						<a href="https://www.arocmag.com/article/01-2021-09-001.html"> [PDF] </a><br>
+						<a href="https://mp.weixin.qq.com/s/fQvXsqnb4W5081YtlYf5cw">【科研成果】2021-11-05
+							智能计算实验室马露凡同学学术成果被ACMMM接收</a><a href="http://arxiv.org/abs/2112.04709"> [PDF]</a> <br>
+						<a href="https://mp.weixin.qq.com/s/5D3VPNZr2qy73U8qI2W4jg">【科研成果】2021-11-03 ICCV视频多模态理解VALUE
+							Challenge 冠军方案</a><br>
+		</section>
 
 
+	</article>
+	</div>
 
-
-<footer>	
-	<section class="copyrights">
-		<section class="mainWrap">
-            <span class="info">
-                 <span>电话查号台：010-62793001</span>
-                 <span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
-                 <span>地址：广东省深圳市南山区西丽大学城清华校区</span>
-            </span>
-            <span class="icp">京公网安备 110402430053 号</span>
-            <div class="clearfix"></div>
-            <span class="copy">版权所有 © 清华大学　　</span>
-       </section>
+	</div>
 	</section>
 
-</footer>
-		<script>
-			// translate.ignore.tag.push('span');
-			translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
-			// translate.service.use('client.edge');
-			// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
-			// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
-			translate.execute();
-		</script>
-	</body>
+	</article>
+
+
+
+
+	<footer>
+		<section class="copyrights">
+			<section class="mainWrap">
+				<span class="info">
+					<span>电话查号台：010-62793001</span>
+					<span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
+					<span>地址：广东省深圳市南山区西丽大学城清华校区</span>
+				</span>
+				<span class="icp">京公网安备 110402430053 号</span>
+				<div class="clearfix"></div>
+				<span class="copy">版权所有 © 清华大学　　</span>
+			</section>
+		</section>
+
+	</footer>
+	<script>
+		// translate.ignore.tag.push('span');
+		translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
+		// translate.service.use('client.edge');
+		// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
+		// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
+		translate.execute();
+	</script>
+</body>
+
 </html>

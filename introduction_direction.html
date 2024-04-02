@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-	<head>
 
-		
+<head>
+	<title>THUSIGSICLAB</title>
+
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
@@ -24,223 +25,230 @@
 		arrLang['km']['desc'] = 'នេះគឺជាអត្ថបទរបស់ខ្ញុំ';
 
 		// Process translation
-		$(function() {
-		$('.translate').click(function() {
-			var lang = $(this).attr('id');
+		$(function () {
+			$('.translate').click(function () {
+				var lang = $(this).attr('id');
 
-			$('.lang').each(function(index, item) {
-			$(this).text(arrLang[lang][$(this).attr('key')]);
+				$('.lang').each(function (index, item) {
+					$(this).text(arrLang[lang][$(this).attr('key')]);
+				});
 			});
-		});
 		});
 	</script>
 
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="css/education.css" />
-		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
-	</head>
-	<body>
-		<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
-		<script src="js/translate.js"></script>
-		<style>
-			.language_button {
-					position: absolute;
-					margin-top: 50px;
-					right: 20px;
-					font-size: 15px;
-					background-color: rgb(102,8,116);
-					color: white;
-					padding: 5px;
-					border-radius: 15px;
-				}
-			</style>
-		<div class="language_button">
-			<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> | 
-			<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');" style="color: white;">简体中文</a>
-		</div>
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/education.css" />
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</head>
 
-		<div class="header">
-			<div class="mainWrap">
-				<div class="topLine"></div>
-				<div class="topWrap">
-					<a href="" class="logo">
-						<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;"/>
-					</a>
-					<section class="search">
-						<img src='img/right_tu2.png' style="width: 250px; height: 80px;"/>
-						
-					</section>
-				</div>
-				<div class="clearfix"></div>
-				<div class="menu">
-					<nav class="navbar navbar-default">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-collapse">
-								  <span class="sr-only">导航</span>
-			                      <span class="icon-bar"></span>
-			                      <span class="icon-bar"></span>
-			                      <span class="icon-bar"></span>
-			                 </button>
-							<a href="" class="navbar-brand anav">导航</a>
-						</div>
-						<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
-							<ul class="nav-tabs nav-justified" style="padding:0 ;">
-								<li key="home">
-									<a href="index.html" class="lang" key="home">首页</a>
-								</li>
-								<li>
-									<a class="" href="introduction.html">概况</a>
-								</li>
-								<li class="">
-									<a href="news.html">新闻<span class="glyphicon glyphicon-menu-down"></span></a>
-									
-								</li>
-								<li>
-									<a href="students.html">成员</a>
-								</li>
-								<li>
-									<a href="paper.html">成果展示</a>
-								</li>
-								<li>
-									<a href="connect.html">联系我们</a>
-								</li>
-								
-							</div>
-						</nav>
-				</div>
+<body>
+	<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
+	<script src="js/translate.js"></script>
+	<style>
+		.language_button {
+			position: absolute;
+			margin-top: 50px;
+			right: 20px;
+			font-size: 15px;
+			background-color: rgb(102, 8, 116);
+			color: white;
+			padding: 5px;
+			border-radius: 15px;
+		}
+	</style>
+	<div class="language_button">
+		<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> |
+		<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');"
+			style="color: white;">简体中文</a>
+	</div>
+
+	<div class="header">
+		<div class="mainWrap">
+			<div class="topLine"></div>
+			<div class="topWrap">
+				<a href="" class="logo">
+					<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;" />
+				</a>
+				<section class="search">
+					<img src='img/right_tu2.png' style="width: 250px; height: 80px;" />
+
+				</section>
+			</div>
+			<div class="clearfix"></div>
+			<div class="menu">
+				<nav class="navbar navbar-default">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#example-navbar-collapse">
+							<span class="sr-only">导航</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="" class="navbar-brand anav">导航</a>
+					</div>
+					<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
+						<ul class="nav-tabs nav-justified" style="padding:0 ;">
+							<li key="home">
+								<a href="index.html" class="lang" key="home">首页</a>
+							</li>
+							<li>
+								<a class="" href="introduction.html">概况</a>
+							</li>
+							<li class="">
+								<a href="news.html">新闻<span class="glyphicon glyphicon-menu-down"></span></a>
+
+							</li>
+							<li>
+								<a href="students.html">成员</a>
+							</li>
+							<li>
+								<a href="paper.html">成果展示</a>
+							</li>
+							<li>
+								<a href="connect.html">联系我们</a>
+							</li>
+
+					</div>
+				</nav>
 			</div>
 		</div>
+	</div>
 
-<article class="content clearfix">
-			<section class="topImg">
-				<img src="img/tu5.png"/>
-			</section>
- <section class="mainWrap">
-	<div class="detailContent">
-	  <div class="col_1"style="padding: 0;">
-		<section class="leftNav">
-				 <h3 style="line-height: 1.5;">课题组介绍</h3>
-					<nav class="navbar navbar-default">
-						<div class="navbar-header eduHeader">
-							<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse" data-target="#example-navbar-collapse-1">
-								  <span class="sr-only">导航</span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                 </button>
-							<a href="" class="navbar-brand edubrand">教育教学</a>
-						</div>
-						<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1" aria-expanded="false">
-							<ul class="navTotal" style="padding:0 ;">
-								<li>
-									<i class="glyphicon glyphicon-minus"></i>
-									<a href="introduction.html">导师介绍</span></a>
-								</li>
-								<li>
-									<i class="glyphicon glyphicon-minus"></i>
-									<a href="introduction_detail.html">课题组介绍</a>
-								</li>
-								<li class="current" >
-									<i class="glyphicon glyphicon-minus"></i>
-									<a href="introduction_direction.html">方向介绍</a>
-								</li>
-							</div>
-					</nav>
-			</section>
-		</div>
-	  <div class="col_2">
-	  	<article class="mainContent">
-	  		<header class="headerNav">
-	  			<nav class="hnav">
-	  				<a>首页.</a>
-	  				<a>课题组概况.</a>
-	  				<a>方向介绍.</a>
-	  			</nav>
-	  			<h1>强化学习</h1>
-	  		</header>
-	  		
-			<section class="article">
-				<div align="center" ><a><img src="img/qianghua.png"/></a></div><br>
-				<p>智能计算实验室强化学习小组当前的研究兴趣点主要在于：单智能体中稀疏奖励问题、值函数估计问题；多智能体合作与竞争、表征与信息交流；离线强化学习；基于模型的强化学习； 多目标强化学习等。
-					小组同时也在关注智能体在不完全信息博弈中的信息交流及大空间大尺度 下智能体表征及种群层级的演化问题，在生成对抗模仿学习等方面也有所涉猎。
-					小组学术氛围浓厚， 和国内强化学习研究组保持着学术沟通与交流。小组目前公开专利8项，其中授权专利1项。 
-					小组发表人工智能顶级会议8篇（3篇ICLR，1篇AAAI，3篇NeurIPS，1篇ECAI），CCF C类论文及期刊论文多篇。
-				</p><br>
-			 </section>
-
-			 <header class="headerNav">
-				<h1>缺陷检测</h1>
-			</header>
-	  		<section class="article">
-				<div align="center" ><a><img src="img/detection2.png"/></a></div><br>
-				<p>智能计算实验室缺陷检测组————基于机器视觉的品质检验方向当前的研究兴趣为： 
-					通用目标检测、Vision Transformer和缺陷检测。
-					小组重点关注单阶段目标检测网络在缺陷检测中的应用， 以期实现一种检测速度快、检测精度高的缺陷甄别系统， 
-					并在玻璃面板、热轧钢带等品质检验相关任务中进行验证。小组目前比赛获奖2项，公开专利1项，投稿学术论文2篇。
-				</p><br>
-				<div align="center" ><a><img src="img/detection1.png"/></a></div><br>
-	  			<p>智能计算实验室工业缺陷检测小组，依托科技创新2030————“新一代人工智能”重大项目，研究具有自主学习能力的品质检验关键技术与系统。 
-					现有工业产品外观缺陷检测系统存在无法解决模型的自主在线增强与技能迁移， 使得系统缺乏智能化的自主学习能力。
-					围绕以上两个问题， 小组进行以下三个方面的研究： 
-					1）研究在线数据增强与迭代学习的参数优化方法，实现模型的自主在线增强； 
-					2）建立面向缺陷甄别的知识增长型人机混合增强模型，建立人机互学习计算架构，实现缺陷甄别模型的自主学习； 
-					3）研究跨领域品质检验任务的共有知识表示与提取方法，设计基于对抗学习机制和深度度量学习的特征和模型高效迁移算法，实现甄别技能跨领域高效传授。 
-					研究算法应用于实际工业生产场景中玻璃面板和柴油机的缺陷检测与迁移。 目前，小组发表人工智能顶级会议CVPR 2篇，多篇论文在投。
-					</p><br>
-
-         </section>
-		 <header class="headerNav">
-			<h1>医疗图像</h1>
-		</header>
-		 <section class="article">
-			<div align="center" ><a><img src="img/yiliao.png"/></a></div><br>
-			<p>智能计算实验室智慧医疗小组当前的研究兴趣点主要在于：
-				多模态医学图像的表征融合问题，自监督弱监督的医学数据学习问题， 基于深度学习的医学数据分析的可解释性等。
-				小组与国际顶级相关学术机构如哈佛大学医学院， 悉尼大学，香港中文大学，产业界顶级实验室如腾讯医疗健康事业部等团队有访问， 交流与合作。
-				小组发表了多篇领域顶级会议（CVPR, ICLR, MICCAI）和SCI期刊。
-				</p><br>
-		 </section>
-
-
-		<header class="headerNav">
-		   <h1>推荐搜索</h1>
-	   </header>
-		<section class="article">
-		   <div align="center" ><a><img src="img/tuijian.jpeg"/></a></div><br>
-		   <p>智能计算实验室推荐搜索小组成立于2022年4月，目前有8名研究生在读，
-			   研究方向涵盖图神经网络表征学习、多行为推荐、跨域推荐、多场景推荐、大规模推荐优化、多模态推荐搜索以及长序列推荐模型等，
-			   目前组员已发表多篇长文于KDD、TOIS、WWW、CIKM、WSDM等数据挖掘及推荐系统领域顶级会议和期刊，
-			   并于秋招斩获多家互联网大厂头部计划offer。我们志在培养大数据与人工智能交叉领域的研究型人才、探索研究业界领先推荐和搜索技术，
-			   旨在发表行业内国际顶级期刊会议论文和专利等学术成果。本小组秉承“开放互助，共同进步”的基本原则，
-			   在各个方面组织组内团结合作致力于为智能计算实验室贡献更多成果产出。
-			   此外，推荐搜索小组重视与企业加强合作，主张结合校方与企业的共同优势来为组内科研活动提供支撑，
-			   本小组将为组内优秀者提供前往腾讯、阿里巴巴、字节跳动等企业实习的内推机会。
-			   </p><br>
+	<article class="content clearfix">
+		<section class="topImg">
+			<img src="img/tu5.png" />
 		</section>
+		<section class="mainWrap">
+			<div class="detailContent">
+				<div class="col_1" style="padding: 0;">
+					<section class="leftNav">
+						<h3 style="line-height: 1.5;">课题组介绍</h3>
+						<nav class="navbar navbar-default">
+							<div class="navbar-header eduHeader">
+								<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse"
+									data-target="#example-navbar-collapse-1">
+									<span class="sr-only">导航</span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+								</button>
+								<a href="" class="navbar-brand edubrand">教育教学</a>
+							</div>
+							<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1"
+								aria-expanded="false">
+								<ul class="navTotal" style="padding:0 ;">
+									<li>
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="introduction.html">导师介绍</span></a>
+									</li>
+									<li>
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="introduction_detail.html">课题组介绍</a>
+									</li>
+									<li class="current">
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="introduction_direction.html">方向介绍</a>
+									</li>
+							</div>
+						</nav>
+					</section>
+				</div>
+				<div class="col_2">
+					<article class="mainContent">
+						<header class="headerNav">
+							<nav class="hnav">
+								<a>首页.</a>
+								<a>课题组概况.</a>
+								<a>方向介绍.</a>
+							</nav>
+							<h1>强化学习</h1>
+						</header>
 
-		<header class="headerNav">
-			<h1>数字人</h1>
-		</header>
-		 <section class="article">
-			<div align="center" ><a><img src="img/shuziren.jpg"/></a></div><br>
-			<p>数字人课题组专注于数字人的生成与驱动技术的前沿研究。
-				我们的团队致力于通过三维视觉和AIGC技术的交叉创新，推进数字人技术的边界。
-				迄今为止，我们的研究成果已在ICCV（国际计算机视觉会议）、ACM MM（多媒体会议）等国际顶级学术会议上发表多篇论文。
-				我们的目标是创造逼真的数字人形象，并实现其在虚拟环境中的自然运动和交互，以支持各种应用场景，包括但不限于娱乐、教育、远程工作和社交。
-				课题组欢迎跨学科的合作和有志之士的加入，共同推动数字人技术的发展。
-				</p><br>
-		 </section>
+						<section class="article">
+							<div align="center"><a><img src="img/qianghua.png" /></a></div><br>
+							<p>智能计算实验室强化学习小组当前的研究兴趣点主要在于：单智能体中稀疏奖励问题、值函数估计问题；多智能体合作与竞争、表征与信息交流；离线强化学习；基于模型的强化学习；
+								多目标强化学习等。
+								小组同时也在关注智能体在不完全信息博弈中的信息交流及大空间大尺度 下智能体表征及种群层级的演化问题，在生成对抗模仿学习等方面也有所涉猎。
+								小组学术氛围浓厚， 和国内强化学习研究组保持着学术沟通与交流。小组目前公开专利8项，其中授权专利1项。
+								小组发表人工智能顶级会议8篇（3篇ICLR，1篇AAAI，3篇NeurIPS，1篇ECAI），CCF C类论文及期刊论文多篇。
+							</p><br>
+						</section>
 
-		 
-		 
+						<header class="headerNav">
+							<h1>缺陷检测</h1>
+						</header>
+						<section class="article">
+							<div align="center"><a><img src="img/detection2.png" /></a></div><br>
+							<p>智能计算实验室缺陷检测组————基于机器视觉的品质检验方向当前的研究兴趣为：
+								通用目标检测、Vision Transformer和缺陷检测。
+								小组重点关注单阶段目标检测网络在缺陷检测中的应用， 以期实现一种检测速度快、检测精度高的缺陷甄别系统，
+								并在玻璃面板、热轧钢带等品质检验相关任务中进行验证。小组目前比赛获奖2项，公开专利1项，投稿学术论文2篇。
+							</p><br>
+							<div align="center"><a><img src="img/detection1.png" /></a></div><br>
+							<p>智能计算实验室工业缺陷检测小组，依托科技创新2030————“新一代人工智能”重大项目，研究具有自主学习能力的品质检验关键技术与系统。
+								现有工业产品外观缺陷检测系统存在无法解决模型的自主在线增强与技能迁移， 使得系统缺乏智能化的自主学习能力。
+								围绕以上两个问题， 小组进行以下三个方面的研究：
+								1）研究在线数据增强与迭代学习的参数优化方法，实现模型的自主在线增强；
+								2）建立面向缺陷甄别的知识增长型人机混合增强模型，建立人机互学习计算架构，实现缺陷甄别模型的自主学习；
+								3）研究跨领域品质检验任务的共有知识表示与提取方法，设计基于对抗学习机制和深度度量学习的特征和模型高效迁移算法，实现甄别技能跨领域高效传授。
+								研究算法应用于实际工业生产场景中玻璃面板和柴油机的缺陷检测与迁移。 目前，小组发表人工智能顶级会议CVPR 2篇，多篇论文在投。
+							</p><br>
 
-         
-            <!--<div class="col_3">
+						</section>
+						<header class="headerNav">
+							<h1>医疗图像</h1>
+						</header>
+						<section class="article">
+							<div align="center"><a><img src="img/yiliao.png" /></a></div><br>
+							<p>智能计算实验室智慧医疗小组当前的研究兴趣点主要在于：
+								多模态医学图像的表征融合问题，自监督弱监督的医学数据学习问题， 基于深度学习的医学数据分析的可解释性等。
+								小组与国际顶级相关学术机构如哈佛大学医学院， 悉尼大学，香港中文大学，产业界顶级实验室如腾讯医疗健康事业部等团队有访问， 交流与合作。
+								小组发表了多篇领域顶级会议（CVPR, ICLR, MICCAI）和SCI期刊。
+							</p><br>
+						</section>
+
+
+						<header class="headerNav">
+							<h1>推荐搜索</h1>
+						</header>
+						<section class="article">
+							<div align="center"><a><img src="img/tuijian.jpeg" /></a></div><br>
+							<p>智能计算实验室推荐搜索小组成立于2022年4月，目前有8名研究生在读，
+								研究方向涵盖图神经网络表征学习、多行为推荐、跨域推荐、多场景推荐、大规模推荐优化、多模态推荐搜索以及长序列推荐模型等，
+								目前组员已发表多篇长文于KDD、TOIS、WWW、CIKM、WSDM等数据挖掘及推荐系统领域顶级会议和期刊，
+								并于秋招斩获多家互联网大厂头部计划offer。我们志在培养大数据与人工智能交叉领域的研究型人才、探索研究业界领先推荐和搜索技术，
+								旨在发表行业内国际顶级期刊会议论文和专利等学术成果。本小组秉承“开放互助，共同进步”的基本原则，
+								在各个方面组织组内团结合作致力于为智能计算实验室贡献更多成果产出。
+								此外，推荐搜索小组重视与企业加强合作，主张结合校方与企业的共同优势来为组内科研活动提供支撑，
+								本小组将为组内优秀者提供前往腾讯、阿里巴巴、字节跳动等企业实习的内推机会。
+							</p><br>
+						</section>
+
+						<header class="headerNav">
+							<h1>数字人</h1>
+						</header>
+						<section class="article">
+							<div align="center"><a><img src="img/shuziren.jpg" /></a></div><br>
+							<p>数字人课题组专注于数字人的生成与驱动技术的前沿研究。
+								我们的团队致力于通过三维视觉和AIGC技术的交叉创新，推进数字人技术的边界。
+								迄今为止，我们的研究成果已在ICCV（国际计算机视觉会议）、ACM MM（多媒体会议）等国际顶级学术会议上发表多篇论文。
+								我们的目标是创造逼真的数字人形象，并实现其在虚拟环境中的自然运动和交互，以支持各种应用场景，包括但不限于娱乐、教育、远程工作和社交。
+								课题组欢迎跨学科的合作和有志之士的加入，共同推动数字人技术的发展。
+							</p><br>
+						</section>
+
+
+
+
+
+						<!--<div class="col_3">
             	<section class="relateLink">
             		<h4>相关链接</h4>
             		<ul>
@@ -253,39 +261,40 @@
             	</section>
          	
             </div>-->
-         
-	  	</article>
-	  </div>	
-		
- </div>		
-</section>
-			
- </article>
 
-<footer>
+					</article>
+				</div>
 
-	
-	<section class="copyrights">
-		<section class="mainWrap">
-            <span class="info">
-                 <span>电话查号台：010-62793001</span>
-                 <span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
-                 <span>地址：广东省深圳市南山区西丽大学城清华校区</span>
-            </span>
-            <span class="icp">京公网安备 110402430053 号</span>
-            <div class="clearfix"></div>
-            <span class="copy">版权所有 © 清华大学　　</span>
-       </section>
-	</section>
+			</div>
+		</section>
 
-</footer>
-		<script>
-			// translate.ignore.tag.push('span');
-			translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
-			// translate.service.use('client.edge');
-			// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
-			// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
-			translate.execute();
-		</script>
-	</body>
+	</article>
+
+	<footer>
+
+
+		<section class="copyrights">
+			<section class="mainWrap">
+				<span class="info">
+					<span>电话查号台：010-62793001</span>
+					<span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
+					<span>地址：广东省深圳市南山区西丽大学城清华校区</span>
+				</span>
+				<span class="icp">京公网安备 110402430053 号</span>
+				<div class="clearfix"></div>
+				<span class="copy">版权所有 © 清华大学　　</span>
+			</section>
+		</section>
+
+	</footer>
+	<script>
+		// translate.ignore.tag.push('span');
+		translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
+		// translate.service.use('client.edge');
+		// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
+		// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
+		translate.execute();
+	</script>
+</body>
+
 </html>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		
+
+<head>
+	<title>THUSIGSICLAB</title>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
 		var arrLang = new Array();
@@ -22,203 +23,211 @@
 		arrLang['km']['desc'] = 'នេះគឺជាអត្ថបទរបស់ខ្ញុំ';
 
 		// Process translation
-		$(function() {
-		$('.translate').click(function() {
-			var lang = $(this).attr('id');
+		$(function () {
+			$('.translate').click(function () {
+				var lang = $(this).attr('id');
 
-			$('.lang').each(function(index, item) {
-			$(this).text(arrLang[lang][$(this).attr('key')]);
+				$('.lang').each(function (index, item) {
+					$(this).text(arrLang[lang][$(this).attr('key')]);
+				});
 			});
-		});
 		});
 	</script>
 
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="css/education.css" />
-		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
-	</head>
-	<body>
-		<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
-		<script src="js/translate.js"></script>
-		<style>
-			.language_button {
-					position: absolute;
-					margin-top: 50px;
-					right: 20px;
-					font-size: 15px;
-					background-color: rgb(102,8,116);
-					color: white;
-					padding: 5px;
-					border-radius: 15px;
-				}
-			</style>
-		<div class="language_button">
-			<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> | 
-			<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');" style="color: white;">简体中文</a>
-		</div>
-		<div class="header">
-			<div class="mainWrap">
-				<div class="topLine"></div>
-				<div class="topWrap">
-					<a href="" class="logo">
-						<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;"/>
-					</a>
-					<section class="search">
-						<img src='img/right_tu2.png' style="width: 250px; height: 80px;"/>
-						
-					</section>
-				</div>
-				<div class="clearfix"></div>
-				<div class="menu">
-					<nav class="navbar navbar-default">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-collapse">
-								  <span class="sr-only">导航</span>
-			                      <span class="icon-bar"></span>
-			                      <span class="icon-bar"></span>
-			                      <span class="icon-bar"></span>
-			                 </button>
-							<a href="" class="navbar-brand anav">导航</a>
-						</div>
-						<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
-							<ul class="nav-tabs nav-justified" style="padding:0 ;">
-								<li key="home">
-									<a href="index.html" class="lang" key="home">首页</a>
-								</li>
-								<li>
-									<a class="" href="introduction.html">概况</a>
-								</li>
-								<li class="">
-									<a href="news.html">新闻<span class="glyphicon glyphicon-menu-down"></span></a>
-									
-								</li>
-								<li>
-									<a href="students.html">成员</a>
-								</li>
-								<li>
-									<a href="paper.html">成果展示</a>
-								</li>
-								<li>
-									<a href="connect.html">联系我们</a>
-								</li>
-								
-							</div>
-						</nav>
-				</div>
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/education.css" />
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
+	<script src="js/translate.js"></script>
+	<style>
+		.language_button {
+			position: absolute;
+			margin-top: 50px;
+			right: 20px;
+			font-size: 15px;
+			background-color: rgb(102, 8, 116);
+			color: white;
+			padding: 5px;
+			border-radius: 15px;
+		}
+	</style>
+	<div class="language_button">
+		<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> |
+		<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');"
+			style="color: white;">简体中文</a>
+	</div>
+	<div class="header">
+		<div class="mainWrap">
+			<div class="topLine"></div>
+			<div class="topWrap">
+				<a href="" class="logo">
+					<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;" />
+				</a>
+				<section class="search">
+					<img src='img/right_tu2.png' style="width: 250px; height: 80px;" />
+
+				</section>
+			</div>
+			<div class="clearfix"></div>
+			<div class="menu">
+				<nav class="navbar navbar-default">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#example-navbar-collapse">
+							<span class="sr-only">导航</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="" class="navbar-brand anav">导航</a>
+					</div>
+					<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
+						<ul class="nav-tabs nav-justified" style="padding:0 ;">
+							<li key="home">
+								<a href="index.html" class="lang" key="home">首页</a>
+							</li>
+							<li>
+								<a class="" href="introduction.html">概况</a>
+							</li>
+							<li class="">
+								<a href="news.html">新闻<span class="glyphicon glyphicon-menu-down"></span></a>
+
+							</li>
+							<li>
+								<a href="students.html">成员</a>
+							</li>
+							<li>
+								<a href="paper.html">成果展示</a>
+							</li>
+							<li>
+								<a href="connect.html">联系我们</a>
+							</li>
+
+					</div>
+				</nav>
 			</div>
 		</div>
+	</div>
 
-<article class="content clearfix">
-			<section class="topImg">
-				<img src="img/tu5.png"/>
-			</section>
- <section class="mainWrap">
-	<div class="detailContent">
-	  <div class="col_1"style="padding: 0;">
-		<section class="leftNav">
-				 <h3>成果产出</h3>
-					<nav class="navbar navbar-default">
-						<div class="navbar-header eduHeader">
-							<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse" data-target="#example-navbar-collapse-1">
-								  <span class="sr-only">导航</span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                 </button>
-							<a href="" class="navbar-brand edubrand">教育教学</a>
-						</div>
-						<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1" aria-expanded="false">
-							<ul class="navTotal" style="padding:0 ;">
-								<li>
-									<i class="glyphicon glyphicon-minus"></i>
-									<a href="paper.html">论文专利</span></a>
-								</li>
-								<li class="current">
-									<i class="glyphicon glyphicon-minus"></i>
-										<a href="bisai.html">比赛获奖</a>
-								</li>
-								<li>
-									<i class="glyphicon glyphicon-minus"></i>
-										<a href="bisai.html">数据集</a>
-								</li>
-							</div>
-					</nav>
-			</section>
-		</div>
-	  <div class="col_2">
-	  	<article class="mainContent">
-	  		<header class="headerNav">
-	  			<nav class="hnav">
-	  				<a>首页.</a>
-	  				<a>成果展示.</a>
-	  				<a>比赛获奖</a>
-	  			</nav>
-	  			<h1>比赛获奖</h1>
-	  		</header>
-
-			  <section class="article">
-				1.CCF-BDCI”数学应用题自动解题”，29/2582名，韩宏炜、游程卉、莫语、褚峤松<br>
-				<a><img src="img/competetion/CCF.jpg" style="width: 182px; height: 257px;"/></a><br>
-				2.珠港澳人工智能算法大赛，第二名，欧奕旻<br>
-				<a><img src="img/competetion/gangzhuao.jpg" style="width: 182px; height: 257px;" /></a><br>
-				3.2020- NFL 1st and Future - Impact Detection，一等奖，欧奕旻 杨锐，左育莘<br>
-				<a><img src="img/competetion/haiyang.png" style="width: 182px; height: 257px;" /></a><br>
-				4.Pre-training for video understanding Challenge，ACM MM 2021，亚军，唐铭康 王占宇<br>
-				<a><img src="img/competetion/MM1.jpg" style="width: 257px; height: 182px;"/></a><br>
-				5.Watch and Buy: Multimodal Product Identification Challenge，ACM MM 2021 & 阿里<br>
-				<a><img src="img/competetion/tianchi1.png" style="width: 182px; height: 257px;"/></a><br>
-				6.腾讯QQ浏览器2021AI算法大赛（视频相似度赛道），第16名，韩宏炜<br>
-				<a><img src="img/competetion/QQliulanqi1.jpg" style="width: 182px; height: 257px;"/></a><br>
-				7.MICCAI2021医学图像配准挑战赛，第4名，潘文韬<br>
-				8.Kaggle Bristol-Myers Squibb - Molecular Translation Contest，银牌，朱翌<br>
-				9.广东电网智慧现场作业挑战赛 赛道三:识别高空作业及安全带佩戴，前18%，朱翌<br>
-				10.Multispectral Pedestrian Detection Challenge，第一名，朱翌、胡浩楠<br>
-				11.华为昇腾合作项目：OSNet模型开发，优良，程星玥<br>
-				12.千言-问题匹配鲁棒性评测（2021CCF大数据与计算智能大赛，22/2851名，刘淏天<br>
-				13.2021 NFL Health & Safety - Helmet Assignment，银牌，欧奕旻 刘鸿博<br>
-
-
-
-         		</section>
-				
-         
-	  	</article>
-	  </div>	
-		
- </div>		
-</section>
-			
- </article>
-
-<footer>
-
-	
-	<section class="copyrights">
+	<article class="content clearfix">
+		<section class="topImg">
+			<img src="img/tu5.png" />
+		</section>
 		<section class="mainWrap">
-            <span class="info">
-                 <span>电话查号台：010-62793001</span>
-                 <span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
-                 <span>地址：广东省深圳市南山区西丽大学城清华校区</span>
-            </span>
-            <span class="icp">京公网安备 110402430053 号</span>
-            <div class="clearfix"></div>
-            <span class="copy">版权所有 © 清华大学　　</span>
-       </section>
-	</section>
+			<div class="detailContent">
+				<div class="col_1" style="padding: 0;">
+					<section class="leftNav">
+						<h3>成果产出</h3>
+						<nav class="navbar navbar-default">
+							<div class="navbar-header eduHeader">
+								<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse"
+									data-target="#example-navbar-collapse-1">
+									<span class="sr-only">导航</span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+								</button>
+								<a href="" class="navbar-brand edubrand">教育教学</a>
+							</div>
+							<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1"
+								aria-expanded="false">
+								<ul class="navTotal" style="padding:0 ;">
+									<li>
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="paper.html">论文专利</span></a>
+									</li>
+									<li class="current">
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="bisai.html">比赛获奖</a>
+									</li>
+									<li>
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="bisai.html">数据集</a>
+									</li>
+							</div>
+						</nav>
+					</section>
+				</div>
+				<div class="col_2">
+					<article class="mainContent">
+						<header class="headerNav">
+							<nav class="hnav">
+								<a>首页.</a>
+								<a>成果展示.</a>
+								<a>比赛获奖</a>
+							</nav>
+							<h1>比赛获奖</h1>
+						</header>
 
-</footer>
-		<script>
-			// translate.ignore.tag.push('span');
-			translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
-			// translate.service.use('client.edge');
-			// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
-			// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
-			translate.execute();
-		</script>
-	</body>
+						<section class="article">
+							1.CCF-BDCI”数学应用题自动解题”，29/2582名，韩宏炜、游程卉、莫语、褚峤松<br>
+							<a><img src="img/competetion/CCF.jpg" style="width: 182px; height: 257px;" /></a><br>
+							2.珠港澳人工智能算法大赛，第二名，欧奕旻<br>
+							<a><img src="img/competetion/gangzhuao.jpg" style="width: 182px; height: 257px;" /></a><br>
+							3.2020- NFL 1st and Future - Impact Detection，一等奖，欧奕旻 杨锐，左育莘<br>
+							<a><img src="img/competetion/haiyang.png" style="width: 182px; height: 257px;" /></a><br>
+							4.Pre-training for video understanding Challenge，ACM MM 2021，亚军，唐铭康 王占宇<br>
+							<a><img src="img/competetion/MM1.jpg" style="width: 257px; height: 182px;" /></a><br>
+							5.Watch and Buy: Multimodal Product Identification Challenge，ACM MM 2021 & 阿里<br>
+							<a><img src="img/competetion/tianchi1.png" style="width: 182px; height: 257px;" /></a><br>
+							6.腾讯QQ浏览器2021AI算法大赛（视频相似度赛道），第16名，韩宏炜<br>
+							<a><img src="img/competetion/QQliulanqi1.jpg"
+									style="width: 182px; height: 257px;" /></a><br>
+							7.MICCAI2021医学图像配准挑战赛，第4名，潘文韬<br>
+							8.Kaggle Bristol-Myers Squibb - Molecular Translation Contest，银牌，朱翌<br>
+							9.广东电网智慧现场作业挑战赛 赛道三:识别高空作业及安全带佩戴，前18%，朱翌<br>
+							10.Multispectral Pedestrian Detection Challenge，第一名，朱翌、胡浩楠<br>
+							11.华为昇腾合作项目：OSNet模型开发，优良，程星玥<br>
+							12.千言-问题匹配鲁棒性评测（2021CCF大数据与计算智能大赛，22/2851名，刘淏天<br>
+							13.2021 NFL Health & Safety - Helmet Assignment，银牌，欧奕旻 刘鸿博<br>
+
+
+
+						</section>
+
+
+					</article>
+				</div>
+
+			</div>
+		</section>
+
+	</article>
+
+	<footer>
+
+
+		<section class="copyrights">
+			<section class="mainWrap">
+				<span class="info">
+					<span>电话查号台：010-62793001</span>
+					<span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
+					<span>地址：广东省深圳市南山区西丽大学城清华校区</span>
+				</span>
+				<span class="icp">京公网安备 110402430053 号</span>
+				<div class="clearfix"></div>
+				<span class="copy">版权所有 © 清华大学　　</span>
+			</section>
+		</section>
+
+	</footer>
+	<script>
+		// translate.ignore.tag.push('span');
+		translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
+		// translate.service.use('client.edge');
+		// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
+		// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
+		translate.execute();
+	</script>
+</body>
+
 </html>

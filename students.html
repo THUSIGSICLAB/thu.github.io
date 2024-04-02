@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-	<head>
 
-		
+<head>
+	<title>THUSIGSICLAB</title>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
@@ -24,122 +24,128 @@
 		arrLang['km']['desc'] = 'នេះគឺជាអត្ថបទរបស់ខ្ញុំ';
 
 		// Process translation
-		$(function() {
-		$('.translate').click(function() {
-			var lang = $(this).attr('id');
+		$(function () {
+			$('.translate').click(function () {
+				var lang = $(this).attr('id');
 
-			$('.lang').each(function(index, item) {
-			$(this).text(arrLang[lang][$(this).attr('key')]);
+				$('.lang').each(function (index, item) {
+					$(this).text(arrLang[lang][$(this).attr('key')]);
+				});
 			});
-		});
 		});
 	</script>
 
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="css/education.css" />
-		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
-	</head>
-	<body>
-		<script src="js/translate.js"></script>
-		<style>
-			.language_button {
-					position: absolute;
-					margin-top: 50px;
-					right: 20px;
-					font-size: 15px;
-					background-color: rgb(102,8,116);
-					color: white;
-					padding: 5px;
-					border-radius: 15px;
-				}
-			</style>
-		<div class="language_button">
-			<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> | 
-			<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');" style="color: white;">简体中文</a>
-		</div>
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/education.css" />
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</head>
 
-		<div class="header">
-			<div class="mainWrap">
-				<div class="topLine"></div>
-				<div class="topWrap">
-					<a href="" class="logo">
-						<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;"/>
-					</a>
-					<section class="search">
-						<img src='img/right_tu2.png' style="width: 250px; height: 80px;"/>
-						
-					</section>
-				</div>
-				<div class="clearfix"></div>
-				<div class="menu">
-					<nav class="navbar navbar-default">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-collapse">
-								  <span class="sr-only">导航</span>
-			                      <span class="icon-bar"></span>
-			                      <span class="icon-bar"></span>
-			                      <span class="icon-bar"></span>
-			                 </button>
-							<a href="" class="navbar-brand anav">导航</a>
-						</div>
-						<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
-							<ul class="nav-tabs nav-justified" style="padding:0 ;">
-								<li key="home">
-									<a href="index.html" class="lang" key="home">首页</a>
-								</li>
-								<li>
-									<a class="" href="introduction.html">概况</a>
-								</li>
-								<li class="">
-									<a href="news.html">新闻</a>
-									
-								</li>
-								<li>
-									<a href="students.html">成员</a>
-								</li>
-								<li>
-									<a href="paper.html">成果展示</a>
-								</li>
-								<li>
-									<a href="connect.html">联系我们</a>
-								</li>
-								
-							</div>
-						</nav>
-				</div>
+<body>
+	<script src="js/translate.js"></script>
+	<style>
+		.language_button {
+			position: absolute;
+			margin-top: 50px;
+			right: 20px;
+			font-size: 15px;
+			background-color: rgb(102, 8, 116);
+			color: white;
+			padding: 5px;
+			border-radius: 15px;
+		}
+	</style>
+	<div class="language_button">
+		<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> |
+		<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');"
+			style="color: white;">简体中文</a>
+	</div>
+
+	<div class="header">
+		<div class="mainWrap">
+			<div class="topLine"></div>
+			<div class="topWrap">
+				<a href="" class="logo">
+					<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;" />
+				</a>
+				<section class="search">
+					<img src='img/right_tu2.png' style="width: 250px; height: 80px;" />
+
+				</section>
+			</div>
+			<div class="clearfix"></div>
+			<div class="menu">
+				<nav class="navbar navbar-default">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#example-navbar-collapse">
+							<span class="sr-only">导航</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="" class="navbar-brand anav">导航</a>
+					</div>
+					<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
+						<ul class="nav-tabs nav-justified" style="padding:0 ;">
+							<li key="home">
+								<a href="index.html" class="lang" key="home">首页</a>
+							</li>
+							<li>
+								<a class="" href="introduction.html">概况</a>
+							</li>
+							<li class="">
+								<a href="news.html">新闻</a>
+
+							</li>
+							<li>
+								<a href="students.html">成员</a>
+							</li>
+							<li>
+								<a href="paper.html">成果展示</a>
+							</li>
+							<li>
+								<a href="connect.html">联系我们</a>
+							</li>
+
+					</div>
+				</nav>
 			</div>
 		</div>
+	</div>
 
-<article class="content clearfix">
-			<section class="topImg">
-				<img src="img/tu5.png"/>
-			</section>
- <section class="mainWrap">
-	<div class="detailContent">
-	  <div class="col_1"style="padding: 0;">
-		<section class="leftNav">
-				 <h3>成员组成</h3>
-					<nav class="navbar navbar-default">
-						<div class="navbar-header eduHeader">
-							<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse" data-target="#example-navbar-collapse-1">
-								  <span class="sr-only">导航</span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                 </button>
-							<a href="" class="navbar-brand edubrand">在读硕士</a>
-						</div>
-						<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1" aria-expanded="false">
-							<ul class="navTotal" style="padding:0 ;">
-								<li>
-									<i class="glyphicon glyphicon-minus"></i>
-									<a href="#boshihou">博士后</a>
-								</li>
+	<article class="content clearfix">
+		<section class="topImg">
+			<img src="img/tu5.png" />
+		</section>
+		<section class="mainWrap">
+			<div class="detailContent">
+				<div class="col_1" style="padding: 0;">
+					<section class="leftNav">
+						<h3>成员组成</h3>
+						<nav class="navbar navbar-default">
+							<div class="navbar-header eduHeader">
+								<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse"
+									data-target="#example-navbar-collapse-1">
+									<span class="sr-only">导航</span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+								</button>
+								<a href="" class="navbar-brand edubrand">在读硕士</a>
+							</div>
+							<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1"
+								aria-expanded="false">
+								<ul class="navTotal" style="padding:0 ;">
+									<li>
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="#boshihou">博士后</a>
+									</li>
 
 									<li>
 										<i class="glyphicon glyphicon-minus"></i>
@@ -147,7 +153,7 @@
 									</li>
 									<li>
 										<i class="glyphicon glyphicon-minus"></i>
-											<a href="#shuoshi">在读硕士</a>
+										<a href="#shuoshi">在读硕士</a>
 									</li>
 
 									<li>
@@ -160,110 +166,109 @@
 									</li>
 								</ul>
 							</div>
-					</nav>
-			</section>
-		</div>
-	  <div class="col_2">
-	  	<article class="mainContent">
-	  		<header class="headerNav">
-	  			<nav class="hnav">
-	  				<a>首页.</a>
-	  				<a>成员组成</a>
-	  				<a></a>
-	  			</nav>
-	  			<h1>博士后</h1>
-	  		</header>
-			<style>
-				.table{
-					width: 800px;
-					height: 60px;
-				}
+						</nav>
+					</section>
+				</div>
+				<div class="col_2">
+					<article class="mainContent">
+						<header class="headerNav">
+							<nav class="hnav">
+								<a>首页.</a>
+								<a>成员组成</a>
+								<a></a>
+							</nav>
+							<h1>博士后</h1>
+						</header>
+						<style>
+							.table {
+								width: 800px;
+								height: 60px;
+							}
+						</style>
+						<a name="boshihou"></a>
+						<section class="article">
+							<table class="table table-hover" name="">
+								<tr>
+									<td style="vertical-align:middle;  text-align:center">2022年入站</td>
+									<td>张亚超</td>
+									<td>王高帅</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td style="vertical-align:middle;  text-align:center">2020年入站</td>
+									<td>胡润泽 (已出站)</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td style="vertical-align:middle;  text-align:center">2018年入站</td>
+									<td>刘玉涛 (已出站)</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>
 
-			</style>
-			<a name="boshihou"></a>
-	  		<section class="article">
-				<table class="table table-hover" name="">
-					<tr>
-						<td  style="vertical-align:middle;  text-align:center">2022年入站</td>
-						<td>张亚超</td>
-						<td>王高帅</td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td  style="vertical-align:middle;  text-align:center">2020年入站</td>
-						<td>胡润泽 (已出站)</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td  style="vertical-align:middle;  text-align:center">2018年入站</td>
-						<td>刘玉涛 (已出站)</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</table>
-				
-			
-			<header class="headerNav">
-				<h1>在读博士</h1>
-			</header>
-			<a name="zaiduboshi"></a>
-			<table class="table table-hover" name="">
-				<tr>
-					<td  style="vertical-align:middle;  text-align:center">2023级</td>
-					<td>邵新宇</td>
-					<td>宝阿春</td>
-					<td>蒲一凡</td>
-				</tr>
-				<tr>
-					<td  style="vertical-align:middle;  text-align:center">2022级</td>
-					<td>李镕辉</td>
-					<td>韩昊男</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td  style="vertical-align:middle;  text-align:center">2021级</td>
-					<td>唐婧仪</td>
-					<td>沈逸洋</td>
-					<td>张扬</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td  style="vertical-align:middle;  text-align:center">2020级</td>
-					<td>吕加飞</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td  style="vertical-align:middle;  text-align:center">2019级</td>
-					<td>赵泽宇</td>
-					<td>张甜甜</td>
-					<td>兰升</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td  style="vertical-align:middle;  text-align:center">2017级</td>
-					<td>严江鹏</td>
-					<td>陈卓</td>
-					<td>陈胜杰</td>
-					<td></td>
-				</tr>
-			</table>
 
+							<header class="headerNav">
+								<h1>在读博士</h1>
+							</header>
+							<a name="zaiduboshi"></a>
+							<table class="table table-hover" name="">
+								<tr>
+									<td style="vertical-align:middle;  text-align:center">2023级</td>
+									<td>邵新宇</td>
+									<td>宝阿春</td>
+									<td>蒲一凡</td>
+								</tr>
+								<tr>
+									<td style="vertical-align:middle;  text-align:center">2022级</td>
+									<td>李镕辉</td>
+									<td>韩昊男</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td style="vertical-align:middle;  text-align:center">2021级</td>
+									<td>唐婧仪</td>
+									<td>沈逸洋</td>
+									<td>张扬</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td style="vertical-align:middle;  text-align:center">2020级</td>
+									<td>吕加飞</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td style="vertical-align:middle;  text-align:center">2019级</td>
+									<td>赵泽宇</td>
+									<td>张甜甜</td>
+									<td>兰升</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td style="vertical-align:middle;  text-align:center">2017级</td>
+									<td>严江鹏</td>
+									<td>陈卓</td>
+									<td>陈胜杰</td>
+									<td></td>
+								</tr>
+							</table>
 
 
 
-			<header class="headerNav">
-				<h1>在读硕士</h1>
-			</header>
-			<a name="shuoshi"></a>
-			<table class="table table-hover"  name="shuoshi">
-				
-				<!-- <tr>
+
+							<header class="headerNav">
+								<h1>在读硕士</h1>
+							</header>
+							<a name="shuoshi"></a>
+							<table class="table table-hover" name="shuoshi">
+
+								<!-- <tr>
 					<td rowspan="5" style="vertical-align:middle;  text-align:center">2020级</td>
 					<td>褚峤松</td>
 					<td>陈翰墨</td>
@@ -301,378 +306,379 @@
 					<td></td>
 				</tr> -->
 
-				<tr>
-					<td rowspan="4" style="vertical-align:middle;  text-align:center">2021级</td>
-					<td>潘文韬</td>
-					<td>何春明</td>
-					<td>张恒煜</td>
-					<td>孟昶</td>
-				</tr>
-				<tr>
-					
-					<td>王思奇</td>
-					<td>刘淏天</td>
-					<td>肖娴静</td>
-					<td>李泽鑫</td>
-				</tr>
-				<tr>
-					
-					<td>秦冠羿</td>
-					<td>张俊杰</td>
-					<td>马跃</td>
-					<td>陈阳昆</td>
-				</tr>
-				<tr>
-					
-					<td>李曦辉</td>
-					<td>杜艳</td>
-					<td>赵鋆凡</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td rowspan="2" style="vertical-align:middle;  text-align:center">2022级</td>
-					<td>周涵涛</td>
-					<td>金孟群</td>
-					<td>唐龙翔</td>
-					<td>任泽平</td>
-				</tr>
-				<tr>
-					<td>苏明扬</td>
-					<td>李纪达</td>
-					<td>胡鹏</td>
-					<td></td>
-				</tr>
-				
-				<tr>
-					<td rowspan="2" style="vertical-align:middle;  text-align:center">2023级</td>
-					<td>肖伊乘</td>
-					<td>林裕康</td>
-					<td>翟晨昊</td>
-					<td>刘润泽</td>
-				</tr>
-				<tr>
-					
-					<td>闫梦蓓</td>
-					<td>孙圣杰</td>
-					<td>方智睿</td>
-					<td></td>
-				</tr> 
-			</table>
+								<tr>
+									<td rowspan="4" style="vertical-align:middle;  text-align:center">2021级</td>
+									<td>潘文韬</td>
+									<td>何春明</td>
+									<td>张恒煜</td>
+									<td>孟昶</td>
+								</tr>
+								<tr>
+
+									<td>王思奇</td>
+									<td>刘淏天</td>
+									<td>肖娴静</td>
+									<td>李泽鑫</td>
+								</tr>
+								<tr>
+
+									<td>秦冠羿</td>
+									<td>张俊杰</td>
+									<td>马跃</td>
+									<td>陈阳昆</td>
+								</tr>
+								<tr>
+
+									<td>李曦辉</td>
+									<td>杜艳</td>
+									<td>赵鋆凡</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td rowspan="2" style="vertical-align:middle;  text-align:center">2022级</td>
+									<td>周涵涛</td>
+									<td>金孟群</td>
+									<td>唐龙翔</td>
+									<td>任泽平</td>
+								</tr>
+								<tr>
+									<td>苏明扬</td>
+									<td>李纪达</td>
+									<td>胡鹏</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td rowspan="2" style="vertical-align:middle;  text-align:center">2023级</td>
+									<td>肖伊乘</td>
+									<td>林裕康</td>
+									<td>翟晨昊</td>
+									<td>刘润泽</td>
+								</tr>
+								<tr>
+
+									<td>闫梦蓓</td>
+									<td>孙圣杰</td>
+									<td>方智睿</td>
+									<td></td>
+								</tr>
+							</table>
 
 
 
-			<header class="headerNav">
-				<h1>已毕业学生</h1>
-			</header>
-			<a name="yibiye"></a>
-			<table class="table table-hover"  >
-				<tr>
-					<td>级别</td>
-					<td>姓名</td>
-					<td>就业去向</td>
-				</tr>
-				<tr>
-					<td rowspan="4" style="vertical-align:middle;  text-align:center">2010级</td>
-					<td>金明</td>
-					<td>字节跳动</td>
+							<header class="headerNav">
+								<h1>已毕业学生</h1>
+							</header>
+							<a name="yibiye"></a>
+							<table class="table table-hover">
+								<tr>
+									<td>级别</td>
+									<td>姓名</td>
+									<td>就业去向</td>
+								</tr>
+								<tr>
+									<td rowspan="4" style="vertical-align:middle;  text-align:center">2010级</td>
+									<td>金明</td>
+									<td>字节跳动</td>
 
-				</tr>
+								</tr>
 
-				<tr>
-					<td>高丽萍</td>
-					<td>字节跳动</td>
-				</tr>
+								<tr>
+									<td>高丽萍</td>
+									<td>字节跳动</td>
+								</tr>
 
-				<tr>
-					<td>马建国</td>
-					<td>深圳市上善御富量化基金</td>
-				</tr>
+								<tr>
+									<td>马建国</td>
+									<td>深圳市上善御富量化基金</td>
+								</tr>
 
-				<tr>
-					<td>周林飞</td>
-					<td>西门子中国研究院</td>
-				</tr>
+								<tr>
+									<td>周林飞</td>
+									<td>西门子中国研究院</td>
+								</tr>
 
-				<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
-				<tr>
-					<td rowspan="3" style="vertical-align:middle;  text-align:center">2011级</td>
-					<td>黄容生</td>
-					<td>易方达</td>
-				</tr>
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<tr>
+									<td rowspan="3" style="vertical-align:middle;  text-align:center">2011级</td>
+									<td>黄容生</td>
+									<td>易方达</td>
+								</tr>
 
-				<tr>
-					<td>闫天翔</td>
-					<td>国元证券</td>
-				</tr>
+								<tr>
+									<td>闫天翔</td>
+									<td>国元证券</td>
+								</tr>
 
-				<tr>
-					<td>高福信</td>
-					<td>华为技术有限公司</td>
-				</tr>
+								<tr>
+									<td>高福信</td>
+									<td>华为技术有限公司</td>
+								</tr>
 
-				<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
-				<tr>
-					<td rowspan="4" style="vertical-align:middle;  text-align:center">2012级</td>
-					<td>欧阳小刚</td>
-					<td>实在智能</td>
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<tr>
+									<td rowspan="4" style="vertical-align:middle;  text-align:center">2012级</td>
+									<td>欧阳小刚</td>
+									<td>实在智能</td>
 
-				</tr>
+								</tr>
 
-				<tr>
-					<td>王东芝</td>
-					<td>机器人创业</td>
-				</tr>
+								<tr>
+									<td>王东芝</td>
+									<td>机器人创业</td>
+								</tr>
 
-				<tr>
-					<td>余谨</td>
-					<td>工商银行数据中心</td>
-				</tr>
+								<tr>
+									<td>余谨</td>
+									<td>工商银行数据中心</td>
+								</tr>
 
-				<tr>
-					<td>贾卓</td>
-					<td>农行数据中心</td>
-				</tr>
-				<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
-				<tr>
-					<td rowspan="3" style="vertical-align:middle;  text-align:center">2013级</td>
-					<td>闫欣伟</td>
-					<td>冰川网络</td>
+								<tr>
+									<td>贾卓</td>
+									<td>农行数据中心</td>
+								</tr>
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<tr>
+									<td rowspan="3" style="vertical-align:middle;  text-align:center">2013级</td>
+									<td>闫欣伟</td>
+									<td>冰川网络</td>
 
-				</tr>
+								</tr>
 
-				<tr>
-					<td>宋靖东</td>
-					<td>阿里巴巴</td>
-				</tr>
+								<tr>
+									<td>宋靖东</td>
+									<td>阿里巴巴</td>
+								</tr>
 
-				<tr>
-					<td>陈连胜</td>
-					<td>文远知行</td>
-				</tr>
-				<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<tr>
+									<td>陈连胜</td>
+									<td>文远知行</td>
+								</tr>
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-				<tr>
-					<td rowspan="4" style="vertical-align:middle;  text-align:center">2014级</td>
-					<td>王慧敏</td>
-					<td>腾讯</td>
+								<tr>
+									<td rowspan="4" style="vertical-align:middle;  text-align:center">2014级</td>
+									<td>王慧敏</td>
+									<td>腾讯</td>
 
-				</tr>
+								</tr>
 
-				<tr>
-					<td>杨志雄</td>
-					<td>字节跳动</td>
-				</tr>
+								<tr>
+									<td>杨志雄</td>
+									<td>字节跳动</td>
+								</tr>
 
-				<tr>
-					<td>尚敏</td>
-					<td>微软公司</td>
-				</tr>
+								<tr>
+									<td>尚敏</td>
+									<td>微软公司</td>
+								</tr>
 
-				<tr>
-					<td>郝婧</td>
-					<td>海康微视</td>
-				</tr>
-				<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
-				<tr>
-					<td rowspan="4" style="vertical-align:middle;  text-align:center">2015级</td>
-					<td>门畅</td>
-					<td>滴滴出行科技有限公司</td>
+								<tr>
+									<td>郝婧</td>
+									<td>海康微视</td>
+								</tr>
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<tr>
+									<td rowspan="4" style="vertical-align:middle;  text-align:center">2015级</td>
+									<td>门畅</td>
+									<td>滴滴出行科技有限公司</td>
 
-				</tr>
+								</tr>
 
-				<tr>
-					<td>汤友华</td>
-					<td>阿里巴巴</td>
-				</tr>
+								<tr>
+									<td>汤友华</td>
+									<td>阿里巴巴</td>
+								</tr>
 
-				<tr>
-					<td>崔作鹰</td>
-					<td>ADVANCE.AI</td>
-				</tr>
+								<tr>
+									<td>崔作鹰</td>
+									<td>ADVANCE.AI</td>
+								</tr>
 
-				<tr>
-					<td>谢露露</td>
-					<td>上海汽车集团</td>
-				</tr>
-				<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
-				<tr>
-					<td rowspan="5" style="vertical-align:middle;  text-align:center">2016级</td>
-					<td>金坤</td>
-					<td>快手</td>
+								<tr>
+									<td>谢露露</td>
+									<td>上海汽车集团</td>
+								</tr>
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<tr>
+									<td rowspan="5" style="vertical-align:middle;  text-align:center">2016级</td>
+									<td>金坤</td>
+									<td>快手</td>
 
-				</tr>
+								</tr>
 
-				<tr>
-					<td>李子寅</td>
-					<td>华为技术有限公司</td>
-				</tr>
+								<tr>
+									<td>李子寅</td>
+									<td>华为技术有限公司</td>
+								</tr>
 
-				<tr>
-					<td>尹帮户</td>
-					<td>腾讯</td>
-				</tr>
+								<tr>
+									<td>尹帮户</td>
+									<td>腾讯</td>
+								</tr>
 
-				<tr>
-					<td>龙如蛟</td>
-					<td>阿里巴巴</td>
-				</tr>
+								<tr>
+									<td>龙如蛟</td>
+									<td>阿里巴巴</td>
+								</tr>
 
-				<tr>
-					<td>李舒燕（博）</td>
-					<td>剑桥大学（博士后）</td>
-				</tr>
-				<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<tr>
+									<td>李舒燕（博）</td>
+									<td>剑桥大学（博士后）</td>
+								</tr>
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-				<tr>
-					<td rowspan="3" style="vertical-align:middle;  text-align:center">2017级</td>
-					<td>尹明皓</td>
-					<td>微软公司</td>
+								<tr>
+									<td rowspan="3" style="vertical-align:middle;  text-align:center">2017级</td>
+									<td>尹明皓</td>
+									<td>微软公司</td>
 
-				</tr>
+								</tr>
 
-				<tr>
-					<td>戚怀宇</td>
-					<td>快手</td>
-				</tr>
+								<tr>
+									<td>戚怀宇</td>
+									<td>快手</td>
+								</tr>
 
-				<tr>
-					<td>陈洪鑫</td>
-					<td>华为技术有限公司</td>
-				</tr>
+								<tr>
+									<td>陈洪鑫</td>
+									<td>华为技术有限公司</td>
+								</tr>
 
-				<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
-				<tr>
-					<td rowspan="5" style="vertical-align:middle;  text-align:center">2018级</td>
-					<td>王亚伟</td>
-					<td>腾讯</td>
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<tr>
+									<td rowspan="5" style="vertical-align:middle;  text-align:center">2018级</td>
+									<td>王亚伟</td>
+									<td>腾讯</td>
 
-				</tr>
+								</tr>
 
-				<tr>
-					<td>董九阳</td>
-					<td>华为技术有限公司</td>
-				</tr>
+								<tr>
+									<td>董九阳</td>
+									<td>华为技术有限公司</td>
+								</tr>
 
-				<tr>
-					<td>刘阳哲</td>
-					<td>中国长江三峡集团有限公司</td>
-				</tr>
+								<tr>
+									<td>刘阳哲</td>
+									<td>中国长江三峡集团有限公司</td>
+								</tr>
 
-				<tr>
-					<td>徐丁丁</td>
-					<td>字节跳动</td>
-				</tr>
+								<tr>
+									<td>徐丁丁</td>
+									<td>字节跳动</td>
+								</tr>
 
-				<tr>
-					<td>徐哲</td>
-					<td>香港中文大学（博士在读）</td>
-				</tr>
-				<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
-								
-				<tr>
-					<td rowspan="7" style="vertical-align:middle;  text-align:center">2019级</td>
-					<td>杨瑞</td>
-					<td>香港科技大学（博士在读）</td>
+								<tr>
+									<td>徐哲</td>
+									<td>香港中文大学（博士在读）</td>
+								</tr>
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-				</tr>
+								<tr>
+									<td rowspan="7" style="vertical-align:middle;  text-align:center">2019级</td>
+									<td>杨瑞</td>
+									<td>香港科技大学（博士在读）</td>
 
-				<tr>
-					<td>欧弈旻</td>
-					<td>华为技术有限公司</td>
-				</tr>
+								</tr>
 
-				<tr>
-					<td>马露凡</td>
-					<td>腾讯</td>
-				</tr>
+								<tr>
+									<td>欧弈旻</td>
+									<td>华为技术有限公司</td>
+								</tr>
 
-				<tr>
-					<td>李帅斌</td>
-					<td>字节跳动</td>
-				</tr>
+								<tr>
+									<td>马露凡</td>
+									<td>腾讯</td>
+								</tr>
 
-				<tr>
-					<td>成斌</td>
-					<td>香港中文大学（博士在读）</td>
-				</tr>
+								<tr>
+									<td>李帅斌</td>
+									<td>字节跳动</td>
+								</tr>
 
-				<tr>
-					<td>罗凤</td>
-					<td>腾讯</td>
-				</tr>
+								<tr>
+									<td>成斌</td>
+									<td>香港中文大学（博士在读）</td>
+								</tr>
 
-				<tr>
-					<td>贾若楠</td>
-					<td>商汤科技</td>
-				</tr>
+								<tr>
+									<td>罗凤</td>
+									<td>腾讯</td>
+								</tr>
 
-				
-				<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
-				
-			</table>
-			
-
-			<header class="headerNav">
-				<h1 style="line-height: 1.2;">北京市优秀毕业生 / 清华大学优秀硕士学位论文</h1>
-				<a name="youxiu"></a>
-			</header>
-
-			
-			<table class="table table-hover" name="">
-				<tr style="white-space: nowrap;">
-					<td  rowspan="1" style="vertical-align:middle;  text-align:center">优秀硕士学位论文</td>
-					<td>唐铭康(2020级)</td>
-					<td>张轩(2020级)</td>
-					<td>戚怀宇(2017级)</td>
-					<td>宋靖东(2013级)</td>
-					<td>黄容生(2011级)</td>
-					<td>高福信(2011级)</td>
-				</tr>
-				<tr style="white-space: nowrap;">
-					<td  rowspan="1" style="vertical-align:middle;  text-align:center">北京市优秀毕业生</td>
-					<td>徐  哲(2018级)</td>
-					<td>宋靖东(2013级)</td>
-					<td>黄容生(2011级)</td>
-					<td></td>
-				</tr>
-
-			</table>
-         	</section>
+								<tr>
+									<td>贾若楠</td>
+									<td>商汤科技</td>
+								</tr>
 
 
-         
-	  	</article>
-	  </div>	
-		
- </div>		
-</section>
-			
- </article>
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-<footer>
+							</table>
 
-	
-	<section class="copyrights">
-		<section class="mainWrap">
-            <span class="info">
-                 <span>电话查号台：010-62793001</span>
-                 <span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
-                 <span>地址：广东省深圳市南山区西丽大学城清华校区</span>
-            </span>
-            <span class="icp">京公网安备 110402430053 号</span>
-            <div class="clearfix"></div>
-            <span class="copy">版权所有 © 清华大学　　</span>
-       </section>
-	</section>
 
-</footer>
-		<script>
-			// translate.ignore.tag.push('span');
-			translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
-			// translate.service.use('client.edge');
-			// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
-			// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
-			translate.execute();
-		</script>
-	</body>
+							<header class="headerNav">
+								<h1 style="line-height: 1.2;">北京市优秀毕业生 / 清华大学优秀硕士学位论文</h1>
+								<a name="youxiu"></a>
+							</header>
+
+
+							<table class="table table-hover" name="">
+								<tr style="white-space: nowrap;">
+									<td rowspan="1" style="vertical-align:middle;  text-align:center">优秀硕士学位论文</td>
+									<td>唐铭康(2020级)</td>
+									<td>张轩(2020级)</td>
+									<td>戚怀宇(2017级)</td>
+									<td>宋靖东(2013级)</td>
+									<td>黄容生(2011级)</td>
+									<td>高福信(2011级)</td>
+								</tr>
+								<tr style="white-space: nowrap;">
+									<td rowspan="1" style="vertical-align:middle;  text-align:center">北京市优秀毕业生</td>
+									<td>徐 哲(2018级)</td>
+									<td>宋靖东(2013级)</td>
+									<td>黄容生(2011级)</td>
+									<td></td>
+								</tr>
+
+							</table>
+						</section>
+
+
+
+					</article>
+				</div>
+
+			</div>
+		</section>
+
+	</article>
+
+	<footer>
+
+
+		<section class="copyrights">
+			<section class="mainWrap">
+				<span class="info">
+					<span>电话查号台：010-62793001</span>
+					<span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
+					<span>地址：广东省深圳市南山区西丽大学城清华校区</span>
+				</span>
+				<span class="icp">京公网安备 110402430053 号</span>
+				<div class="clearfix"></div>
+				<span class="copy">版权所有 © 清华大学　　</span>
+			</section>
+		</section>
+
+	</footer>
+	<script>
+		// translate.ignore.tag.push('span');
+		translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
+		// translate.service.use('client.edge');
+		// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
+		// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
+		translate.execute();
+	</script>
+</body>
+
 </html>

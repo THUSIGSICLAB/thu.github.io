@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-	<head>
 
-		
+<head>
+	<title>THUSIGSICLAB</title>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
@@ -24,162 +24,170 @@
 		arrLang['km']['desc'] = 'នេះគឺជាអត្ថបទរបស់ខ្ញុំ';
 
 		// Process translation
-		$(function() {
-		$('.translate').click(function() {
-			var lang = $(this).attr('id');
+		$(function () {
+			$('.translate').click(function () {
+				var lang = $(this).attr('id');
 
-			$('.lang').each(function(index, item) {
-			$(this).text(arrLang[lang][$(this).attr('key')]);
+				$('.lang').each(function (index, item) {
+					$(this).text(arrLang[lang][$(this).attr('key')]);
+				});
 			});
-		});
 		});
 	</script>
 
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="css/education.css" />
-		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
-	</head>
-	<body>
-		<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
-		<script src="js/translate.js"></script>
-		<style>
-			.language_button {
-					position: absolute;
-					margin-top: 50px;
-					right: 20px;
-					font-size: 15px;
-					background-color: rgb(102,8,116);
-					color: white;
-					padding: 5px;
-					border-radius: 15px;
-				}
-			</style>
-		<div class="language_button">
-			<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> | 
-			<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');" style="color: white;">简体中文</a>
-		</div>
-		<div class="header">
-			<div class="mainWrap">
-				<div class="topLine"></div>
-				<div class="topWrap">
-					<a href="" class="logo">
-						<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;"/>
-					</a>
-					<section class="search">
-						<img src='img/right_tu2.png' style="width: 250px; height: 80px;"/>
-						
-					</section>
-				</div>
-				<div class="clearfix"></div>
-				<div class="menu">
-					<nav class="navbar navbar-default">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-collapse">
-								  <span class="sr-only">导航</span>
-			                      <span class="icon-bar"></span>
-			                      <span class="icon-bar"></span>
-			                      <span class="icon-bar"></span>
-			                 </button>
-							<a href="" class="navbar-brand anav">导航</a>
-						</div>
-						<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
-							<ul class="nav-tabs nav-justified" style="padding:0 ;">
-								<li key="home">
-									<a href="index.html" class="lang" key="home">首页</a>
-								</li>
-								<li>
-									<a class="" href="introduction.html">概况</a>
-								</li>
-								<li class="">
-									<a href="news.html">新闻</a>
-									
-								</li>
-								<li>
-									<a href="students.html">成员</a>
-								</li>
-								<li>
-									<a href="paper.html">成果展示</a>
-								</li>
-								<li>
-									<a href="connect.html">联系我们</a>
-								</li>
-								
-							</div>
-						</nav>
-				</div>
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/education.css" />
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
+	<script src="js/translate.js"></script>
+	<style>
+		.language_button {
+			position: absolute;
+			margin-top: 50px;
+			right: 20px;
+			font-size: 15px;
+			background-color: rgb(102, 8, 116);
+			color: white;
+			padding: 5px;
+			border-radius: 15px;
+		}
+	</style>
+	<div class="language_button">
+		<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> |
+		<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');"
+			style="color: white;">简体中文</a>
+	</div>
+	<div class="header">
+		<div class="mainWrap">
+			<div class="topLine"></div>
+			<div class="topWrap">
+				<a href="" class="logo">
+					<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;" />
+				</a>
+				<section class="search">
+					<img src='img/right_tu2.png' style="width: 250px; height: 80px;" />
+
+				</section>
+			</div>
+			<div class="clearfix"></div>
+			<div class="menu">
+				<nav class="navbar navbar-default">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#example-navbar-collapse">
+							<span class="sr-only">导航</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="" class="navbar-brand anav">导航</a>
+					</div>
+					<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
+						<ul class="nav-tabs nav-justified" style="padding:0 ;">
+							<li key="home">
+								<a href="index.html" class="lang" key="home">首页</a>
+							</li>
+							<li>
+								<a class="" href="introduction.html">概况</a>
+							</li>
+							<li class="">
+								<a href="news.html">新闻</a>
+
+							</li>
+							<li>
+								<a href="students.html">成员</a>
+							</li>
+							<li>
+								<a href="paper.html">成果展示</a>
+							</li>
+							<li>
+								<a href="connect.html">联系我们</a>
+							</li>
+
+					</div>
+				</nav>
 			</div>
 		</div>
+	</div>
 
-<article class="content clearfix">
-			<section class="topImg">
-				<img src="img/tu5.png"/>
-			</section>
- <section class="mainWrap">
-	<div class="detailContent">
-	  <div class="col_1"style="padding: 0;">
-		<section class="leftNav">
-				 <h3 style=" line-height: 1.5;">课题组介绍</h3>
-					<nav class="navbar navbar-default">
-						<div class="navbar-header eduHeader">
-							<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse" data-target="#example-navbar-collapse-1">
-								  <span class="sr-only">导航</span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                 </button>
-							<a href="" class="navbar-brand edubrand">教育教学</a>
-						</div>
-						<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1" aria-expanded="false">
-							<ul class="navTotal" style="padding:0 ;">
-								<li class="current">
-									<i class="glyphicon glyphicon-minus"></i>
-									<a href="introduction.html">导师介绍</span></a>
-								</li>
-								<li>
-									<i class="glyphicon glyphicon-minus"></i>
-									<a href="introduction_detail.html">课题组介绍</a>
-								</li>
-								<li>
-									<i class="glyphicon glyphicon-minus"></i>
-									<a href="introduction_direction.html">方向介绍</a>
-								</li>
+	<article class="content clearfix">
+		<section class="topImg">
+			<img src="img/tu5.png" />
+		</section>
+		<section class="mainWrap">
+			<div class="detailContent">
+				<div class="col_1" style="padding: 0;">
+					<section class="leftNav">
+						<h3 style=" line-height: 1.5;">课题组介绍</h3>
+						<nav class="navbar navbar-default">
+							<div class="navbar-header eduHeader">
+								<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse"
+									data-target="#example-navbar-collapse-1">
+									<span class="sr-only">导航</span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+								</button>
+								<a href="" class="navbar-brand edubrand">教育教学</a>
 							</div>
-					</nav>
-			</section>
-		</div>
-	  <div class="col_2">
-	  	<article class="mainContent">
-	  		<header class="headerNav">
-	  			<nav class="hnav">
-	  				<a>首页.</a>
-	  				<a>课题组概况.</a>
-	  				<a>导师介绍.</a>
-	  			</nav>
-	  			<h1 style=" line-height: 1.2;">清华大学深圳国际研究生院--智能计算实验室李秀老师课题组</h1>
-	  		</header>
-	  		
-	  		<section class="article">
-				<div align="center" ><a><img src="img/lixiu.png"/></a></div>
-				<font size="3">
-	  			<p> 李秀  教授，博士生导师<br>
-					学科：控制科学与工程<br>
-					学术兼职：中国人工智能学会智能融合专委会秘书长；深圳市人工智能学会副理事长；广东省人工智能与机器人学会理事；国家自然科学基金委员会，网评专家；深圳市科技专家委员会，评审专家；CVPR，ICCV，IJCAI, AAAI, MICCAI, ICASSP等国际会议审稿人，TNNLS, PR等期刊审稿人。<br>
-					研究方向：智能系统、数据挖掘与模式识别。在国内外重要学术期刊或会议上发表学术论文200余篇，在google scholar上被引用6600多次。2015年获广东省科技进步一等奖和深圳市科技进步二等奖，2017年获广东省科技进步三等奖，2022年获深圳市自然科学二等奖。2022年度、2023年度连续入选美国斯坦福大学与爱思唯尔数据库（Elsevier）联合发布的全球前2%顶尖科学家榜单。
-					作为项目负责人，完成国家自然科学基金项目4项，深圳市基础研究项目2项，深圳市技术开发项目1项；作为子课题负责人，完成国家863项目4项；目前在研国家重点研发项目2项，深圳市重点实验室项目1项。
-					</p>
-                </font>
-				<ul class="artSub">
-                    
-           </ul>
+							<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1"
+								aria-expanded="false">
+								<ul class="navTotal" style="padding:0 ;">
+									<li class="current">
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="introduction.html">导师介绍</span></a>
+									</li>
+									<li>
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="introduction_detail.html">课题组介绍</a>
+									</li>
+									<li>
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="introduction_direction.html">方向介绍</a>
+									</li>
+							</div>
+						</nav>
+					</section>
+				</div>
+				<div class="col_2">
+					<article class="mainContent">
+						<header class="headerNav">
+							<nav class="hnav">
+								<a>首页.</a>
+								<a>课题组概况.</a>
+								<a>导师介绍.</a>
+							</nav>
+							<h1 style=" line-height: 1.2;">清华大学深圳国际研究生院--智能计算实验室李秀老师课题组</h1>
+						</header>
 
-         </section>
-         
-            <!--<div class="col_3">
+						<section class="article">
+							<div align="center"><a><img src="img/lixiu.png" /></a></div>
+							<font size="3">
+								<p> 李秀 教授，博士生导师<br>
+									学科：控制科学与工程<br>
+									学术兼职：中国人工智能学会智能融合专委会秘书长；深圳市人工智能学会副理事长；广东省人工智能与机器人学会理事；国家自然科学基金委员会，网评专家；深圳市科技专家委员会，评审专家；CVPR，ICCV，IJCAI,
+									AAAI, MICCAI, ICASSP等国际会议审稿人，TNNLS, PR等期刊审稿人。<br>
+									研究方向：智能系统、数据挖掘与模式识别。在国内外重要学术期刊或会议上发表学术论文200余篇，在google
+									scholar上被引用6600多次。2015年获广东省科技进步一等奖和深圳市科技进步二等奖，2017年获广东省科技进步三等奖，2022年获深圳市自然科学二等奖。2022年度、2023年度连续入选美国斯坦福大学与爱思唯尔数据库（Elsevier）联合发布的全球前2%顶尖科学家榜单。
+									作为项目负责人，完成国家自然科学基金项目4项，深圳市基础研究项目2项，深圳市技术开发项目1项；作为子课题负责人，完成国家863项目4项；目前在研国家重点研发项目2项，深圳市重点实验室项目1项。
+								</p>
+							</font>
+							<ul class="artSub">
+
+							</ul>
+
+						</section>
+
+						<!--<div class="col_3">
             	<section class="relateLink">
             		<h4>相关链接</h4>
             		<ul>
@@ -192,39 +200,40 @@
             	</section>
          	
             </div>-->
-         
-	  	</article>
-	  </div>	
-		
- </div>		
-</section>
-			
- </article>
 
-<footer>
+					</article>
+				</div>
 
-	
-	<section class="copyrights">
-		<section class="mainWrap">
-            <span class="info">
-                 <span>电话查号台：010-62793001</span>
-                 <span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
-                 <span>地址：广东省深圳市南山区西丽大学城清华校区</span>
-            </span>
-            <span class="icp">京公网安备 110402430053 号</span>
-            <div class="clearfix"></div>
-            <span class="copy">版权所有 © 清华大学　　</span>
-       </section>
-	</section>
+			</div>
+		</section>
 
-</footer>
-		<script>
-			// translate.ignore.tag.push('span');
-			translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
-			// translate.service.use('client.edge');
-			// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
-			// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
-			translate.execute();
-		</script>
-	</body>
+	</article>
+
+	<footer>
+
+
+		<section class="copyrights">
+			<section class="mainWrap">
+				<span class="info">
+					<span>电话查号台：010-62793001</span>
+					<span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
+					<span>地址：广东省深圳市南山区西丽大学城清华校区</span>
+				</span>
+				<span class="icp">京公网安备 110402430053 号</span>
+				<div class="clearfix"></div>
+				<span class="copy">版权所有 © 清华大学　　</span>
+			</section>
+		</section>
+
+	</footer>
+	<script>
+		// translate.ignore.tag.push('span');
+		translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
+		// translate.service.use('client.edge');
+		// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
+		// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
+		translate.execute();
+	</script>
+</body>
+
 </html>
