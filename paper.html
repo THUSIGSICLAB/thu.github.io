@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<style>
-			#backToTop {
-					display: none; /* 初始状态为不显示 */
-					position: fixed;
-					bottom: 20px;
-					right: 20px;
-					z-index: 99;
-					font-size: 30px;
-					border: none;
-					outline: none;
-					background-color: rgb(102,8,116);
-					color: white;
-					/* cursor: pointer; */
-					padding: 15px;
-					border-radius: 10px;
-				}
-				
-				#backToTop.show {
-					display: block; /* 当页面滚动到一定位置时显示该元素 */
-				}
-			</style>
+
+<head>
+	<style>
+		#backToTop {
+			display: none;
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			width: 48px;
+			height: 48px;
+			/* z-index: 99; */
+			font-size: 30px;
+			border: none;
+			outline: none;
+			background-color: rgb(102, 8, 116);
+			color: white;
+			/* padding: 15px; */
+			border-radius: 24px;
+		}
+
+		#backToTop.show {
+			display: block;
+			/* 当页面滚动到一定位置时显示该元素 */
+		}
+	</style>
 
 	<link href="css/style.css" rel="stylesheet">
 
@@ -45,177 +48,185 @@
 		arrLang['km']['desc'] = 'នេះគឺជាអត្ថបទរបស់ខ្ញុំ';
 
 		// Process translation
-		$(function() {
-		$('.translate').click(function() {
-			var lang = $(this).attr('id');
+		$(function () {
+			$('.translate').click(function () {
+				var lang = $(this).attr('id');
 
-			$('.lang').each(function(index, item) {
-			$(this).text(arrLang[lang][$(this).attr('key')]);
+				$('.lang').each(function (index, item) {
+					$(this).text(arrLang[lang][$(this).attr('key')]);
+				});
 			});
-		});
 		});
 	</script>
 
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="css/education.css" />
-		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
-	</head>
-	<body>
-		<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
-		<script src="js/translate.js"></script>
-		<style>
-			.language_button {
-					position: absolute;
-					margin-top: 50px;
-					right: 20px;
-					font-size: 15px;
-					background-color: rgb(102,8,116);
-					color: white;
-					padding: 5px;
-					border-radius: 15px;
-				}
-			</style>
-		<div class="language_button">
-			<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> | 
-			<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');" style="color: white;">简体中文</a>
-		</div>
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/education.css" />
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</head>
 
-		<button id="backToTop" onclick="topFunction()">↑</button>
-		<script>
-			// 获取返回顶部按钮元素
-			var backToTopButton = document.getElementById("backToTop");
-			
-			// 判断页面滚动距离并根据需要显示或隐藏返回顶部按钮
-			window.onscroll = function () {
-				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-					backToTopButton.classList.add('show');
-				} else {
-					backToTopButton.classList.remove('show');
-				}
-			};
-			
-			// 点击返回顶部按钮后平滑滚动到页面顶部
-			function topFunction() {
-				document.body.scrollTop = 0; // For Safari
-				document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+<body>
+	<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
+	<script src="js/translate.js"></script>
+	<style>
+		.language_button {
+			position: absolute;
+			margin-top: 50px;
+			right: 20px;
+			font-size: 15px;
+			background-color: rgb(102, 8, 116);
+			color: white;
+			padding: 5px;
+			border-radius: 15px;
+		}
+	</style>
+	<div class="language_button">
+		<a class="ignore" href="javascript:translate.changeLanguage('english');" style="color: white;">English</a> |
+		<a class="ignore" href="javascript:translate.changeLanguage('chinese_simplified');"
+			style="color: white;">简体中文</a>
+	</div>
+
+	<button id="backToTop" onclick="topFunction()">↑</button>
+	<script>
+		// 获取返回顶部按钮元素
+		var backToTopButton = document.getElementById("backToTop");
+
+		// 判断页面滚动距离并根据需要显示或隐藏返回顶部按钮
+		window.onscroll = function () {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				backToTopButton.classList.add('show');
+			} else {
+				backToTopButton.classList.remove('show');
 			}
-		</script>
-		
-		<div class="header">
-			<div class="mainWrap">
-				<div class="topLine"></div>
-				<div class="topWrap">
-					<a href="" class="logo">
-						<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;"/>
-					</a>
-					<section class="search">
-						<img src='img/right_tu2.png' style="width: 250px; height: 80px;"/>
-						
-					</section>
-				</div>
-				<div class="clearfix"></div>
-				<div class="menu">
-					<nav class="navbar navbar-default">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-collapse">
-								  <span class="sr-only">导航</span>
-			                      <span class="icon-bar"></span>
-			                      <span class="icon-bar"></span>
-			                      <span class="icon-bar"></span>
-			                 </button>
-							<a href="" class="navbar-brand anav">导航</a>
-						</div>
-						<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
-							<ul class="nav-tabs nav-justified" style="padding:0 ;">
-								<li key="home">
-									<a href="index.html" class="lang" key="home">首页</a>
-								</li>
-								<li>
-									<a class="" href="introduction.html">概况</a>
-								</li>
-								<li class="">
-									<a href="news.html">新闻<span class="glyphicon glyphicon-menu-down"></span></a>
-									
-								</li>
-								<li>
-									<a href="students.html">成员</a>
-								</li>
-								<li>
-									<a href="paper.html">成果展示</a>
-								</li>
-								<li>
-									<a href="connect.html">联系我们</a>
-								</li>
-								
-							</div>
-						</nav>
-				</div>
+		};
+
+		// 点击返回顶部按钮后平滑滚动到页面顶部
+		function topFunction() {
+			document.body.scrollTop = 0; // For Safari
+			document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+		}
+	</script>
+
+	<div class="header">
+		<div class="mainWrap">
+			<div class="topLine"></div>
+			<div class="topWrap">
+				<a href="" class="logo">
+					<img src="img/h5_logo_2.png" style="width: 400px; height: 70px;" />
+				</a>
+				<section class="search">
+					<img src='img/right_tu2.png' style="width: 250px; height: 80px;" />
+
+				</section>
+			</div>
+			<div class="clearfix"></div>
+			<div class="menu">
+				<nav class="navbar navbar-default">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#example-navbar-collapse">
+							<span class="sr-only">导航</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="" class="navbar-brand anav">导航</a>
+					</div>
+					<div class="collapse navbar-collapse" id="example-navbar-collapse" aria-expanded="false">
+						<ul class="nav-tabs nav-justified" style="padding:0 ;">
+							<li key="home">
+								<a href="index.html" class="lang" key="home">首页</a>
+							</li>
+							<li>
+								<a class="" href="introduction.html">概况</a>
+							</li>
+							<li class="">
+								<a href="news.html">新闻<span class="glyphicon glyphicon-menu-down"></span></a>
+
+							</li>
+							<li>
+								<a href="students.html">成员</a>
+							</li>
+							<li>
+								<a href="paper.html">成果展示</a>
+							</li>
+							<li>
+								<a href="connect.html">联系我们</a>
+							</li>
+
+					</div>
+				</nav>
 			</div>
 		</div>
+	</div>
 
-<article class="content clearfix">
-			<section class="topImg">
-				<img src="img/tu5.png"/>
-			</section>
- <section class="mainWrap">
-	<div class="detailContent">
-	  <div class="col_1"style="padding: 0;">
-		<section class="leftNav">
-				 <h3>成果产出</h3>
-					<nav class="navbar navbar-default">
-						<div class="navbar-header eduHeader">
-							<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse" data-target="#example-navbar-collapse-1">
-								  <span class="sr-only">导航</span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                      <span class="icon-bar eduicon" style="background-color: white;"></span>
-			                 </button>
-							<a href="" class="navbar-brand edubrand">教育教学</a>
-						</div>
-						<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1" aria-expanded="false">
-							<ul class="navTotal" style="padding:0 ;">
-								<li class="current">
-									<i class="glyphicon glyphicon-minus"></i>
-									<a href="paper.html">论文专利</span></a>
-								</li>
-								<li>
-									<i class="glyphicon glyphicon-minus"></i>
-										<a href="bisai.html">比赛获奖</a>
-								</li>
-								<li>
-									<i class="glyphicon glyphicon-minus"></i>
-										<a href="dataset.html">数据集</a>
-								</li>
+	<article class="content clearfix">
+		<section class="topImg">
+			<img src="img/tu5.png" />
+		</section>
+		<section class="mainWrap">
+			<div class="detailContent">
+				<div class="col_1" style="padding: 0;">
+					<section class="leftNav">
+						<h3>成果产出</h3>
+						<nav class="navbar navbar-default">
+							<div class="navbar-header eduHeader">
+								<button type="button" class="navbar-toggle collapsed edutoggle" data-toggle="collapse"
+									data-target="#example-navbar-collapse-1">
+									<span class="sr-only">导航</span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+									<span class="icon-bar eduicon" style="background-color: white;"></span>
+								</button>
+								<a href="" class="navbar-brand edubrand">教育教学</a>
 							</div>
-					</nav>
-			</section>
-			
-		</div>
-	  <div class="col_2">
-	  	<article class="mainContent">
-	  		<header class="headerNav">
-	  			<nav class="hnav">
-	  				<a>首页.</a>
-	  				<a>成果展示.</a>
-	  				<a>论文专利</a>
-	  			</nav>
-	  			<h1>SCI检索期刊论文：</h1>
-	  		</header>
-	  		   
-	  		<section class="article">
-				<style>
-					::marker{
-						content: "[" counter(list-item) "]  ";
-					}	
-				.paperp {
-					margin: 0px 13% 0px 3%;
-				}	</style>
-				<!-- <label for="type">Type:</label>
+							<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1"
+								aria-expanded="false">
+								<ul class="navTotal" style="padding:0 ;">
+									<li class="current">
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="paper.html">论文专利</span></a>
+									</li>
+									<li>
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="bisai.html">比赛获奖</a>
+									</li>
+									<li>
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="dataset.html">数据集</a>
+									</li>
+							</div>
+						</nav>
+					</section>
+
+				</div>
+				<div class="col_2">
+					<article class="mainContent">
+						<header class="headerNav">
+							<nav class="hnav">
+								<a>首页.</a>
+								<a>成果展示.</a>
+								<a>论文专利</a>
+							</nav>
+							<h1>SCI检索期刊论文：</h1>
+						</header>
+
+						<section class="article">
+							<style>
+								::marker {
+									content: "[" counter(list-item) "]  ";
+								}
+
+								.paperp {
+									margin: 0px 13% 0px 3%;
+								}
+							</style>
+							<!-- <label for="type">Type:</label>
 				<select name="type" id="type" onchange="setType(this.options[this.options.selectedIndex].value)">
 					<option value="all">All</option>
 					<option value="C">Conference</option>
@@ -310,242 +321,419 @@
 					}
 				</script> -->
 
-				<table border="0">
-					<ol>
-						<style>
-							td {
-							   padding:5px;
-							}
-							p {
-  								color: blue;
-							}
-						</style>
-						<tr>
-							<td>
-								<img src="img/sci-Hqg-net.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>He C, Li K, Xu G, Yan J, Tang L, Zhang Y, Wang Y, <b>Li X</b>. <a href="https://ieeexplore.ieee.org/abstract/document/10272680" class="bold font16">Hqg-net: Unpaired medical image enhancement with high-quality guidance[J].</a> <b><i>IEEE Transactions on Neural Networks and Learning Systems</i></b>, 2023, DOI: 10.1109/TNNLS.2023.3315307
-									<br/><a href="https://ieeexplore.ieee.org/abstract/document/10272680" class="bold font16">[Page]</a> <a href="https://github.com/THUSIGSICLAB/HQG-Net" class="bold font16">[Code]</a> <a href="https://pan.baidu.com/s/1zmHwsxMWo_QoW9PnhKcNqA?pwd=h8mw&_at_=1709197840395#list/path=%2F" class="bold font16">[Data]</a></a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_ROV6D.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Jingyi Tang, Zeyu Chen, Bowen Fu, Wenjie Lu, Shengquan Li, <b>Xiu Li</b>, and Xiangyang Ji. <a href="https://ieeexplore.ieee.org/abstract/document/10313927" class="bold font16">ROV6D: 6D Pose Estimation Benchmark Dataset for Underwater Remotely Operated Vehicles[J].</a> <b><i>IEEE Robotics and Automation Letters</i></b>, 2024, vol.9, no.1, pp.65-72
-									<br/><a href="https://github.com/THUSIGSICLAB/ROV6D" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_ETDNet.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Hantao Zhou, Rui Yang, Runze Hu, Chang Shu, Xiaochu Tang, and <b>Xiu Li</b>. <a href="https://ieeexplore.ieee.org/abstract/document/10227321/" class="bold font16">ETDNet: Efficient Transformer-based Detection Network for Surface Defect Detection[J].</a> <b><i>IEEE Transactions on Instrumentation and Measurement</i></b>, 2023, vol.72, pp.1-14
-									<br/><a href="https://ieeexplore.ieee.org/abstract/document/10227321/" class="bold font16">[Page]</a> <a href="https://github.com/THUSIGSICLAB/ETDNet" class="bold font16">[Code]</a> <a href="https://pan.baidu.com/s/1zfnyTZHHtSRq5iR3fNf7HA?pwd=f25o#list/path=%2F" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_Coarse-to-fine.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Meng C, Zhao Z, Guo W, Zhang Y, Wu H, Gao C, Li D, <b>Li X</b>, et al. <a href="https://dl.acm.org/doi/10.1145/3606369" class="bold font16">Coarse-to-fine knowledge-enhanced multi-interest learning framework for multi-behavior recommendation[J].</a> <b><i>ACM Transactions on Information Systems</i></b>, 2023, 42(1): 1-27. WOS:001040640300001.
-									<br/><a href="https://dl.acm.org/doi/10.1145/3606369" class="bold font16">[Page]</a> <a href="https://github.com/THUSIGSICLAB/CKML" class="bold font16">[Code]</a> <a href="https://pan.baidu.com/s/1BTs7mlO592iCW71scfkNAg?pwd=9hvn" class="bold font16">[Data]</a></a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_regional-based.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Lan S,  <b>Li X</b>, Guo Z. <a href="" class="bold font16">An Adaptive Region-Based Transformer for Nonrigid Medical Image Registration With a Self-Constructing Latent Graph[J].</a> <b><i>IEEE Transactions on Neural Networks and Learning Systems</i></b>, 2023. WOS:001040640300001.
-									<br/><a href="https://ieeexplore.ieee.org/document/10191036" class="bold font16">[Page]</a></li>
-							</td>	
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_ Discrepancy-Aware.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Yu B, <b>Li X</b>, Li W, Zhou J, Lu J. <a href="" class="bold font16">Discrepancy-Aware Meta-Learning for Zero-Shot Face Manipulation Detection[J].</a> <b><i>IEEE Transactions on Image Processing</i></b>, 2023, vol.32, pp.3759-3773. WOS:001028969300001.
-									<br/><a href="https://ieeexplore.ieee.org/document/10173741" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_Dynamics-Adaptive.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Zhang T, Lin Z, Wang Y, Ye D, Fu Q, Yang W, Wang X, Liang B, Yuan B, <b>Li X</b>. <a href="" class="bold font16">Dynamics-Adaptive Continual Reinforcement Learning via Progressive Contextualization[J].</a> <b><i>IEEE Transactions on Neural Networks and Learning Systems</i></b>, 2023. WOS:001005843700001.
-									<br/><a href="https://arxiv.org/abs/2209.00347" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_DRT.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Lan S, <b>Li X</b>, Guo Z. <a href="" class="bold font16">DRT: Deformable Region-based Transformer for Nonrigid Medical Image Registration with a Constraint of Orientation[J].</a> <b><i>IEEE Transactions on Instrumentation and Measurement</i></b>, 2023, vol.72, pp.1-15. WOS:001008184300015.
-									<br/><a href="https://ieeexplore.ieee.org/document/10121195" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_SODB.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Yuan Z, Pan W, Zhao X, Zhao F, Xu Z, <b>Li X</b>, et al. <a href="" class="bold font16">Publisher Correction: SODB facilitates comprehensive exploration of spatial omics data[J].</a> <b><i>Nature methods</i></b>, 2023, 20(4): 623. WOS:000953332800001.
-									<br/><a href="https://www.nature.com/articles/s41592-023-01844-9" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_Stay in Grid.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Tang M, Wang Z, Zeng Z, <b>Li X</b>, et al. <a href="" class="bold font16">Stay in Grid: Improving Video Captioning via Fully Grid-level Representation[J].</a> <b><i>IEEE Transactions on Circuits and Systems for Video Technology</i></b>, 2022, vol.33, no.7, pp.3319-3332. WOS:001022165700021.
-									<br/><a href="https://ieeexplore.ieee.org/document/9999686" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_ Intention-Driven.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Huo Y, Li X, Zhang X, <b>Li X</b>, et al. <a href="" class="bold font16">Adaptive Intention-Driven Variable Impedance Control for Wearable Robots With Compliant Actuators[J].</a> <b><i>IEEE Transactions on Control Systems Technology</i></b>, 2022, 31(3): 1308-1323. WOS:000890819200001.
-									<br/><a href="https://ieeexplore.ieee.org/document/9962240" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_Query2Set.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Chen S, Guo Z, <b>Li X</b>, et al. <a href="https://ieeexplore.ieee.org/document/9733330" class="bold font16">Query2Set: Single-to-Multiple Partial Fingerprint Recognition Based on Attention Mechanism[J].</a> <b><i>IEEE Transactions on Information Forensics and Security</i></b>, 2022, 17: 1243-1253. JCR Q1.
-									<br/><a href="https://ieeexplore.ieee.org/document/9733330" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_Deep Contrastive.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Yan J, Chen H, <b>Li X</b>, et al. <a href="" class="bold font16">Deep contrastive learning based tissue clustering for annotation-free histopathology image analysis[J].</a> <b><i>Computerized Medical Imaging and Graphics</i></b>, 2022, 97: 102053. JCR Q1.
-									<br/><a href="https://www.sciencedirect.com/science/article/pii/S089561112200026X/pdfft?md5=57f18d92e9b23141be33ad9e578f8976&pid=1-s2.0-S089561112200026X-main.pdf" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_Interval type-2.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Mazandarani M, <b>Li X</b>. <a href="" class="bold font16">Interval type-2 fractional fuzzy inference systems: Towards an evolution in fuzzy inference systems[J].</a> <b><i>Expert Systems with Applications</i></b>, 2022, 189: 115947. JCR Q1.
-									<br/><a href="https://www.sciencedirect.com/science/article/pii/S0957417421013002" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_Salience-Aware.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Yu B, Lu J, <b>Li X</b>, Zhou J; <a href="https://ieeexplore.ieee.org/document/9650907" class="bold font16">Salience-Aware Face Presentation Attack Detection via Deep Reinforcement Learning，</a><b><i>IEEE Transactions on Information Forensics and Security</i></b>, 2022 vol.17: 413-427, JCR Q1, WOS:000748395300005;
-									<br/><a href="https://ieeexplore.ieee.org/document/9650907" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_Structure-adaptive Neighborhood.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Li S, <b>Li X</b>, Lu J, Zhou J; <a href="" class="bold font16">Structure-adaptive Neighborhood Preserving Hashing for Scalable Video Search,</a> <b><i>IEEE Transactions on Circuits and Systems for Video Technology</i></b>, 2021, JCR Q1, vol.32, no.4, pp.2441-2454. WOS:000778973700059;
-									<br/><a href="https://ieeexplore.ieee.org/document/9467321" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_F3Rnet.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Xu Z, Luo J, Yan J, <b>Li X</b>, et al. <a href="" class="bold font16">F3RNet: full-resolution residual registration network for deformable image registration[J].</a> <b><i>International Journal of Computer Assisted Radiology and Surgery</i></b>, 2021, 16(6): 923-932. JCR Q2
-									<br/><a href="https://link.springer.com/article/10.1007/s11548-021-02359-4#Dataset%20and%20Implementation" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_BEAR-H.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Li X, Zhang X, <b>Li X</b>, et al. <a href="" class="bold font16">BEAR-H: An Intelligent Bilateral Exoskeletal Assistive Robot for Smart Rehabilitation[J].</a> <b><i>IEEE Robotics & Automation Magazine</i></b>, 2021, vol.29, no.3, pp.34-46.
-									<br/><a href="https://ieeexplore.ieee.org/document/9656918/keywords#full-text-header" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_A-steel-surface.jpg" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Hao R, Lu B, Cheng Y, <b>Li X</b>, et al. <a href="" class="bold font16">A steel surface defect inspection approach towards smart industrial monitoring[J].</a> <b><i>Journal of Intelligent Manufacturing</i></b>, 2021, 32(7): 1833-1843.   JCR Q1，WOS:000571362300001
-									<br/><a href="https://link.springer.com/article/10.1007/s10845-020-01670-2" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_Remaining-useful-life.jpg" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Mo Y, Wu Q, <b>Li X</b>, et al. <a href="" class="bold font16">Remaining useful life estimation via transformer encoder enhanced by a gated convolutional unit[J].</a> <b><i>Journal of Intelligent Manufacturing</i></b>, 2021: 1-10.   JCR Q1，WOS:000629084400001
-									<br/><a href="https://link.springer.com/content/pdf/10.1007/s10845-021-01750-x.pdf" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_Zernike aberration.jpg" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Zhang Y, Liu Y, Jiang S, Dixit K, Song P, Zhang X, Ji X, <b>Li X</b> , <a href="" class="bold font16">Neural network model assisted Fourier ptychography with Zernike aberration recovery and total variation constraint.,</a> <b><i>Journal of Biomedical Optics</i></b>, 2021, 26(3) : 036502, JCR Q2, WOS:000636641800015
-									<br/><a href="https://pubmed.ncbi.nlm.nih.gov/33768741/" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_22.jpg" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Liu Y, Gu K, <b>Li X</b>, et al. <a href="" class="bold font16">Blind image quality assessment by natural scene statistics and perceptual characteristics[J].</a> <b><i>ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM)</i></b>, 2020, 16(3): 91-111.  JCR Q1，WOS:000569375200017;
-									<br/><a href="https://dl.acm.org/doi/10.1145/3414837" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_23.jpg" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Li S, Chen Z, <b>Li X</b>, Lu J, Zhou J. <a href="" class="bold font16">Unsupervised variational video hashing with 1d-cnn-lstm networks[J].</a> <b><i>IEEE Transactions on Multimedia</i></b>, 2020, 22(6): 1542-1554, JCR Q1; WOS:000538033100014;
-									<br/><a href="https://ieeexplore.ieee.org/document/8861413" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_24.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Liu Y, Gu K, Zhang Y, <b>Li X</b>, Zhai G, Zhao D, Gao W, <a href="" class="bold font16">Unsupervised Blind Image Quality Evaluation via Statistical Measurements of Structure, Naturalness, and Perception,</a> <b><i>IEEE Transactions on Circuits and Systems for Video Technology</i></b>, 2020, 30(4): 929-943, JCR Q1, WOS:000561099300003;
-									<br/><a href="https://ieeexplore.ieee.org/document/8648473" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_25.jpg" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Yan J, Chen S, Zhang Y, <b>Li X</b>, et al. <a href="" class="bold font16">Neural Architecture Search for compressed sensing Magnetic Resonance image reconstruction[J].</a> <b><i>Computerized Medical Imaging and Graphics</i></b>, 2020, 85: 101784.  JCR Q1， WOS:000582704200006
-									<br/><a href="https://www.sciencedirect.com/science/article/pii/S089561112030077X" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<!-- <tr>
+							<table border="0">
+								<ol>
+									<style>
+										td {
+											padding: 5px;
+										}
+
+										p {
+											color: blue;
+										}
+									</style>
+									<tr>
+										<td>
+											<img src="img/sci-Hqg-net.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>He C, Li K, Xu G, Yan J, Tang L, Zhang Y, Wang Y, <b>Li X</b>. <a
+													href="https://ieeexplore.ieee.org/abstract/document/10272680"
+													class="bold font16">Hqg-net: Unpaired medical image enhancement with
+													high-quality guidance[J].</a> <b><i>IEEE Transactions on Neural
+														Networks and Learning Systems</i></b>, 2023, DOI:
+												10.1109/TNNLS.2023.3315307
+												<br /><a href="https://ieeexplore.ieee.org/abstract/document/10272680"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/HQG-Net"
+													class="bold font16">[Code]</a> <a
+													href="https://pan.baidu.com/s/1zmHwsxMWo_QoW9PnhKcNqA?pwd=h8mw&_at_=1709197840395#list/path=%2F"
+													class="bold font16">[Data]</a></a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_ROV6D.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Jingyi Tang, Zeyu Chen, Bowen Fu, Wenjie Lu, Shengquan Li, <b>Xiu
+													Li</b>, and Xiangyang Ji. <a
+													href="https://ieeexplore.ieee.org/abstract/document/10313927"
+													class="bold font16">ROV6D: 6D Pose Estimation Benchmark Dataset for
+													Underwater Remotely Operated Vehicles[J].</a> <b><i>IEEE Robotics
+														and Automation Letters</i></b>, 2024, vol.9, no.1, pp.65-72
+												<br /><a href="https://github.com/THUSIGSICLAB/ROV6D"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_ETDNet.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Hantao Zhou, Rui Yang, Runze Hu, Chang Shu, Xiaochu Tang, and <b>Xiu
+													Li</b>. <a
+													href="https://ieeexplore.ieee.org/abstract/document/10227321/"
+													class="bold font16">ETDNet: Efficient Transformer-based Detection
+													Network for Surface Defect Detection[J].</a> <b><i>IEEE Transactions
+														on Instrumentation and Measurement</i></b>, 2023, vol.72,
+												pp.1-14
+												<br /><a href="https://ieeexplore.ieee.org/abstract/document/10227321/"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/ETDNet"
+													class="bold font16">[Code]</a> <a
+													href="https://pan.baidu.com/s/1zfnyTZHHtSRq5iR3fNf7HA?pwd=f25o#list/path=%2F"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_Coarse-to-fine.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Meng C, Zhao Z, Guo W, Zhang Y, Wu H, Gao C, Li D, <b>Li X</b>, et al.
+												<a href="https://dl.acm.org/doi/10.1145/3606369"
+													class="bold font16">Coarse-to-fine knowledge-enhanced multi-interest
+													learning framework for multi-behavior recommendation[J].</a>
+												<b><i>ACM Transactions on Information Systems</i></b>, 2023, 42(1):
+												1-27. WOS:001040640300001.
+												<br /><a href="https://dl.acm.org/doi/10.1145/3606369"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/CKML"
+													class="bold font16">[Code]</a> <a
+													href="https://pan.baidu.com/s/1BTs7mlO592iCW71scfkNAg?pwd=9hvn"
+													class="bold font16">[Data]</a></a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_regional-based.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Lan S, <b>Li X</b>, Guo Z. <a href="" class="bold font16">An Adaptive
+													Region-Based Transformer for Nonrigid Medical Image Registration
+													With a Self-Constructing Latent Graph[J].</a> <b><i>IEEE
+														Transactions on Neural Networks and Learning Systems</i></b>,
+												2023. WOS:001040640300001.
+												<br /><a href="https://ieeexplore.ieee.org/document/10191036"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_ Discrepancy-Aware.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yu B, <b>Li X</b>, Li W, Zhou J, Lu J. <a href=""
+													class="bold font16">Discrepancy-Aware Meta-Learning for Zero-Shot
+													Face Manipulation Detection[J].</a> <b><i>IEEE Transactions on Image
+														Processing</i></b>, 2023, vol.32, pp.3759-3773.
+												WOS:001028969300001.
+												<br /><a href="https://ieeexplore.ieee.org/document/10173741"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_Dynamics-Adaptive.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Zhang T, Lin Z, Wang Y, Ye D, Fu Q, Yang W, Wang X, Liang B, Yuan B,
+												<b>Li X</b>. <a href="" class="bold font16">Dynamics-Adaptive Continual
+													Reinforcement Learning via Progressive Contextualization[J].</a>
+												<b><i>IEEE Transactions on Neural Networks and Learning Systems</i></b>,
+												2023. WOS:001005843700001.
+												<br /><a href="https://arxiv.org/abs/2209.00347"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_DRT.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Lan S, <b>Li X</b>, Guo Z. <a href="" class="bold font16">DRT:
+													Deformable Region-based Transformer for Nonrigid Medical Image
+													Registration with a Constraint of Orientation[J].</a> <b><i>IEEE
+														Transactions on Instrumentation and Measurement</i></b>, 2023,
+												vol.72, pp.1-15. WOS:001008184300015.
+												<br /><a href="https://ieeexplore.ieee.org/document/10121195"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_SODB.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yuan Z, Pan W, Zhao X, Zhao F, Xu Z, <b>Li X</b>, et al. <a href=""
+													class="bold font16">Publisher Correction: SODB facilitates
+													comprehensive exploration of spatial omics data[J].</a> <b><i>Nature
+														methods</i></b>, 2023, 20(4): 623. WOS:000953332800001.
+												<br /><a href="https://www.nature.com/articles/s41592-023-01844-9"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_Stay in Grid.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Tang M, Wang Z, Zeng Z, <b>Li X</b>, et al. <a href=""
+													class="bold font16">Stay in Grid: Improving Video Captioning via
+													Fully Grid-level Representation[J].</a> <b><i>IEEE Transactions on
+														Circuits and Systems for Video Technology</i></b>, 2022, vol.33,
+												no.7, pp.3319-3332. WOS:001022165700021.
+												<br /><a href="https://ieeexplore.ieee.org/document/9999686"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_ Intention-Driven.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Huo Y, Li X, Zhang X, <b>Li X</b>, et al. <a href=""
+													class="bold font16">Adaptive Intention-Driven Variable Impedance
+													Control for Wearable Robots With Compliant Actuators[J].</a>
+												<b><i>IEEE Transactions on Control Systems Technology</i></b>, 2022,
+												31(3): 1308-1323. WOS:000890819200001.
+												<br /><a href="https://ieeexplore.ieee.org/document/9962240"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_Query2Set.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Chen S, Guo Z, <b>Li X</b>, et al. <a
+													href="https://ieeexplore.ieee.org/document/9733330"
+													class="bold font16">Query2Set: Single-to-Multiple Partial
+													Fingerprint Recognition Based on Attention Mechanism[J].</a>
+												<b><i>IEEE Transactions on Information Forensics and Security</i></b>,
+												2022, 17: 1243-1253. JCR Q1.
+												<br /><a href="https://ieeexplore.ieee.org/document/9733330"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_Deep Contrastive.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yan J, Chen H, <b>Li X</b>, et al. <a href="" class="bold font16">Deep
+													contrastive learning based tissue clustering for annotation-free
+													histopathology image analysis[J].</a> <b><i>Computerized Medical
+														Imaging and Graphics</i></b>, 2022, 97: 102053. JCR Q1.
+												<br /><a
+													href="https://www.sciencedirect.com/science/article/pii/S089561112200026X/pdfft?md5=57f18d92e9b23141be33ad9e578f8976&pid=1-s2.0-S089561112200026X-main.pdf"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_Interval type-2.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Mazandarani M, <b>Li X</b>. <a href="" class="bold font16">Interval
+													type-2 fractional fuzzy inference systems: Towards an evolution in
+													fuzzy inference systems[J].</a> <b><i>Expert Systems with
+														Applications</i></b>, 2022, 189: 115947. JCR Q1.
+												<br /><a
+													href="https://www.sciencedirect.com/science/article/pii/S0957417421013002"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_Salience-Aware.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yu B, Lu J, <b>Li X</b>, Zhou J; <a
+													href="https://ieeexplore.ieee.org/document/9650907"
+													class="bold font16">Salience-Aware Face Presentation Attack
+													Detection via Deep Reinforcement Learning，</a><b><i>IEEE
+														Transactions on Information Forensics and Security</i></b>, 2022
+												vol.17: 413-427, JCR Q1, WOS:000748395300005;
+												<br /><a href="https://ieeexplore.ieee.org/document/9650907"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Structure-adaptive Neighborhood.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Li S, <b>Li X</b>, Lu J, Zhou J; <a href=""
+													class="bold font16">Structure-adaptive Neighborhood Preserving
+													Hashing for Scalable Video Search,</a> <b><i>IEEE Transactions on
+														Circuits and Systems for Video Technology</i></b>, 2021, JCR Q1,
+												vol.32, no.4, pp.2441-2454. WOS:000778973700059;
+												<br /><a href="https://ieeexplore.ieee.org/document/9467321"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_F3Rnet.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Xu Z, Luo J, Yan J, <b>Li X</b>, et al. <a href=""
+													class="bold font16">F3RNet: full-resolution residual registration
+													network for deformable image registration[J].</a>
+												<b><i>International Journal of Computer Assisted Radiology and
+														Surgery</i></b>, 2021, 16(6): 923-932. JCR Q2
+												<br /><a
+													href="https://link.springer.com/article/10.1007/s11548-021-02359-4#Dataset%20and%20Implementation"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_BEAR-H.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Li X, Zhang X, <b>Li X</b>, et al. <a href=""
+													class="bold font16">BEAR-H: An Intelligent Bilateral Exoskeletal
+													Assistive Robot for Smart Rehabilitation[J].</a> <b><i>IEEE Robotics
+														& Automation Magazine</i></b>, 2021, vol.29, no.3, pp.34-46.
+												<br /><a
+													href="https://ieeexplore.ieee.org/document/9656918/keywords#full-text-header"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_A-steel-surface.jpg" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Hao R, Lu B, Cheng Y, <b>Li X</b>, et al. <a href=""
+													class="bold font16">A steel surface defect inspection approach
+													towards smart industrial monitoring[J].</a> <b><i>Journal of
+														Intelligent Manufacturing</i></b>, 2021, 32(7): 1833-1843. JCR
+												Q1，WOS:000571362300001
+												<br /><a
+													href="https://link.springer.com/article/10.1007/s10845-020-01670-2"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_Remaining-useful-life.jpg"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Mo Y, Wu Q, <b>Li X</b>, et al. <a href="" class="bold font16">Remaining
+													useful life estimation via transformer encoder enhanced by a gated
+													convolutional unit[J].</a> <b><i>Journal of Intelligent
+														Manufacturing</i></b>, 2021: 1-10. JCR Q1，WOS:000629084400001
+												<br /><a
+													href="https://link.springer.com/content/pdf/10.1007/s10845-021-01750-x.pdf"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_Zernike aberration.jpg"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Zhang Y, Liu Y, Jiang S, Dixit K, Song P, Zhang X, Ji X, <b>Li X</b> ,
+												<a href="" class="bold font16">Neural network model assisted Fourier
+													ptychography with Zernike aberration recovery and total variation
+													constraint.,</a> <b><i>Journal of Biomedical Optics</i></b>, 2021,
+												26(3) : 036502, JCR Q2, WOS:000636641800015
+												<br /><a href="https://pubmed.ncbi.nlm.nih.gov/33768741/"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_22.jpg" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Liu Y, Gu K, <b>Li X</b>, et al. <a href="" class="bold font16">Blind
+													image quality assessment by natural scene statistics and perceptual
+													characteristics[J].</a> <b><i>ACM Transactions on Multimedia
+														Computing, Communications, and Applications (TOMM)</i></b>,
+												2020, 16(3): 91-111. JCR Q1，WOS:000569375200017;
+												<br /><a href="https://dl.acm.org/doi/10.1145/3414837"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_23.jpg" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Li S, Chen Z, <b>Li X</b>, Lu J, Zhou J. <a href=""
+													class="bold font16">Unsupervised variational video hashing with
+													1d-cnn-lstm networks[J].</a> <b><i>IEEE Transactions on
+														Multimedia</i></b>, 2020, 22(6): 1542-1554, JCR Q1;
+												WOS:000538033100014;
+												<br /><a href="https://ieeexplore.ieee.org/document/8861413"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_24.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Liu Y, Gu K, Zhang Y, <b>Li X</b>, Zhai G, Zhao D, Gao W, <a href=""
+													class="bold font16">Unsupervised Blind Image Quality Evaluation via
+													Statistical Measurements of Structure, Naturalness, and
+													Perception,</a> <b><i>IEEE Transactions on Circuits and Systems for
+														Video Technology</i></b>, 2020, 30(4): 929-943, JCR Q1,
+												WOS:000561099300003;
+												<br /><a href="https://ieeexplore.ieee.org/document/8648473"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_25.jpg" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yan J, Chen S, Zhang Y, <b>Li X</b>, et al. <a href=""
+													class="bold font16">Neural Architecture Search for compressed
+													sensing Magnetic Resonance image reconstruction[J].</a>
+												<b><i>Computerized Medical Imaging and Graphics</i></b>, 2020, 85:
+												101784. JCR Q1， WOS:000582704200006
+												<br /><a
+													href="https://www.sciencedirect.com/science/article/pii/S089561112030077X"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<!-- <tr>
 							<td>
 								<img src="img/test.png" style="width:150px; height:100px;">
 							</td>
@@ -554,7 +742,7 @@
 									<br/><a href="" class="bold font16">[Page]</a> <a href="" class="bold font16">[Data]</a> <a href="" class="bold font16">[Demo]</a></li>
 							</td>
 						</tr> -->
-						<!-- <tr>
+									<!-- <tr>
 							<td>
 								<img src="img/test.png" style="width:150px; height:100px;">
 							</td>
@@ -563,7 +751,7 @@
 									<br/><a href="" class="bold font16">[Page]</a> <a href="" class="bold font16">[Data]</a> <a href="" class="bold font16">[Demo]</a></li>
 							</td>
 						</tr> -->
-						<!-- <tr>
+									<!-- <tr>
 							<td>
 								<img src="img/test.png" style="width:150px; height:100px;">
 							</td>
@@ -572,7 +760,7 @@
 									<br/><a href="" class="bold font16">[Page]</a> <a href="" class="bold font16">[Data]</a> <a href="" class="bold font16">[Demo]</a></li>
 							</td>
 						</tr> -->
-						<!-- <tr>
+									<!-- <tr>
 							<td>
 								<img src="img/test.png" style="width:150px; height:100px;">
 							</td>
@@ -581,7 +769,7 @@
 									<br/><a href="" class="bold font16">[Page]</a> <a href="" class="bold font16">[Data]</a> <a href="" class="bold font16">[Demo]</a></li>
 							</td>
 						</tr> -->
-						<!-- <tr>
+									<!-- <tr>
 							<td>
 								<img src="img/test.png" style="width:150px; height:100px;">
 							</td>
@@ -590,7 +778,7 @@
 									<br/><a href="" class="bold font16">[Page]</a> <a href="" class="bold font16">[Data]</a> <a href="" class="bold font16">[Demo]</a></li>
 							</td>
 						</tr> -->
-						<!-- <tr>
+									<!-- <tr>
 							<td>
 								<img src="img/test.png" style="width:150px; height:100px;">
 							</td>
@@ -599,340 +787,678 @@
 									<br/><a href="" class="bold font16">[Page]</a> <a href="" class="bold font16">[Data]</a> <a href="" class="bold font16">[Demo]</a></li>
 							</td>
 						</tr> -->
-					</ol>  
-				</table>
+								</ol>
+							</table>
 
-				<header class="headerNav">
-			
-					<h1>会议论文：</h1>
-				</header>	
-				<table border="0">
-					<ol>
-						<tr>
-							<td>
-								<img src="img/conf_D3PO.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Kai Yang, Jian Tao, Jiafei Lyu, Chunjiang Ge, Qimai Li, Jiaxin Chen, Weihan Shen, Xiaolong Zhu, <b>Xiu Li</b>. <a href="https://arxiv.org/abs/2311.13231" class="bold font16">Using Human Feedback to Fine-tune Diffusion Models without Any Reward Model[C].</a> <b><i>In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR-24)</i></b>, 2024.
-									<br/><a href="https://arxiv.org/abs/2311.13231" class="bold font16">[Page]</a> <a href="https://github.com/THUSIGSICLAB/D3PO" class="bold font16">[Code]</a> <a href="https://huggingface.co/datasets/yangkaiSIGS/d3po_datasets/tree/main" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_UVCOM.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Yicheng Xiao, Zhuoyan Luo, Yong Liu, Yue Ma, Hengwei Bian, Yatai Ji, Yujiu Yang, <b>Xiu Li</b>. <a href="https://arxiv.org/pdf/2311.16464.pdf" class="bold font16">Bridging the Gap: A Unified Video Comprehension Framework for Moment Retrieval and Highlight Detection[C].</a> <b><i>In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR-24)</i></b>, 2024.
-									<br/><a href="https://arxiv.org/pdf/2311.16464.pdf" class="bold font16">[Page]</a> <a href="https://github.com/EasonXiao-888/UVCOM" class="bold font16">[Code]</a> <a href="https://github.com/EasonXiao-888/UVCOM" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_Exploring Multi-Modal Control.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Ronghui Li, Yuqin Dai, Yachao Zhang, Jun Li, Jian Yang, Jie Guo, <b>Xiu Li</b>. <a href="https://arxiv.org/pdf/2401.01382.pdf" class="bold font16">Exploring Multi-Modal Control in Music-Driven Dance Generation[C].</a> <b><i>In Proceedings of the International Conference on Acoustics, Speech and Signal Processing (ICASSP-24)</i></b>.
-									<br/><a href="https://arxiv.org/pdf/2401.01382.pdf" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_seabo.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Jiafei Lyu, Xiaoteng Ma, Le Wan, Runze Liu, <b>Xiu Li</b>, et al. <a href="https://arxiv.org/abs/2402.03807" class="bold font16">SEABO: A Simple Search-Based Method for Offline Imitation Learning[C].</a> <b><i>In Proceedings of the International Conference on Learning Representations (ICLR-24)</i></b>, 2024.
-									<br/><a href="https://arxiv.org/abs/2402.03807" class="bold font16">[Page]</a> <a href="https://github.com/THUSIGSICLAB/SEABO" class="bold font16">[Code]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_enhancing.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Chunming He, Kai Li, Yachao Zhang, Yulun Zhang, Zhenhua Guo, <b>Xiu Li</b>, et al. <a href="https://arxiv.org/pdf/2308.03166.pdf" class="bold font16">Strategic Preys Make Acute Predators: Enhancing Camouflaged Object Detectors by Generating Camouflaged Objects[C].</a> <b><i>In Proceedings of the International Conference on Learning Representations (ICLR-24)</i></b>, 2024.
-									<br/><a href="https://arxiv.org/pdf/2308.03166.pdf" class="bold font16">[Page]</a> <a href="https://github.com/ChunmingHe/Camouflageator" class="bold font16">[Code]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_cross-modal.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Yachao Zhang, Runze Hu, Ronghui Li, Yanyun Qu, Yuan Xie, <b>Xiu Li</b>. <a href="https://arxiv.org/abs/2304.01186" class="bold font16">Cross-Modal Match for Language Conditioned 3D Object Grounding[C].</a> <b><i>In Proceedings of the Association for the Advance of Artificial Intelligence (AAAI-24)</i></b>, 2024.
-									<br/></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_follow-pose.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Yue Ma, Yingqing He, Xiaodong Cun, Xintao Wang, Siran Chen, Ying Shan, <b>Xiu Li</b>, et al. <a href="https://arxiv.org/abs/2304.01186" class="bold font16">Follow Your Pose: Pose-Guided Text-to-Video Generation using Pose-Free Videos[C].</a> <b><i>In Proceedings of the Association for the Advance of Artificial Intelligence (AAAI-24)</i></b>, 2024.
-									<br/><a href="https://arxiv.org/abs/2304.01186" class="bold font16">[Page]</a> <a href="https://github.com/mayuelala/FollowYourPose" class="bold font16">[Code]</a> <a href="https://github.com/mayuelala/FollowYourPose" class="bold font16">[Demo]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_Chain-of-Generation.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Zunnan Xu, Yachao Zhang, Sicheng Yang, Ronghui Li, <b>Xiu Li</b>. <a href="https://arxiv.org/abs/2312.15900" class="bold font16">Chain of Generation: Multi-Modal Gesture Synthesis via Cascaded Conditional Control[C].</a> <b><i>In Proceedings of the Association for the Advance of Artificial Intelligence (AAAI-24)</i></b>, 2024.
-									<br/><a href="https://arxiv.org/abs/2312.15900" class="bold font16">[Page]</a> <a href="https://drive.google.com/file/d/1Akf0WgAwuH2fvlWbvNpif4XRqXlpznh9/view?usp=share_link" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/sci_hierarchical-projection.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>C Meng, H Zhang, W Guo, H Guo, H Liu, Y Zhang, H Zheng, R Tang, <b>X Li</b>, et al. <a href="https://dl.acm.org/doi/10.1145/3580305.3599838" class="bold font16">Hierarchical Projection Enhanced Multi-Behavior Recommendation[C].</a> <b><i>In Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (SIGKDD-23)</i></b>, 2023: 4649-4660.
-									<br/><a href="https://dl.acm.org/doi/10.1145/3580305.3599838" class="bold font16">[Page]</a> <a href="https://github.com/THUSIGSICLAB/HPMR" class="bold font16">[Code]</a> <a href="https://github.com/MC-CV/HPMR" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_Parallel-Knowledge.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Chang Meng, Chenhao Zhai, Yu Yang, Hengyu Zhang, <b>Xiu Li</b>. <a href="https://arxiv.org/abs/2308.04807" class="bold font16">Parallel Knowledge Enhancement based Framework for Multi-behavior Recommendation[C].</a> <b><i>In Proceedings of the ACM International Conference on Information & Knowledge Management (CIKM-23)</i></b>, 2023: 4649-4660.
-									<br/><a href="https://arxiv.org/abs/2308.04807" class="bold font16">[Page]</a> <a href="https://github.com/THUSIGSICLAB/PKEF" class="bold font16">[Code]</a> <a href="https://github.com/MC-CV/PKEF" class="bold font16">[Data]</li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_Camouflaged-object.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>C He, K Li, Y Zhang, L Tang, Y Zhang, <b>X Li</b>. <a href="https://openaccess.thecvf.com/content/CVPR2023/html/He_Camouflaged_Object_Detection_With_Feature_Decomposition_and_Edge_Reconstruction_CVPR_2023_paper.html" class="bold font16">Camouflaged object detection with feature decomposition and edge reconstruction[C].</a> <b><i>In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR-23)</i></b>, 2023: 22046-22055.
-									<br/><a href="https://openaccess.thecvf.com/content/CVPR2023/html/He_Camouflaged_Object_Detection_With_Feature_Decomposition_and_Edge_Reconstruction_CVPR_2023_paper.html" class="bold font16">[Page]</a> <a href="https://github.com/THUSIGSICLAB/FEDER" class="bold font16">[Code]</a> <a href="https://github.com/ChunmingHe/FEDER" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_Weakly-Supervised.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>C He, K Li, Y Zhang, L Tang, Y Zhang, Z Guo, <b>X Li</b>. <a href="https://arxiv.org/abs/2305.11003" class="bold font16">Weakly-Supervised Concealed Object Segmentation with SAM-based Pseudo Labeling and Multi-scale Feature Grouping[C].</a> <b><i>Advances in Neural Information Processing Systems (NeurIPS-23)</i></b>, 2023.
-									<br/><a href="https://arxiv.org/abs/2305.11003" class="bold font16">[Page]</a> <a href="https://github.com/ChunmingHe/WS-SAM" class="bold font16">[Code]</a> <a href="https://github.com/ChunmingHe/WS-SAM" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_Degradation-Resistant.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>C He, K Li, G Xu, Y Zhang, R Hu, Z Guo, <b>X Li</b>. <a href="https://openaccess.thecvf.com/content/ICCV2023/html/He_Degradation-Resistant_Unfolding_Network_for_Heterogeneous_Image_Fusion_ICCV_2023_paper.html" class="bold font16">Degradation-Resistant Unfolding Network for Heterogeneous Image Fusion[C].</a> <b><i>In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV-23)</i></b>, 2023: 12611-12621.
-									<br/><a href="https://openaccess.thecvf.com/content/ICCV2023/html/He_Degradation-Resistant_Unfolding_Network_for_Heterogeneous_Image_Fusion_ICCV_2023_paper.html" class="bold font16">[Page]</a> <a href="https://github.com/ChunmingHe/DeRUN" class="bold font16">[Code]</a> <a href="https://github.com/ChunmingHe/DeRUN" class="bold font16">[Data]</a> <a href="https://github.com/ChunmingHe/DeRUN" class="bold font16">[Demo]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_BoxSnake.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Rui Yang, Lin Song, Yixiao Ge, <b>Xiu Li</b>. <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_BoxSnake_Polygonal_Instance_Segmentation_with_Box_Supervision_ICCV_2023_paper.pdf" class="bold font16">BoxSnake: Polygonal Instance Segmentation with Box Supervision[C].</a> <b><i>In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV-23)</i></b>, 2023: 2303.11630.
-									<br/><a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_BoxSnake_Polygonal_Instance_Segmentation_with_Box_Supervision_ICCV_2023_paper.pdf" class="bold font16">[Page]</a> <a href="https://github.com/Yangr116/BoxSnake" class="bold font16">[Code]</a> <a href="https://github.com/THUSIGSICLAB/BoxSnake" class="bold font16">[Data]</a></a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_SemanticAC.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Yicheng Xiao, Yue Ma, Shuyan Li, Hantao Zhou, Ran Liao, <b>Xiu Li</b>. <a href="https://arxiv.org/abs/2302.05940" class="bold font16">SemanticAC: Semantics-Assisted Framework for Audio Classification[C].</a> <b><i>In Proceedings of the International Conference on Acoustics, Speech and Signal Processing (ICASSP-23)</i></b>.
-									<br/><a href="https://arxiv.org/abs/2302.05940" class="bold font16">[Page]</a> <a href="https://github.com/THUSIGSICLAB/SemanticAC" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_source-free.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>L Tang, K Li, C He, Y Zhang, <b>X Li</b>. <a href="https://ieeexplore.ieee.org/document/10350421" class="bold font16">Consistency Regularization for Generalizable Source-free Domain Adaptation[C].</a> <b><i>In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV-23)</i></b>, 2023: 4323-4333.
-									<br/><a href="https://ieeexplore.ieee.org/document/10350421" class="bold font16">[Page]</a> <a href="https://github.com/THUSIGSICLAB/SFDA-CBMT" class="bold font16">[Code]</a> <a href="https://pan.baidu.com/s/1vZOPEvlb3foDqk6Gum5fBA?pwd=so3s" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_FineDance.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Ronghui Li, Junfan Zhao, Yachao Zhang, Mingyang Su, Zeping Ren, Han Zhang, Yansong Tang, <b>Xiu Li</b>. <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Li_FineDance_A_Fine-grained_Choreography_Dataset_for_3D_Full_Body_Dance_ICCV_2023_paper.pdf" class="bold font16">FineDance: A Fine-grained Choreography Dataset for 3D Full Body Dance Generation[C].</a> <b><i>In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV-23)</i></b>, 2023.
-									<br/><a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Li_FineDance_A_Fine-grained_Choreography_Dataset_for_3D_Full_Body_Dance_ICCV_2023_paper.pdf" class="bold font16">[Page]</a> <a href="https://github.com/THUSIGSICLAB/FineDance" class="bold font16">[Code]</a> <a href="https://pan.baidu.com/s/1DdJjfXWZZvnUmqPUrOTf7g?pwd=dkqn&_at_=1709532710678" class="bold font16">[Data]</a> <a href="https://github.com/li-ronghui/FineDance" class="bold font16">[Demo]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_flag3d.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Y Tang, J Liu, A Liu, B Yang, W Dai, Y Rao, J Lu, J Zhou, <b>X Li</b>. <a href="" class="bold font16">Flag3d: A 3d fitness activity dataset with language instruction[C].</a> <b><i>In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR-23)</i></b>, 2023: 22106-22117.
-									<br/><a href="https://arxiv.org/abs/2212.04638" class="bold font16">[Page]</a> <a href="https://andytang15.github.io/FLAG3D/" class="bold font16">[Demo]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_OrdinalCLIP.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>W Li, X Huang, Z Zhu, Y Tang, <b>X Li</b>, J Zhou, J Lu. <a href="" class="bold font16">Ordinalclip: Learning rank prompts for language-guided ordinal regression[C].</a> <b><i>Advances in Neural Information Processing Systems (NeurIPS-22)</i></b>, 2022, 35: 35313-35325.
-									<br/><a href="https://arxiv.org/abs/2206.02338" class="bold font16">[Page]</a> <a href="https://github.com/xk-huang/OrdinalCLIP" class="bold font16">[Code]</a> <a href="https://pan.baidu.com/share/init?surl=RSYSx8tP7M4grUeVfuUhvQ&pwd=k44w" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_mildly-conservative.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>J Lyu, X Ma, <b>X Li</b>, Z Lu. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/0b5669c3b07bb8429af19a7919376ff5-Paper-Conference.pdf" class="bold font16">Mildly conservative Q-learning for offline reinforcement learning[C].</a> <b><i>Advances in Neural Information Processing Systems (NeurIPS-22)</i></b>, 2022, 35: 1711-1724.
-									<br/><a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/0b5669c3b07bb8429af19a7919376ff5-Paper-Conference.pdf" class="bold font16">[Page]</a> <a href="https://github.com/dmksjfl/MCQ" class="bold font16">[Code]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_double-check.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>J Lyu, <b>X Li</b>, Z Lu. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/f9e2800a251fa9107a008104f47c45d1-Paper-Conference.pdf" class="bold font16">Double Check Your State Before Trusting It: Confidence-Aware Bidirectional Offline Model-Based Imagination[C].</a> <b><i>Advances in Neural Information Processing Systems (NeurIPS-22)</i></b>, 2022, 35: 38218-38231.
-									<br/><a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/f9e2800a251fa9107a008104f47c45d1-Paper-Conference.pdf" class="bold font16">[Page]</a> <a href="https://github.com/dmksjfl/CABI" class="bold font16">[Code]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_ScalableViT.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>R Yang, H Ma, J Wu, Y Tang, X Xiao, M Zheng, <b>X Li</b>. <a href="https://arxiv.org/abs/2203.10790" class="bold font16">Scalablevit: Rethinking the context-oriented generalization of vision transformer[C].</a> <b><i>European Conference on Computer Vision (ECCV-22)</i></b>, 2022: 480-496.
-									<br/><a href="https://arxiv.org/abs/2203.10790" class="bold font16">[Page]</a> <a href="https://github.com/Yangr116/ScalableViT" class="bold font16">[Code]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_D2.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Z Chen, C Wang, H Zhao, B Yuan, <b>X Li</b>. <a href="" class="bold font16">D2Animator: Dual Distillation of StyleGAN For High-Resolution Face Animation[C].</a> <b><i>In Proceedings of the 30th ACM International Conference on Multimedia (ACM MM-22)</i></b>, 2022: 1769-1778.
-									<br/><a href="https://dl.acm.org/doi/10.1145/3503161.3548002" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_Human-Action-Reasoning.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Y Ma, Y Wang, Y Wu, Z Lyu, S Chen, <b>X Li</b>, Y Qiao. <a href="https://dl.acm.org/doi/abs/10.1145/3503161.3548257" class="bold font16">Visual knowledge graph for human action reasoning in videos[C].</a> <b><i>In Proceedings of the 30th ACM International Conference on Multimedia (ACM MM-22)</i></b>, 2022: 4132-4141.
-									<br/><a href="https://dl.acm.org/doi/abs/10.1145/3503161.3548257" class="bold font16">[Page]</a> <a href="https://github.com/mayuelala/AKU" class="bold font16">[Code]</a></a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_Disentangling.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>H Zhang, E Yuan, W Guo, Z He, J Qin, H Guo, B Chen, <b>X Li</b>, R Tang. <a href="https://doi.org/10.1145/3511808.3557289" class="bold font16">Disentangling Past-Future Modeling in Sequential Recommendation via Dual Networks[C].</a> <b><i>In Proceedings of the 31st ACM International Conference on Information & Knowledge Management (CIKM-22)</i></b>, 2022: 2549-2558.
-									<br/><a href="https://doi.org/10.1145/3511808.3557289" class="bold font16">[Page]</a> <a href="https://github.com/zhy99426/DualRec" class="bold font16">[Code]</a> <a href="https://github.com/zhy99426/DualRec" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_rethinking-goal.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>R Yang, Y Lu, W Li, H Sun, M Fang, Y Du, <b>X Li</b>, et al. <a href="https://arxiv.org/abs/2202.04478v1" class="bold font16">Rethinking Goal-conditioned Supervised Learning and Its Connection to Offline RL[C].</a> <b><i>In Proceedings of the International Conference on Learning Representations (ICLR-22)</i></b>, 2022.
-									<br/><a href="https://arxiv.org/abs/2202.04478v1" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_Efficient-continuous.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Lyu, J., Ma, X., Yan, J., <b>Li, X</b>. <a href="https://ojs.aaai.org/index.php/AAAI/article/view/20732/20491" class="bold font16">Efficient continuous control with double actors and regularized critics. [C]</a> <b><i>In Proceedings of the AAAI Conference on Artificial Intelligence (AAAI-22)</i></b>, 2022.
-									<br/><a href="https://ojs.aaai.org/index.php/AAAI/article/view/20732/20491" class="bold font16">[Page]</a> <a href="https://github.com/dmksjfl/DARC" class="bold font16">[Code]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_22.jpg" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Li, S., <b>Li, X</b>., Lu, J., & Zhou, J. <a href="" class="bold font16">Self-supervised video hashing via bidirectional transformers. [C]</a> <b><i>In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR-21)</i></b> 2021:13549-13558.
-									<br/><a href="https://ieeexplore.ieee.org/document/9577815" class="bold font16">[Page]</a> <a href="https://github.com/Lily1994/BTH" class="bold font16">[Code]</a> <a href="https://github.com/Lily1994/BTH" class="bold font16">[Data]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_A Self-boosting Framework.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Wang Z, Zhou L, Wang L, <b>Li X</b>. <a href="" class="bold font16">A Self-boosting Framework for Automated Radiographic Report Generation. [C]</a> <b><i>In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR-21)</i></b>, 2021, 2433-2442.
-									<br/><a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_A_Self-Boosting_Framework_for_Automated_Radiographic_Report_Generation_CVPR_2021_paper.pdf" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_Implicit Feature.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Ma, L., Wang, T., Dong, B., Yan, J., <b>Li, X</b>., Zhang, X. <a href="" class="bold font16">Implicit Feature Refinement for Instance Segmentation. [C]</a> <b><i>In Proceedings of the 29th ACM International Conference on Multimedia (ACMMM-21) 2021</i></b>, 3088-3096.
-									<br/><a href="https://www.semanticscholar.org/paper/Implicit-Feature-Refinement-for-Instance-Ma-Wang/20f9ae00f13ca6c2d4158289b263ea6e3a8001c2" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_25.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Xu, Z, Lu D, Wang Y, Luo J, Jayender J, Ma K, Zheng Y, <b>Li X</b>. <a href="" class="bold font16">Noisy labels are treasure: mean-teacher-assisted confident learning for hepatic vessel segmentation. [C]</a> <b><i>In Proceedings of the International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI-21)</i></b>, 2021, 3-13.
-									<br/><a href="https://arxiv.org/abs/2106.01860" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_26.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>J Yan, H Chen, K Wang, Y Ji, Y Zhu, J Li, D Xie, Z Xu, J Huang, S Cheng, <b>X Li</b>, J Yao, <a href="" class="bold font16">Hierarchical attention guided framework for multi-resolution collaborative whole slide image segmentation[C].</a> <b><i>In Proceedings of the International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI-21)</i></b>, 2021: 153-163.
-									<br/><a href="https://link.springer.com/chapter/10.1007/978-3-030-87237-3_15" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_27.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Yu B, Li W, <b>Li X</b>, et al. <a href="" class="bold font16">Frequency-aware spatiotemporal transformers for video inpainting detection. [C]</a> <b><i>In Proceedings of the IEEE International Conference on Computer Vision (ICCV-21).</i></b> 2021: 8188-8197.
-									<br/><a href="https://ieeexplore.ieee.org/document/9710661" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_28.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Xu Z, Yan J, Luo J, <b>Li X</b>, et al. <a href="" class="bold font16">Unsupervised multimodal image registration with adaptative gradient guidance[C]</a> <b><i>In Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP-21)</i></b>. IEEE, 2021: 1225-1229.
-									<br/><a href="https://ieeexplore.ieee.org/abstract/document/9414320" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_29.jpg" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Ma L, Dong B, Yan J, et al. <a href="" class="bold font16">Matting enhanced mask R-CNN[C]</a> <b><i>In Proceedings of the 2021 IEEE International Conference on Multimedia and Expo (ICME-21).</i></b> IEEE, 2021: 1-6.
-									<br/><a href="https://ieeexplore.ieee.org/abstract/document/9428183" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="img/conf_30.png" style="width:150px; height:100px;">
-							</td>
-							<td>
-								<li>Xu Z, Luo J, Yan J, <b>Li X</b>，et al. <a href="" class="bold font16">Adversarial uni-and multi-modal stream networks for multimodal image registration. [C]</a> <b><i>In Proceedings of the International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI-20)</i></b>. 2020: 222-232.
-									<br/><a href="https://link.springer.com/chapter/10.1007/978-3-030-59716-0_22" class="bold font16">[Page]</a></li>
-							</td>
-						</tr>
-						<!-- <tr>
+							<header class="headerNav">
+
+								<h1>会议论文：</h1>
+							</header>
+							<table border="0">
+								<ol>
+									<tr>
+										<td>
+											<img src="img/conf_D3PO.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Kai Yang, Jian Tao, Jiafei Lyu, Chunjiang Ge, Qimai Li, Jiaxin Chen,
+												Weihan Shen, Xiaolong Zhu, <b>Xiu Li</b>. <a
+													href="https://arxiv.org/abs/2311.13231" class="bold font16">Using
+													Human Feedback to Fine-tune Diffusion Models without Any Reward
+													Model[C].</a> <b><i>In Proceedings of the IEEE/CVF Conference on
+														Computer Vision and Pattern Recognition (CVPR-24)</i></b>, 2024.
+												<br /><a href="https://arxiv.org/abs/2311.13231"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/D3PO"
+													class="bold font16">[Code]</a> <a
+													href="https://huggingface.co/datasets/yangkaiSIGS/d3po_datasets/tree/main"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_UVCOM.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yicheng Xiao, Zhuoyan Luo, Yong Liu, Yue Ma, Hengwei Bian, Yatai Ji,
+												Yujiu Yang, <b>Xiu Li</b>. <a
+													href="https://arxiv.org/pdf/2311.16464.pdf"
+													class="bold font16">Bridging the Gap: A Unified Video Comprehension
+													Framework for Moment Retrieval and Highlight Detection[C].</a>
+												<b><i>In Proceedings of the IEEE/CVF Conference on Computer Vision and
+														Pattern Recognition (CVPR-24)</i></b>, 2024.
+												<br /><a href="https://arxiv.org/pdf/2311.16464.pdf"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/EasonXiao-888/UVCOM"
+													class="bold font16">[Code]</a> <a
+													href="https://github.com/EasonXiao-888/UVCOM"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Exploring Multi-Modal Control.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Ronghui Li, Yuqin Dai, Yachao Zhang, Jun Li, Jian Yang, Jie Guo, <b>Xiu
+													Li</b>. <a href="https://arxiv.org/pdf/2401.01382.pdf"
+													class="bold font16">Exploring Multi-Modal Control in Music-Driven
+													Dance Generation[C].</a> <b><i>In Proceedings of the International
+														Conference on Acoustics, Speech and Signal Processing
+														(ICASSP-24)</i></b>.
+												<br /><a href="https://arxiv.org/pdf/2401.01382.pdf"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_seabo.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Jiafei Lyu, Xiaoteng Ma, Le Wan, Runze Liu, <b>Xiu Li</b>, et al. <a
+													href="https://arxiv.org/abs/2402.03807" class="bold font16">SEABO: A
+													Simple Search-Based Method for Offline Imitation Learning[C].</a>
+												<b><i>In Proceedings of the International Conference on Learning
+														Representations (ICLR-24)</i></b>, 2024.
+												<br /><a href="https://arxiv.org/abs/2402.03807"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/SEABO"
+													class="bold font16">[Code]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_enhancing.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Chunming He, Kai Li, Yachao Zhang, Yulun Zhang, Zhenhua Guo, <b>Xiu
+													Li</b>, et al. <a href="https://arxiv.org/pdf/2308.03166.pdf"
+													class="bold font16">Strategic Preys Make Acute Predators: Enhancing
+													Camouflaged Object Detectors by Generating Camouflaged
+													Objects[C].</a> <b><i>In Proceedings of the International Conference
+														on Learning Representations (ICLR-24)</i></b>, 2024.
+												<br /><a href="https://arxiv.org/pdf/2308.03166.pdf"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/ChunmingHe/Camouflageator"
+													class="bold font16">[Code]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_cross-modal.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yachao Zhang, Runze Hu, Ronghui Li, Yanyun Qu, Yuan Xie, <b>Xiu Li</b>.
+												<a href="https://arxiv.org/abs/2304.01186"
+													class="bold font16">Cross-Modal Match for Language Conditioned 3D
+													Object Grounding[C].</a> <b><i>In Proceedings of the Association for
+														the Advance of Artificial Intelligence (AAAI-24)</i></b>, 2024.
+												<br />
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_follow-pose.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yue Ma, Yingqing He, Xiaodong Cun, Xintao Wang, Siran Chen, Ying Shan,
+												<b>Xiu Li</b>, et al. <a href="https://arxiv.org/abs/2304.01186"
+													class="bold font16">Follow Your Pose: Pose-Guided Text-to-Video
+													Generation using Pose-Free Videos[C].</a> <b><i>In Proceedings of
+														the Association for the Advance of Artificial Intelligence
+														(AAAI-24)</i></b>, 2024.
+												<br /><a href="https://arxiv.org/abs/2304.01186"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/mayuelala/FollowYourPose"
+													class="bold font16">[Code]</a> <a
+													href="https://github.com/mayuelala/FollowYourPose"
+													class="bold font16">[Demo]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Chain-of-Generation.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Zunnan Xu, Yachao Zhang, Sicheng Yang, Ronghui Li, <b>Xiu Li</b>. <a
+													href="https://arxiv.org/abs/2312.15900" class="bold font16">Chain of
+													Generation: Multi-Modal Gesture Synthesis via Cascaded Conditional
+													Control[C].</a> <b><i>In Proceedings of the Association for the
+														Advance of Artificial Intelligence (AAAI-24)</i></b>, 2024.
+												<br /><a href="https://arxiv.org/abs/2312.15900"
+													class="bold font16">[Page]</a> <a
+													href="https://drive.google.com/file/d/1Akf0WgAwuH2fvlWbvNpif4XRqXlpznh9/view?usp=share_link"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_hierarchical-projection.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>C Meng, H Zhang, W Guo, H Guo, H Liu, Y Zhang, H Zheng, R Tang, <b>X
+													Li</b>, et al. <a
+													href="https://dl.acm.org/doi/10.1145/3580305.3599838"
+													class="bold font16">Hierarchical Projection Enhanced Multi-Behavior
+													Recommendation[C].</a> <b><i>In Proceedings of the 29th ACM SIGKDD
+														Conference on Knowledge Discovery and Data Mining
+														(SIGKDD-23)</i></b>, 2023: 4649-4660.
+												<br /><a href="https://dl.acm.org/doi/10.1145/3580305.3599838"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/HPMR"
+													class="bold font16">[Code]</a> <a
+													href="https://github.com/MC-CV/HPMR" class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Parallel-Knowledge.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Chang Meng, Chenhao Zhai, Yu Yang, Hengyu Zhang, <b>Xiu Li</b>. <a
+													href="https://arxiv.org/abs/2308.04807" class="bold font16">Parallel
+													Knowledge Enhancement based Framework for Multi-behavior
+													Recommendation[C].</a> <b><i>In Proceedings of the ACM International
+														Conference on Information & Knowledge Management
+														(CIKM-23)</i></b>, 2023: 4649-4660.
+												<br /><a href="https://arxiv.org/abs/2308.04807"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/PKEF"
+													class="bold font16">[Code]</a> <a
+													href="https://github.com/MC-CV/PKEF" class="bold font16">[Data]
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Camouflaged-object.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>C He, K Li, Y Zhang, L Tang, Y Zhang, <b>X Li</b>. <a
+													href="https://openaccess.thecvf.com/content/CVPR2023/html/He_Camouflaged_Object_Detection_With_Feature_Decomposition_and_Edge_Reconstruction_CVPR_2023_paper.html"
+													class="bold font16">Camouflaged object detection with feature
+													decomposition and edge reconstruction[C].</a> <b><i>In Proceedings
+														of the IEEE/CVF Conference on Computer Vision and Pattern
+														Recognition (CVPR-23)</i></b>, 2023: 22046-22055.
+												<br /><a
+													href="https://openaccess.thecvf.com/content/CVPR2023/html/He_Camouflaged_Object_Detection_With_Feature_Decomposition_and_Edge_Reconstruction_CVPR_2023_paper.html"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/FEDER"
+													class="bold font16">[Code]</a> <a
+													href="https://github.com/ChunmingHe/FEDER"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Weakly-Supervised.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>C He, K Li, Y Zhang, L Tang, Y Zhang, Z Guo, <b>X Li</b>. <a
+													href="https://arxiv.org/abs/2305.11003"
+													class="bold font16">Weakly-Supervised Concealed Object Segmentation
+													with SAM-based Pseudo Labeling and Multi-scale Feature
+													Grouping[C].</a> <b><i>Advances in Neural Information Processing
+														Systems (NeurIPS-23)</i></b>, 2023.
+												<br /><a href="https://arxiv.org/abs/2305.11003"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/ChunmingHe/WS-SAM"
+													class="bold font16">[Code]</a> <a
+													href="https://github.com/ChunmingHe/WS-SAM"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Degradation-Resistant.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>C He, K Li, G Xu, Y Zhang, R Hu, Z Guo, <b>X Li</b>. <a
+													href="https://openaccess.thecvf.com/content/ICCV2023/html/He_Degradation-Resistant_Unfolding_Network_for_Heterogeneous_Image_Fusion_ICCV_2023_paper.html"
+													class="bold font16">Degradation-Resistant Unfolding Network for
+													Heterogeneous Image Fusion[C].</a> <b><i>In Proceedings of the
+														IEEE/CVF International Conference on Computer Vision
+														(ICCV-23)</i></b>, 2023: 12611-12621.
+												<br /><a
+													href="https://openaccess.thecvf.com/content/ICCV2023/html/He_Degradation-Resistant_Unfolding_Network_for_Heterogeneous_Image_Fusion_ICCV_2023_paper.html"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/ChunmingHe/DeRUN"
+													class="bold font16">[Code]</a> <a
+													href="https://github.com/ChunmingHe/DeRUN"
+													class="bold font16">[Data]</a> <a
+													href="https://github.com/ChunmingHe/DeRUN"
+													class="bold font16">[Demo]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_BoxSnake.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Rui Yang, Lin Song, Yixiao Ge, <b>Xiu Li</b>. <a
+													href="https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_BoxSnake_Polygonal_Instance_Segmentation_with_Box_Supervision_ICCV_2023_paper.pdf"
+													class="bold font16">BoxSnake: Polygonal Instance Segmentation with
+													Box Supervision[C].</a> <b><i>In Proceedings of the IEEE/CVF
+														International Conference on Computer Vision (ICCV-23)</i></b>,
+												2023: 2303.11630.
+												<br /><a
+													href="https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_BoxSnake_Polygonal_Instance_Segmentation_with_Box_Supervision_ICCV_2023_paper.pdf"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/Yangr116/BoxSnake"
+													class="bold font16">[Code]</a> <a
+													href="https://github.com/THUSIGSICLAB/BoxSnake"
+													class="bold font16">[Data]</a></a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_SemanticAC.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yicheng Xiao, Yue Ma, Shuyan Li, Hantao Zhou, Ran Liao, <b>Xiu Li</b>.
+												<a href="https://arxiv.org/abs/2302.05940"
+													class="bold font16">SemanticAC: Semantics-Assisted Framework for
+													Audio Classification[C].</a> <b><i>In Proceedings of the
+														International Conference on Acoustics, Speech and Signal
+														Processing (ICASSP-23)</i></b>.
+												<br /><a href="https://arxiv.org/abs/2302.05940"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/SemanticAC"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_source-free.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>L Tang, K Li, C He, Y Zhang, <b>X Li</b>. <a
+													href="https://ieeexplore.ieee.org/document/10350421"
+													class="bold font16">Consistency Regularization for Generalizable
+													Source-free Domain Adaptation[C].</a> <b><i>In Proceedings of the
+														IEEE/CVF International Conference on Computer Vision
+														(ICCV-23)</i></b>, 2023: 4323-4333.
+												<br /><a href="https://ieeexplore.ieee.org/document/10350421"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/SFDA-CBMT"
+													class="bold font16">[Code]</a> <a
+													href="https://pan.baidu.com/s/1vZOPEvlb3foDqk6Gum5fBA?pwd=so3s"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_FineDance.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Ronghui Li, Junfan Zhao, Yachao Zhang, Mingyang Su, Zeping Ren, Han
+												Zhang, Yansong Tang, <b>Xiu Li</b>. <a
+													href="https://openaccess.thecvf.com/content/ICCV2023/papers/Li_FineDance_A_Fine-grained_Choreography_Dataset_for_3D_Full_Body_Dance_ICCV_2023_paper.pdf"
+													class="bold font16">FineDance: A Fine-grained Choreography Dataset
+													for 3D Full Body Dance Generation[C].</a> <b><i>In Proceedings of
+														the IEEE/CVF International Conference on Computer Vision
+														(ICCV-23)</i></b>, 2023.
+												<br /><a
+													href="https://openaccess.thecvf.com/content/ICCV2023/papers/Li_FineDance_A_Fine-grained_Choreography_Dataset_for_3D_Full_Body_Dance_ICCV_2023_paper.pdf"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/FineDance"
+													class="bold font16">[Code]</a> <a
+													href="https://pan.baidu.com/s/1DdJjfXWZZvnUmqPUrOTf7g?pwd=dkqn&_at_=1709532710678"
+													class="bold font16">[Data]</a> <a
+													href="https://github.com/li-ronghui/FineDance"
+													class="bold font16">[Demo]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_flag3d.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Y Tang, J Liu, A Liu, B Yang, W Dai, Y Rao, J Lu, J Zhou, <b>X Li</b>.
+												<a href="" class="bold font16">Flag3d: A 3d fitness activity dataset
+													with language instruction[C].</a> <b><i>In Proceedings of the
+														IEEE/CVF Conference on Computer Vision and Pattern Recognition
+														(CVPR-23)</i></b>, 2023: 22106-22117.
+												<br /><a href="https://arxiv.org/abs/2212.04638"
+													class="bold font16">[Page]</a> <a
+													href="https://andytang15.github.io/FLAG3D/"
+													class="bold font16">[Demo]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_OrdinalCLIP.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>W Li, X Huang, Z Zhu, Y Tang, <b>X Li</b>, J Zhou, J Lu. <a href=""
+													class="bold font16">Ordinalclip: Learning rank prompts for
+													language-guided ordinal regression[C].</a> <b><i>Advances in Neural
+														Information Processing Systems (NeurIPS-22)</i></b>, 2022, 35:
+												35313-35325.
+												<br /><a href="https://arxiv.org/abs/2206.02338"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/xk-huang/OrdinalCLIP"
+													class="bold font16">[Code]</a> <a
+													href="https://pan.baidu.com/share/init?surl=RSYSx8tP7M4grUeVfuUhvQ&pwd=k44w"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_mildly-conservative.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>J Lyu, X Ma, <b>X Li</b>, Z Lu. <a
+													href="https://proceedings.neurips.cc/paper_files/paper/2022/file/0b5669c3b07bb8429af19a7919376ff5-Paper-Conference.pdf"
+													class="bold font16">Mildly conservative Q-learning for offline
+													reinforcement learning[C].</a> <b><i>Advances in Neural Information
+														Processing Systems (NeurIPS-22)</i></b>, 2022, 35: 1711-1724.
+												<br /><a
+													href="https://proceedings.neurips.cc/paper_files/paper/2022/file/0b5669c3b07bb8429af19a7919376ff5-Paper-Conference.pdf"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/dmksjfl/MCQ" class="bold font16">[Code]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_double-check.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>J Lyu, <b>X Li</b>, Z Lu. <a
+													href="https://proceedings.neurips.cc/paper_files/paper/2022/file/f9e2800a251fa9107a008104f47c45d1-Paper-Conference.pdf"
+													class="bold font16">Double Check Your State Before Trusting It:
+													Confidence-Aware Bidirectional Offline Model-Based
+													Imagination[C].</a> <b><i>Advances in Neural Information Processing
+														Systems (NeurIPS-22)</i></b>, 2022, 35: 38218-38231.
+												<br /><a
+													href="https://proceedings.neurips.cc/paper_files/paper/2022/file/f9e2800a251fa9107a008104f47c45d1-Paper-Conference.pdf"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/dmksjfl/CABI"
+													class="bold font16">[Code]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_ScalableViT.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>R Yang, H Ma, J Wu, Y Tang, X Xiao, M Zheng, <b>X Li</b>. <a
+													href="https://arxiv.org/abs/2203.10790"
+													class="bold font16">Scalablevit: Rethinking the context-oriented
+													generalization of vision transformer[C].</a> <b><i>European
+														Conference on Computer Vision (ECCV-22)</i></b>, 2022: 480-496.
+												<br /><a href="https://arxiv.org/abs/2203.10790"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/Yangr116/ScalableViT"
+													class="bold font16">[Code]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_D2.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Z Chen, C Wang, H Zhao, B Yuan, <b>X Li</b>. <a href=""
+													class="bold font16">D2Animator: Dual Distillation of StyleGAN For
+													High-Resolution Face Animation[C].</a> <b><i>In Proceedings of the
+														30th ACM International Conference on Multimedia (ACM
+														MM-22)</i></b>, 2022: 1769-1778.
+												<br /><a href="https://dl.acm.org/doi/10.1145/3503161.3548002"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Human-Action-Reasoning.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Y Ma, Y Wang, Y Wu, Z Lyu, S Chen, <b>X Li</b>, Y Qiao. <a
+													href="https://dl.acm.org/doi/abs/10.1145/3503161.3548257"
+													class="bold font16">Visual knowledge graph for human action
+													reasoning in videos[C].</a> <b><i>In Proceedings of the 30th ACM
+														International Conference on Multimedia (ACM MM-22)</i></b>,
+												2022: 4132-4141.
+												<br /><a href="https://dl.acm.org/doi/abs/10.1145/3503161.3548257"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/mayuelala/AKU"
+													class="bold font16">[Code]</a></a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Disentangling.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>H Zhang, E Yuan, W Guo, Z He, J Qin, H Guo, B Chen, <b>X Li</b>, R Tang.
+												<a href="https://doi.org/10.1145/3511808.3557289"
+													class="bold font16">Disentangling Past-Future Modeling in Sequential
+													Recommendation via Dual Networks[C].</a> <b><i>In Proceedings of the
+														31st ACM International Conference on Information & Knowledge
+														Management (CIKM-22)</i></b>, 2022: 2549-2558.
+												<br /><a href="https://doi.org/10.1145/3511808.3557289"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/zhy99426/DualRec"
+													class="bold font16">[Code]</a> <a
+													href="https://github.com/zhy99426/DualRec"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_rethinking-goal.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>R Yang, Y Lu, W Li, H Sun, M Fang, Y Du, <b>X Li</b>, et al. <a
+													href="https://arxiv.org/abs/2202.04478v1"
+													class="bold font16">Rethinking Goal-conditioned Supervised Learning
+													and Its Connection to Offline RL[C].</a> <b><i>In Proceedings of the
+														International Conference on Learning Representations
+														(ICLR-22)</i></b>, 2022.
+												<br /><a href="https://arxiv.org/abs/2202.04478v1"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Efficient-continuous.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Lyu, J., Ma, X., Yan, J., <b>Li, X</b>. <a
+													href="https://ojs.aaai.org/index.php/AAAI/article/view/20732/20491"
+													class="bold font16">Efficient continuous control with double actors
+													and regularized critics. [C]</a> <b><i>In Proceedings of the AAAI
+														Conference on Artificial Intelligence (AAAI-22)</i></b>, 2022.
+												<br /><a
+													href="https://ojs.aaai.org/index.php/AAAI/article/view/20732/20491"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/dmksjfl/DARC"
+													class="bold font16">[Code]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_22.jpg" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Li, S., <b>Li, X</b>., Lu, J., & Zhou, J. <a href=""
+													class="bold font16">Self-supervised video hashing via bidirectional
+													transformers. [C]</a> <b><i>In Proceedings of the IEEE/CVF
+														Conference on Computer Vision and Pattern Recognition
+														(CVPR-21)</i></b> 2021:13549-13558.
+												<br /><a href="https://ieeexplore.ieee.org/document/9577815"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/Lily1994/BTH"
+													class="bold font16">[Code]</a> <a
+													href="https://github.com/Lily1994/BTH"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_A Self-boosting Framework.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Wang Z, Zhou L, Wang L, <b>Li X</b>. <a href="" class="bold font16">A
+													Self-boosting Framework for Automated Radiographic Report
+													Generation. [C]</a> <b><i>In Proceedings of the IEEE/CVF Conference
+														on Computer Vision and Pattern Recognition (CVPR-21)</i></b>,
+												2021, 2433-2442.
+												<br /><a
+													href="https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_A_Self-Boosting_Framework_for_Automated_Radiographic_Report_Generation_CVPR_2021_paper.pdf"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Implicit Feature.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Ma, L., Wang, T., Dong, B., Yan, J., <b>Li, X</b>., Zhang, X. <a href=""
+													class="bold font16">Implicit Feature Refinement for Instance
+													Segmentation. [C]</a> <b><i>In Proceedings of the 29th ACM
+														International Conference on Multimedia (ACMMM-21) 2021</i></b>,
+												3088-3096.
+												<br /><a
+													href="https://www.semanticscholar.org/paper/Implicit-Feature-Refinement-for-Instance-Ma-Wang/20f9ae00f13ca6c2d4158289b263ea6e3a8001c2"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_25.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Xu, Z, Lu D, Wang Y, Luo J, Jayender J, Ma K, Zheng Y, <b>Li X</b>. <a
+													href="" class="bold font16">Noisy labels are treasure:
+													mean-teacher-assisted confident learning for hepatic vessel
+													segmentation. [C]</a> <b><i>In Proceedings of the International
+														Conference on Medical Image Computing and Computer-Assisted
+														Intervention (MICCAI-21)</i></b>, 2021, 3-13.
+												<br /><a href="https://arxiv.org/abs/2106.01860"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_26.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>J Yan, H Chen, K Wang, Y Ji, Y Zhu, J Li, D Xie, Z Xu, J Huang, S Cheng,
+												<b>X Li</b>, J Yao, <a href="" class="bold font16">Hierarchical
+													attention guided framework for multi-resolution collaborative whole
+													slide image segmentation[C].</a> <b><i>In Proceedings of the
+														International Conference on Medical Image Computing and
+														Computer-Assisted Intervention (MICCAI-21)</i></b>, 2021:
+												153-163.
+												<br /><a
+													href="https://link.springer.com/chapter/10.1007/978-3-030-87237-3_15"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_27.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yu B, Li W, <b>Li X</b>, et al. <a href=""
+													class="bold font16">Frequency-aware spatiotemporal transformers for
+													video inpainting detection. [C]</a> <b><i>In Proceedings of the IEEE
+														International Conference on Computer Vision (ICCV-21).</i></b>
+												2021: 8188-8197.
+												<br /><a href="https://ieeexplore.ieee.org/document/9710661"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_28.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Xu Z, Yan J, Luo J, <b>Li X</b>, et al. <a href=""
+													class="bold font16">Unsupervised multimodal image registration with
+													adaptative gradient guidance[C]</a> <b><i>In Proceedings of the IEEE
+														International Conference on Acoustics, Speech and Signal
+														Processing (ICASSP-21)</i></b>. IEEE, 2021: 1225-1229.
+												<br /><a href="https://ieeexplore.ieee.org/abstract/document/9414320"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_29.jpg" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Ma L, Dong B, Yan J, et al. <a href="" class="bold font16">Matting
+													enhanced mask R-CNN[C]</a> <b><i>In Proceedings of the 2021 IEEE
+														International Conference on Multimedia and Expo
+														(ICME-21).</i></b> IEEE, 2021: 1-6.
+												<br /><a href="https://ieeexplore.ieee.org/abstract/document/9428183"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_30.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Xu Z, Luo J, Yan J, <b>Li X</b>，et al. <a href=""
+													class="bold font16">Adversarial uni-and multi-modal stream networks
+													for multimodal image registration. [C]</a> <b><i>In Proceedings of
+														the International Conference on Medical Image Computing and
+														Computer-Assisted Intervention (MICCAI-20)</i></b>. 2020:
+												222-232.
+												<br /><a
+													href="https://link.springer.com/chapter/10.1007/978-3-030-59716-0_22"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<!-- <tr>
 							<td>
 								<img src="img/test.png" style="width:150px; height:100px;">
 							</td>
@@ -941,80 +1467,82 @@
 									<br/><a href="" class="bold font16">[Page]</a> <a href="" class="bold font16">[Data]</a> <a href="" class="bold font16">[Demo]</a></li>
 							</td>
 						</tr> -->
-					</ol> 
-				</table>	
-	  			
-			<header class="headerNav">
-			
-				<h1>专利</h1>
-			</header>	
-			<ol>
-				<li>李秀；贾若楠；基于一致性约束建模的强化学习机器人控制方法及系统，中国，ZL202110768179.5<br></li>
-				<li>李秀；贾若楠；减少过估计的模型化强化学习机器人控制方法及系统，中国，ZL202110757340.9<br></li>
-				<li>李秀；杨锐;欧奕旻;严江鹏；一种海面船舶检测方法及系统，中国，ZL202111135426.4<br></li>
-				<li>李秀；宋恺祥；一种基于图像修复技术的弱监督语义分割方法和装置，中国，ZL202010129164.X<br></li>
-				<li>李秀；吕加飞；杨瑞；一种基于强化学习的压水堆堆芯自动控制方法，中国，ZL202110031428.2<br></li>
-				<li>李秀；杨瑞；吕加飞；杨宇；基于动态模型与事后经验回放的多目标机器人控制方法，中国，ZL202011281615.8<br></li>
-				<li>李秀；陈洪鑫；一种基于深度强化学习的视频编码帧内码率控制方法，中国，ZL202010080042.6<br></li>
-				<li>李秀；宋恺祥；适用于2D卷积神经网络的可学习引导滤波模块和方法；中国，ZL201910867312.5<br></li>
-				<li>李秀；金坤；一种基于深度学习和语义分割的图像检索方法；中国，ZL201810615664.7<br></li>
-				<li>李秀；龙如蛟；一种基于深度网络的使网络注意到数据的重要部分的方法，中国，ZL201810891937.0 <br></li>
-				<li>李秀；刘志鑫；门畅；学习行为动态预测方法、装置、设备及存储介质，中国，ZL201811144725.2<br></li>
-				<li>李秀；闫欣伟；一种中文虚假顾客评论识别方法，中国，ZL201510164626.0<br></li>
-				<li>李秀；陈连胜；汤友华；一种克服静止前景运动目标检测的方法，中国，ZL201510548886.8<br>		</li>
-				<li>李秀；欧阳小刚；陈连胜；宋靖东；一种水下图像并行分割方法及装置，中国，ZL201510221256.X<br></li>
-				<li>李秀；陈连胜；汤友华；一种运动目标检测的方法，中国，ZL201510549568.3<br></li>
-				<li>李秀；宋靖东；科学工作流调度处理方法及装置，中国，ZL201410302064.7<br></li>
-				<li>李秀；闫天翔；高福信；余瑾；一种从非关系型数据库到关系型数据库的数据迁移方法，中国，ZL201310443352.X<br></li>
-				<li>李秀；黄容生；郭振华；马辉；用于海底观测网仪器智能配置的云配置方法，中国，ZL201310467742.0<br></li>
-			</ol>	
+								</ol>
+							</table>
 
-			<header class="headerNav">
-			
-				<h1>在研国家级重大科研项目</h1>
-			</header>	
-			<ol >
-				<li>国家重点研发计划科技创新2030-“脑科学与脑类研究”重大项目“类脑仿生智能无人系统”项目，课题名称：“非配合异构多智能体类脑学习与博弈理论”。执行期：2022-2026.<br></li>
-				<li>国家重点研发计划科技创新2030-“新一代人工智能”重大项目，课题名称：缺陷甄别技能在线增强与多任务高效迁移（课题编号：2020AAA0108303）。课题负责人：李秀。执行期：2020-2023。<br></li>
-				<li>国家自然科学基金项目，项目名称：水下影像智能处理的关键技术研究	项目负责人：李秀。执行期：2019-2022<br></li>
+							<header class="headerNav">
 
-			</ol>
+								<h1>专利</h1>
+							</header>
+							<ol>
+								<li>李秀；贾若楠；基于一致性约束建模的强化学习机器人控制方法及系统，中国，ZL202110768179.5<br></li>
+								<li>李秀；贾若楠；减少过估计的模型化强化学习机器人控制方法及系统，中国，ZL202110757340.9<br></li>
+								<li>李秀；杨锐;欧奕旻;严江鹏；一种海面船舶检测方法及系统，中国，ZL202111135426.4<br></li>
+								<li>李秀；宋恺祥；一种基于图像修复技术的弱监督语义分割方法和装置，中国，ZL202010129164.X<br></li>
+								<li>李秀；吕加飞；杨瑞；一种基于强化学习的压水堆堆芯自动控制方法，中国，ZL202110031428.2<br></li>
+								<li>李秀；杨瑞；吕加飞；杨宇；基于动态模型与事后经验回放的多目标机器人控制方法，中国，ZL202011281615.8<br></li>
+								<li>李秀；陈洪鑫；一种基于深度强化学习的视频编码帧内码率控制方法，中国，ZL202010080042.6<br></li>
+								<li>李秀；宋恺祥；适用于2D卷积神经网络的可学习引导滤波模块和方法；中国，ZL201910867312.5<br></li>
+								<li>李秀；金坤；一种基于深度学习和语义分割的图像检索方法；中国，ZL201810615664.7<br></li>
+								<li>李秀；龙如蛟；一种基于深度网络的使网络注意到数据的重要部分的方法，中国，ZL201810891937.0 <br></li>
+								<li>李秀；刘志鑫；门畅；学习行为动态预测方法、装置、设备及存储介质，中国，ZL201811144725.2<br></li>
+								<li>李秀；闫欣伟；一种中文虚假顾客评论识别方法，中国，ZL201510164626.0<br></li>
+								<li>李秀；陈连胜；汤友华；一种克服静止前景运动目标检测的方法，中国，ZL201510548886.8<br> </li>
+								<li>李秀；欧阳小刚；陈连胜；宋靖东；一种水下图像并行分割方法及装置，中国，ZL201510221256.X<br></li>
+								<li>李秀；陈连胜；汤友华；一种运动目标检测的方法，中国，ZL201510549568.3<br></li>
+								<li>李秀；宋靖东；科学工作流调度处理方法及装置，中国，ZL201410302064.7<br></li>
+								<li>李秀；闫天翔；高福信；余瑾；一种从非关系型数据库到关系型数据库的数据迁移方法，中国，ZL201310443352.X<br></li>
+								<li>李秀；黄容生；郭振华；马辉；用于海底观测网仪器智能配置的云配置方法，中国，ZL201310467742.0<br></li>
+							</ol>
 
-			
-         
-	  	</article>
-	  </div>	
-		
- </div>		
-</section>
-			
- </article>
+							<header class="headerNav">
 
-<footer>
+								<h1>在研国家级重大科研项目</h1>
+							</header>
+							<ol>
+								<li>国家重点研发计划科技创新2030-“脑科学与脑类研究”重大项目“类脑仿生智能无人系统”项目，课题名称：“非配合异构多智能体类脑学习与博弈理论”。执行期：2022-2026.<br>
+								</li>
+								<li>国家重点研发计划科技创新2030-“新一代人工智能”重大项目，课题名称：缺陷甄别技能在线增强与多任务高效迁移（课题编号：2020AAA0108303）。课题负责人：李秀。执行期：2020-2023。<br>
+								</li>
+								<li>国家自然科学基金项目，项目名称：水下影像智能处理的关键技术研究 项目负责人：李秀。执行期：2019-2022<br></li>
 
-	
-	<section class="copyrights">
-		<section class="mainWrap">
-            <span class="info">
-                 <span>电话查号台：010-62793001</span>
-                 <span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
-                 <span>地址：广东省深圳市南山区西丽大学城清华校区</span>
-            </span>
-            <span class="icp">京公网安备 110402430053 号</span>
-            <div class="clearfix"></div>
-            <span class="copy">版权所有 © 清华大学　　</span>
-       </section>
-	</section>
+							</ol>
 
-</footer>
-		<script>
-			// translate.ignore.tag.push('span');
-			translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
-			// translate.service.use('client.edge');
-			// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
-			// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
-			translate.execute();
-		</script>
-	</body>
+
+
+					</article>
+				</div>
+
+			</div>
+		</section>
+
+	</article>
+
+	<footer>
+
+
+		<section class="copyrights">
+			<section class="mainWrap">
+				<span class="info">
+					<span>电话查号台：010-62793001</span>
+					<span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
+					<span>地址：广东省深圳市南山区西丽大学城清华校区</span>
+				</span>
+				<span class="icp">京公网安备 110402430053 号</span>
+				<div class="clearfix"></div>
+				<span class="copy">版权所有 © 清华大学　　</span>
+			</section>
+		</section>
+
+	</footer>
+	<script>
+		// translate.ignore.tag.push('span');
+		translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认就是 'chinese_simplified' 简体中文。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明
+		// translate.service.use('client.edge');
+		// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
+		// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
+		translate.execute();
+	</script>
+</body>
 
 </html>
