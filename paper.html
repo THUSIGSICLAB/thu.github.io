@@ -192,6 +192,19 @@
 									<li class="current">
 										<i class="glyphicon glyphicon-minus"></i>
 										<a href="paper.html">论文专利</span></a>
+										<ul>
+											<li>
+												<i class="glyphicon glyphicon-minus"></i>
+												<a href="#"
+													onclick="refreshPart('filter_medical'); return false;">医学影像</a>
+											</li>
+											<li>
+												<i class="glyphicon glyphicon-minus"></i>
+												<a href="#"
+													onclick="refreshPart('filter_multi'); return false;">多模态及大模型</a>
+											</li>
+										</ul>
+
 									</li>
 									<li>
 										<i class="glyphicon glyphicon-minus"></i>
@@ -214,10 +227,13 @@
 								<a>成果展示.</a>
 								<a>论文专利</a>
 							</nav>
-							<h1>SCI检索期刊论文：</h1>
+							<!-- <h1>SCI检索期刊论文：</h1> -->
 						</header>
 
-						<section class="article">
+						<section class="article" id="updateArea">
+							<header class="headerNav">
+								<h1>SCI检索期刊论文：</h1>
+							</header>
 							<style>
 								::marker {
 									content: "[" counter(list-item) "]  ";
@@ -227,100 +243,6 @@
 									margin: 0px 13% 0px 3%;
 								}
 							</style>
-							<!-- <label for="type">Type:</label>
-				<select name="type" id="type" onchange="setType(this.options[this.options.selectedIndex].value)">
-					<option value="all">All</option>
-					<option value="C">Conference</option>
-					<option value="J">Journal</option>
-				</select>
-				<label for="Area">Area:</label>
-				<select name="Area" id="Area" onchange="setArea(this.options[this.options.selectedIndex].value)">
-					<option value="all">All</option>
-					<option value="CV">Computer Vision</option>
-					<option value="RL">Reinforcement Learning</option>
-					<option value="Others">Others</option>
-				</select> 
-				<label for="type">Year:</label>
-				<select name="type" id="type" onchange="setYear(this.options[this.options.selectedIndex].value)">
-					<option value="all">All</option>
-					<option value="2022">2022</option>
-					<option value="2021">2021</option>
-					<option value="2020">2020</option>
-					<option value="2019">2019</option>
-					<option value="2018">2018</option>
-					<option value="2017">2017</option>
-					<option value="2016">2016</option>
-				</select>
-				<div id="paper_list"></div>
-				<style>
-					::marker{
-						content: "[" counter(list-item) "]  ";
-					}	
-				.paperp {
-					margin: 0px 13% 0px 3%;
-				}		
-				</style>
-				<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-				<script src="js/papers.js"></script>
-				<script type="text/javascript">
-					var type = "all"
-					var area = "all"
-					var year = "all"
-					$(document).ready(function(){
-						// load data
-						for(let i in papers){
-							var buttons = ''
-							if(papers[i].paper !== "")
-								buttons = buttons + '<button class="list-inline-item"><a class="d-inline-block" style="width:110%;height:100%;border-radius:5px;text-align: center;" href='+ papers[i].paper +'>Paper</a></button>'
-							if(papers[i].code !== "")
-								buttons = buttons + '<button class="list-inline-item"><a class="d-inline-block" style="width:110%;height:100%;border-radius:5px;text-align: center;" href='+ papers[i].code +'>Code</a></button>'	
-							if(papers[i].demo !== "")
-								buttons = buttons + '<button class="list-inline-item"><a class="d-inline-block" style="width:110%;height:100%;border-radius:5px;text-align: center;" href='+ papers[i].demo +'>Demo</a></button>'	
-							buttons = '<ul class="list-inline bg-gray mt-1" style="text-align: right;">' + buttons + '</ul>'
-							var note = '<span class="text-lighten">(' + papers[i].note +' )</span>'
-							var paper = '<div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2"><div class="text-dark">' + papers[i].cite + note + buttons +'</div></div>'
-							$("#paper_list").append(paper);
-						}});
-					function clear(){
-						$("#paper_list").empty();
-					}
-					function setType(v){
-						this.type = v
-						searchPapers()
-					}
-					function setArea(v){
-						this.area = v
-						searchPapers()
-					}
-					function setYear(v){
-						this.year = v
-						searchPapers()
-					}
-					function searchPapers(){
-						clear()
-						// load data
-						for(let i in papers){
-							console.log(papers[i].type == this.type, papers[i].area == this.area, papers[i].year == this.year)
-							if(papers[i].type !== this.type && this.type !== "all")
-								continue
-							if(papers[i].area !== this.area && this.area !== "all")
-								continue
-							if(papers[i].year !== this.year && this.year !== "all")
-								continue
-							var buttons = ""
-							if(papers[i].paper !== "")
-								buttons = buttons + '<button class="list-inline-item"><a class="d-inline-block" style="width:110%;height:100%;border-radius:5px;text-align: center;" href='+ papers[i].paper +'>Paper</a></button>'
-							if(papers[i].code !== "")
-								buttons = buttons + '<button class="list-inline-item"><a class="d-inline-block" style="width:110%;height:100%;border-radius:5px;text-align: center;" href='+ papers[i].code +'>Code</a></button>'	
-							if(papers[i].demo !== "")
-								buttons = buttons + '<button class="list-inline-item"><a class="d-inline-block" style="width:110%;height:100%;border-radius:5px;text-align: center;" href='+ papers[i].demo +'>Demo</a></button>'	
-							buttons = '<ul class="list-inline bg-gray mt-1" style="text-align: right;">' + buttons + '</ul>'
-							var note = '<span class="text-lighten">(' + papers[i].note +' )</span>'
-							var paper = '<div class="card border-0 rounded-0 hover-shadow bg-gray p-2 mb-2"><div class="text-dark">' + papers[i].cite + note + buttons +'</div></div>'
-							$("#paper_list").append(paper);
-						}
-					}
-				</script> -->
 
 							<table border="0">
 								<ol>
@@ -340,8 +262,11 @@
 										<td>
 											<li>Jiafei Lyu, Le Wan, Zongqing Lu and <b>Xiu Li</b>. <a
 													href="https://www.sciencedirect.com/science/article/abs/pii/S0020025524002846"
-													class="bold font16">Off-Policy RL Algorithms Can be Sample-Efficient for Continuous Control via Sample Multiple Reuse[J].</a> <b><i>Information Sciences</i></b>, 2024.
-												<br /><a href="https://www.sciencedirect.com/science/article/abs/pii/S0020025524002846"
+													class="bold font16">Off-Policy RL Algorithms Can be Sample-Efficient
+													for Continuous Control via Sample Multiple Reuse[J].</a>
+												<b><i>Information Sciences</i></b>, 2024.
+												<br /><a
+													href="https://www.sciencedirect.com/science/article/abs/pii/S0020025524002846"
 													class="bold font16">[Page]</a> <a
 													href="https://github.com/THUSIGSICLAB/SMR"
 													class="bold font16">[Code]</a>
@@ -836,7 +761,9 @@
 										</td>
 										<td>
 											<li>Jiafei Lyu, Chenjia Bai, Jingwen Yang, Zongqing Lu, <b>Xiu Li</b>. <a
-													href="https://arxiv.org/pdf/2405.15369" class="bold font16">Cross-Domain Policy Adaptation by Capturing Representation Mismatch[C].</a> ICML, 2024.
+													href="https://arxiv.org/pdf/2405.15369"
+													class="bold font16">Cross-Domain Policy Adaptation by Capturing
+													Representation Mismatch[C].</a> ICML, 2024.
 												<br /><a href="https://arxiv.org/pdf/2405.15369"
 													class="bold font16">[Page]</a> <a
 													href="https://github.com/THUSIGSICLAB/PAR"
@@ -1538,7 +1465,358 @@
 						</tr> -->
 								</ol>
 							</table>
+						</section>
+						<section class="article" id="filter_medical" style="display: none;">
+							<table border="0">
+								<ol>
+									<style>
+										td {
+											padding: 5px;
+										}
 
+										p {
+											color: blue;
+										}
+									</style>
+									<tr>
+										<td>
+											<img src="img/sci-Hqg-net.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>He C, Li K, Xu G, Yan J, Tang L, Zhang Y, Wang Y, <b>Li X</b>. <a
+													href="https://ieeexplore.ieee.org/abstract/document/10272680"
+													class="bold font16">Hqg-net: Unpaired medical image enhancement with
+													high-quality guidance[J].</a> <b><i>IEEE Transactions on Neural
+														Networks and Learning Systems</i></b>, 2023, DOI:
+												10.1109/TNNLS.2023.3315307
+												<br /><a href="https://ieeexplore.ieee.org/abstract/document/10272680"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/HQG-Net"
+													class="bold font16">[Code]</a> <a
+													href="https://pan.baidu.com/s/1zmHwsxMWo_QoW9PnhKcNqA?pwd=h8mw&_at_=1709197840395#list/path=%2F"
+													class="bold font16">[Data]</a></a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Weakly-Supervised.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>C He, K Li, Y Zhang, L Tang, Y Zhang, Z Guo, <b>X Li</b>. <a
+													href="https://arxiv.org/abs/2305.11003"
+													class="bold font16">Weakly-Supervised Concealed Object Segmentation
+													with SAM-based Pseudo Labeling and Multi-scale Feature
+													Grouping[C].</a> <b><i>Advances in Neural Information Processing
+														Systems (NeurIPS-23)</i></b>, 2023.
+												<br /><a href="https://arxiv.org/abs/2305.11003"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/ChunmingHe/WS-SAM"
+													class="bold font16">[Code]</a> <a
+													href="https://github.com/ChunmingHe/WS-SAM"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Degradation-Resistant.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>C He, K Li, G Xu, Y Zhang, R Hu, Z Guo, <b>X Li</b>. <a
+													href="https://openaccess.thecvf.com/content/ICCV2023/html/He_Degradation-Resistant_Unfolding_Network_for_Heterogeneous_Image_Fusion_ICCV_2023_paper.html"
+													class="bold font16">Degradation-Resistant Unfolding Network for
+													Heterogeneous Image Fusion[C].</a> <b><i>In Proceedings of the
+														IEEE/CVF International Conference on Computer Vision
+														(ICCV-23)</i></b>, 2023: 12611-12621.
+												<br /><a
+													href="https://openaccess.thecvf.com/content/ICCV2023/html/He_Degradation-Resistant_Unfolding_Network_for_Heterogeneous_Image_Fusion_ICCV_2023_paper.html"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/ChunmingHe/DeRUN"
+													class="bold font16">[Code]</a> <a
+													href="https://github.com/ChunmingHe/DeRUN"
+													class="bold font16">[Data]</a> <a
+													href="https://github.com/ChunmingHe/DeRUN"
+													class="bold font16">[Demo]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_regional-based.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Lan S, <b>Li X</b>, Guo Z. <a href="" class="bold font16">An Adaptive
+													Region-Based Transformer for Nonrigid Medical Image Registration
+													With a Self-Constructing Latent Graph[J].</a> <b><i>IEEE
+														Transactions on Neural Networks and Learning Systems</i></b>,
+												2023. WOS:001040640300001.
+												<br /><a href="https://ieeexplore.ieee.org/document/10191036"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_26.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>J Yan, H Chen, K Wang, Y Ji, Y Zhu, J Li, D Xie, Z Xu, J Huang, S Cheng,
+												<b>X Li</b>, J Yao, <a href="" class="bold font16">Hierarchical
+													attention guided framework for multi-resolution collaborative whole
+													slide image segmentation[C].</a> <b><i>In Proceedings of the
+														International Conference on Medical Image Computing and
+														Computer-Assisted Intervention (MICCAI-21)</i></b>, 2021:
+												153-163.
+												<br /><a
+													href="https://link.springer.com/chapter/10.1007/978-3-030-87237-3_15"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_25.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Xu, Z, Lu D, Wang Y, Luo J, Jayender J, Ma K, Zheng Y, <b>Li X</b>. <a
+													href="" class="bold font16">Noisy labels are treasure:
+													mean-teacher-assisted confident learning for hepatic vessel
+													segmentation. [C]</a> <b><i>In Proceedings of the International
+														Conference on Medical Image Computing and Computer-Assisted
+														Intervention (MICCAI-21)</i></b>, 2021, 3-13.
+												<br /><a href="https://arxiv.org/abs/2106.01860"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_25.jpg" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yan J, Chen S, Zhang Y, <b>Li X</b>, et al. <a href=""
+													class="bold font16">Neural Architecture Search for compressed
+													sensing Magnetic Resonance image reconstruction[J].</a>
+												<b><i>Computerized Medical Imaging and Graphics</i></b>, 2020, 85:
+												101784. JCR Q1， WOS:000582704200006
+												<br /><a
+													href="https://www.sciencedirect.com/science/article/pii/S089561112030077X"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_DRT.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Lan S, <b>Li X</b>, Guo Z. <a href="" class="bold font16">DRT:
+													Deformable Region-based Transformer for Nonrigid Medical Image
+													Registration with a Constraint of Orientation[J].</a> <b><i>IEEE
+														Transactions on Instrumentation and Measurement</i></b>, 2023,
+												vol.72, pp.1-15. WOS:001008184300015.
+												<br /><a href="https://ieeexplore.ieee.org/document/10121195"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_Deep Contrastive.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yan J, Chen H, <b>Li X</b>, et al. <a href="" class="bold font16">Deep
+													contrastive learning based tissue clustering for annotation-free
+													histopathology image analysis[J].</a> <b><i>Computerized Medical
+														Imaging and Graphics</i></b>, 2022, 97: 102053. JCR Q1.
+												<br /><a
+													href="https://www.sciencedirect.com/science/article/pii/S089561112200026X/pdfft?md5=57f18d92e9b23141be33ad9e578f8976&pid=1-s2.0-S089561112200026X-main.pdf"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_Zernike aberration.jpg"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Zhang Y, Liu Y, Jiang S, Dixit K, Song P, Zhang X, Ji X, <b>Li X</b> ,
+												<a href="" class="bold font16">Neural network model assisted Fourier
+													ptychography with Zernike aberration recovery and total variation
+													constraint.,</a> <b><i>Journal of Biomedical Optics</i></b>, 2021,
+												26(3) : 036502, JCR Q2, WOS:000636641800015
+												<br /><a href="https://pubmed.ncbi.nlm.nih.gov/33768741/"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+								</ol>
+							</table>
+						</section>
+						<section class="article" id="filter_multi" style="display: none;">
+							<table border="0">
+								<ol>
+									<style>
+										td {
+											padding: 5px;
+										}
+
+										p {
+											color: blue;
+										}
+									</style>
+									<tr>
+										<td>
+											<img src="img/conf_Exploring Multi-Modal Control.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Ronghui Li, Yuqin Dai, Yachao Zhang, Jun Li, Jian Yang, Jie Guo, <b>Xiu
+													Li</b>. <a href="https://arxiv.org/pdf/2401.01382.pdf"
+													class="bold font16">Exploring Multi-Modal Control in Music-Driven
+													Dance Generation[C].</a> <b><i>In Proceedings of the International
+														Conference on Acoustics, Speech and Signal Processing
+														(ICASSP-24)</i></b>.
+												<br /><a href="https://arxiv.org/pdf/2401.01382.pdf"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Chain-of-Generation.png"
+												style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Zunnan Xu, Yachao Zhang, Sicheng Yang, Ronghui Li, <b>Xiu Li</b>. <a
+													href="https://arxiv.org/abs/2312.15900" class="bold font16">Chain of
+													Generation: Multi-Modal Gesture Synthesis via Cascaded Conditional
+													Control[C].</a> <b><i>In Proceedings of the Association for the
+														Advance of Artificial Intelligence (AAAI-24)</i></b>, 2024.
+												<br /><a href="https://arxiv.org/abs/2312.15900"
+													class="bold font16">[Page]</a> <a
+													href="https://drive.google.com/file/d/1Akf0WgAwuH2fvlWbvNpif4XRqXlpznh9/view?usp=share_link"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_cross-modal.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Yachao Zhang, Runze Hu, Ronghui Li, Yanyun Qu, Yuan Xie, <b>Xiu Li</b>.
+												<a href="https://arxiv.org/abs/2304.01186"
+													class="bold font16">Cross-Modal Match for Language Conditioned 3D
+													Object Grounding[C].</a> <b><i>In Proceedings of the Association for
+														the Advance of Artificial Intelligence (AAAI-24)</i></b>, 2024.
+												<br />
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_FineDance.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Ronghui Li, Junfan Zhao, Yachao Zhang, Mingyang Su, Zeping Ren, Han
+												Zhang, Yansong Tang, <b>Xiu Li</b>. <a
+													href="https://openaccess.thecvf.com/content/ICCV2023/papers/Li_FineDance_A_Fine-grained_Choreography_Dataset_for_3D_Full_Body_Dance_ICCV_2023_paper.pdf"
+													class="bold font16">FineDance: A Fine-grained Choreography Dataset
+													for 3D Full Body Dance Generation[C].</a> <b><i>In Proceedings of
+														the IEEE/CVF International Conference on Computer Vision
+														(ICCV-23)</i></b>, 2023.
+												<br /><a
+													href="https://openaccess.thecvf.com/content/ICCV2023/papers/Li_FineDance_A_Fine-grained_Choreography_Dataset_for_3D_Full_Body_Dance_ICCV_2023_paper.pdf"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/FineDance"
+													class="bold font16">[Code]</a> <a
+													href="https://pan.baidu.com/s/1DdJjfXWZZvnUmqPUrOTf7g?pwd=dkqn&_at_=1709532710678"
+													class="bold font16">[Data]</a> <a
+													href="https://github.com/li-ronghui/FineDance"
+													class="bold font16">[Demo]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_source-free.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>L Tang, K Li, C He, Y Zhang, <b>X Li</b>. <a
+													href="https://ieeexplore.ieee.org/document/10350421"
+													class="bold font16">Consistency Regularization for Generalizable
+													Source-free Domain Adaptation[C].</a> <b><i>In Proceedings of the
+														IEEE/CVF International Conference on Computer Vision
+														(ICCV-23)</i></b>, 2023: 4323-4333.
+												<br /><a href="https://ieeexplore.ieee.org/document/10350421"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/SFDA-CBMT"
+													class="bold font16">[Code]</a> <a
+													href="https://pan.baidu.com/s/1vZOPEvlb3foDqk6Gum5fBA?pwd=so3s"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_ Intention-Driven.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Huo Y, Li X, Zhang X, <b>Li X</b>, et al. <a href=""
+													class="bold font16">Adaptive Intention-Driven Variable Impedance
+													Control for Wearable Robots With Compliant Actuators[J].</a>
+												<b><i>IEEE Transactions on Control Systems Technology</i></b>, 2022,
+												31(3): 1308-1323. WOS:000890819200001.
+												<br /><a href="https://ieeexplore.ieee.org/document/9962240"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/conf_Lodge.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Ronghui Li, YuXiang Zhang, Yachao Zhang, Hongwen Zhang, Jie Guo, Yan
+												Zhang, Yebin Liu, <b>Xiu Li</b>. <a
+													href="http://arxiv.org/abs/2403.10518" class="bold font16">Lodge: A
+													Coarse to Fine Diffusion Network for Long Dance Generation Guided by
+													the Characteristic Dance Primitives[C].</a> <b><i>In Proceedings of
+														the IEEE/CVF Conference on
+														Computer Vision and Pattern Recognition (CVPR-24)</i></b>, 2024.
+												<br /><a href="http://arxiv.org/abs/2403.10518"
+													class="bold font16">[Page]</a> <a
+													href="https://github.com/THUSIGSICLAB/LODGE"
+													class="bold font16">[Code]</a> <a
+													href="https://pan.baidu.com/s/1EDkipfSTvaGoPuIHae2qdw?pwd=u8y4"
+													class="bold font16">[Data]</a>
+											</li>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="img/sci_BEAR-H.png" style="width:150px; height:100px;">
+										</td>
+										<td>
+											<li>Li X, Zhang X, <b>Li X</b>, et al. <a href=""
+													class="bold font16">BEAR-H: An Intelligent Bilateral Exoskeletal
+													Assistive Robot for Smart Rehabilitation[J].</a> <b><i>IEEE Robotics
+														& Automation Magazine</i></b>, 2021, vol.29, no.3, pp.34-46.
+												<br /><a
+													href="https://ieeexplore.ieee.org/document/9656918/keywords#full-text-header"
+													class="bold font16">[Page]</a>
+											</li>
+										</td>
+									</tr>
+								</ol>
+							</table>
+						</section>
+						<section class="article">
 							<header class="headerNav">
 
 								<h1>专利</h1>
@@ -1574,14 +1852,10 @@
 								<li>国家重点研发计划科技创新2030-“新一代人工智能”重大项目，课题名称：缺陷甄别技能在线增强与多任务高效迁移（课题编号：2020AAA0108303）。课题负责人：李秀。执行期：2020-2023。<br>
 								</li>
 								<li>国家自然科学基金项目，项目名称：水下影像智能处理的关键技术研究 项目负责人：李秀。执行期：2019-2022<br></li>
-
 							</ol>
-
-
-
+						</section>
 					</article>
 				</div>
-
 			</div>
 		</section>
 
@@ -1611,6 +1885,12 @@
 		// translate.language.setUrlParamControl(); //url参数后可以加get方式传递 language 参数的方式控制当前网页以什么语种显示
 		// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
 		translate.execute();
+	</script>
+	<script>
+		function refreshPart(partId) {
+			var newContent = document.getElementById(partId).innerHTML;
+			document.getElementById('updateArea').innerHTML = newContent;
+		}
 	</script>
 </body>
 
