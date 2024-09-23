@@ -303,19 +303,187 @@
 							<p class="tnp">这项研究旨在通过利用人类语音的多模态信息来改进三维手势的生成。先前的研究主要关注于将额外的模态融入以提高生成手势的质量... </p>
 						</div>
 					</li>
-					<!-- <li class="li_1_2">
-						<div class="tn">
-							<h3><a href="https://mp.weixin.qq.com/s/US5ChSVjjpxxM9KGwRPklQ"><b>[科研成果]</b>
-									智能计算实验室何春明同学成果被ICLR2024接收</a></h3>
-							<p class="tnp">伪装目标检测（Camouflaged Object
-								Detection，COD）是一项具有挑战性的任务，其目标是识别在环境中视觉上融入的伪装对象。尽管取得了显著的成功，现有的伪装目标检测器在一些具有挑战性的情况下仍然难以获得精确的结果...
-							</p>
-						</div>
-					</li> -->
 				</ul>
 			</section>
 		</div>
+		<div></div>
+			<style>
+				.video-show {
+					position: absolute;
+					/* top: 10%;
+					left: 10%;
+					transform: translate(-50%, -50%); */
+					margin: 0 30px;
+					margin-top: 10px;   /*视频上方无文字说明时添加此间隔 */
+					height: auto;
+					max-width: 95%;
+					max-height: 80%;
+					object-fit: contain;
+					border: none;
+					box-sizing: border-box;
+				}
 
+				.introduce_background {
+					position: relative;
+					width: 700px;
+					height: 500px;
+					background-color: white;
+					margin: 0 1px;
+					padding: 0;
+					border: none;
+					box-sizing: border-box;
+				}
+
+				.video-intro {
+					position: relative;
+					/* right: 10%; */
+					width: 700px;
+					height: 500px;
+					background-color: rgba(102, 8, 116, 0.3);
+					margin: 0 1px;
+					padding: 0;
+					border: none;
+					box-sizing: border-box;
+				}
+
+				.arrow {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					font-size: 50px;
+					cursor: pointer;
+					color: rgb(102, 8, 116);
+					border: none;
+					background-color: transparent;
+				}
+
+				.arrow:hover {
+					color: #000;
+				}
+
+				.left-arrow {
+					left: 10px;
+				}
+
+				.right-arrow {
+					right: 10px;
+				}
+
+				.small-text {
+					position: relative;
+					top: -5px;
+					/* 向上移动小字 */
+					right: -5px;
+					/* 向右移动小字 */
+					font-size: 12px;
+					/* 小字的字体大小 */
+					font-style: italic;
+					/* 字体倾斜 */
+					color: red;
+					/* 小字的颜色 */
+				}
+
+				a {
+					text-decoration: none;
+					/* 移除链接默认的下划线 */
+				}
+
+				.background-text {
+					padding-top: 6px;
+					text-align: center;
+					vertical-align: middle;
+					font-weight: bold;
+					border: 0px;
+					font-size: 22px;
+					/* 设置字体大小 */
+					color: white;
+				}
+
+				.introduce-text {
+					padding-top: 6px;
+					text-align: center;
+					vertical-align: middle;
+					font-weight: bold;
+					border: 0px;
+					font-size: 24px;
+					color: black;
+				}
+
+				.gray-bg {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: 0;
+					padding: 0;
+					background-color: rgba(191, 191, 191, 0.3);
+					/* 浅灰色透明度为30% */
+					height: 510px;
+					width: 100%;
+					position: relative;
+					margin-bottom: 20px;
+					box-sizing: border-box;
+				}
+			</style>
+			<div class="gray-bg">
+				<div class="introduce_background">
+					<div style="margin-top: 35px; margin-left: 20px;">
+						<span style="font-size: 22px;"><b>算法背景</b></span><br>
+						<span style="font-size: 18px;">随着生成式人工智能的快速发展，现有方法如FineDance、EDG已经展示出了数秒钟高质量舞蹈的能力。然而，实际应用中的舞蹈表演和社交舞通常持续3至5分钟，舞蹈剧可以持续15分钟以上，甚至一个小时。因此，现有的舞蹈生成算法难以满足实际需求，而如何生成高质量的长序列舞蹈动作成为了亟待解决的问题。</span><br><br>
+						<span style="font-size: 22px;"><b>算法能力</b></span><br>
+						<span style="font-size: 18px;">针对目前音乐生成3D舞蹈动作中存在的长序列生成质量差，生成效率低的问题，我们提出了Lodge，可以高效地根据输入音乐生成极长的3D人体舞蹈动作。该解决方案不仅适用于电影和游戏制作等诸多应用，而且还具有激发舞蹈设计者设计新颖动作的潜力，并提高他们的工作效率。</span><br>
+					</div>
+				</div>
+				<div class="video-intro">
+					<div class="background-text">
+						长序列舞蹈动作生成
+					</div>
+					<div class="video-show">
+						<video id="video_intro" width="640px" height="360px" controls>
+							<source
+								src="https://thusigsclub.github.io/thu.github.io/video_1.mp4"
+								type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="background-text" style="padding-top: 20px;">
+							<span id="text_intro" class="background-text">Demo 1</span>
+						</div>
+						<button class="arrow left-arrow" onclick="leftArrow_intro()">&#10094;</button>
+						<button class="arrow right-arrow" onclick="rightArrow_intro()">&#10095;</button>
+					</div>
+				</div>
+			</div>
+
+			<script>
+				const video_intro = document.getElementById('video_intro');
+				const text_intro = document.getElementById("text_intro");
+				//   const leftArrow = document.getElementById('left-arrow');
+				//   const rightArrow = document.getElementById('right-arrow');
+
+				let videoIndex_intro = 0;
+				const videoSources_intro = [
+					{ title: '', description: 'Demo 1', src: 'https://thusigsclub.github.io/thu.github.io/video_1.mp4' }, // initial video
+					{ title: '', description: 'Demo 2', src: 'https://thusigsclub.github.io/thu.github.io/video_2.mp4' }
+				];
+
+				function leftArrow_intro() {
+					videoIndex_intro = (videoIndex_intro - 1 + videoSources_intro.length) % videoSources_intro.length;
+					video_intro.src = videoSources_intro[videoIndex_intro].src;
+					// video.src = videoSources[videoIndex];
+					text_intro.textContent = videoSources_intro[videoIndex_intro].description
+					video_intro.load();
+					video_intro.play();
+				}
+
+				function rightArrow_intro() {
+					videoIndex_intro = (videoIndex_intro + 1) % videoSources_intro.length;
+					video_intro.src = videoSources_intro[videoIndex_intro].src;
+					// video.src = videoSources[videoIndex];
+					text_intro.textContent = videoSources_intro[videoIndex_intro].description
+					video_intro.load();
+					video_intro.play();
+				}
+			</script>
+		</div>
 		<div>
 			<style>
 				.video-carousel {
@@ -394,7 +562,7 @@
 					vertical-align: middle;
 					font-weight: bold;
 					border: 0px;
-					font-size: 24px;
+					font-size: 22px;
 					/* 设置字体大小 */
 					color: white;
 				}
@@ -416,7 +584,7 @@
 			<div class="gray-bg">
 				<div class="video-background">
 					<div class="background-text">
-						Algorithm Demo
+						其他项目介绍
 					</div>
 					<div class="video-carousel">
 						<video id="video" width="640" height="360" controls>
