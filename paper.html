@@ -27,8 +27,8 @@
 		}
 	</style>
 
+	<script src="https://pyscript.net/alpha/pyscript.js"></script>
 	<link href="css/style.css" rel="stylesheet">
-
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
 		var arrLang = new Array();
@@ -122,7 +122,6 @@
 				</a>
 				<section class="search">
 					<img src='img/right_tu2.png' style="width: 250px; height: 80px;" />
-
 				</section>
 			</div>
 			<div class="clearfix"></div>
@@ -159,7 +158,7 @@
 							<li>
 								<a href="connect.html">联系我们</a>
 							</li>
-
+						</ul>
 					</div>
 				</nav>
 			</div>
@@ -194,17 +193,16 @@
 										<a href="paper.html">论文专利</span></a>
 										<ul>
 											<li>
-												<i class="glyphicon glyphicon-minus"></i>
+<!--												<i class="glyphicon glyphicon-minus"></i>-->
 												<a href="#"
-													onclick="refreshPart('filter_medical'); return false;">医学影像</a>
+													onclick="refreshPart('filter_medical')">医学影像</a>
 											</li>
 											<li>
-												<i class="glyphicon glyphicon-minus"></i>
+<!--												<i class="glyphicon glyphicon-minus"></i>-->
 												<a href="#"
-													onclick="refreshPart('filter_multi'); return false;">多模态及大模型</a>
+													onclick="refreshPart('filter_multi')">多模态及大模型</a>
 											</li>
 										</ul>
-
 									</li>
 									<li>
 										<i class="glyphicon glyphicon-minus"></i>
@@ -214,6 +212,7 @@
 										<i class="glyphicon glyphicon-minus"></i>
 										<a href="dataset.html">数据集</a>
 									</li>
+								</ul>
 							</div>
 						</nav>
 					</section>
@@ -227,13 +226,38 @@
 								<a>成果展示.</a>
 								<a>论文专利</a>
 							</nav>
-							<!-- <h1>SCI检索期刊论文：</h1> -->
 						</header>
-
-						<section class="article" id="updateArea">
-							<header class="headerNav">
-								<h1>SCI检索期刊论文：</h1>
-							</header>
+						<style>
+							.container_toolbar {
+								width: fit-content;
+								margin: 0 auto; /* 水平居中 */
+								}
+								.toolbar {
+								/* width: fit-content; */
+								text-align: center;
+								background-color: rgb(102, 8, 116);
+								border-radius: 5px;
+								}
+								.toolbar a {
+								text-decoration: none;
+								display: inline-block;
+								padding: 10px;
+								margin: 0 5px;
+								color: white;
+								background-color: rgb(102, 8, 116);
+								}
+								.toolbar a:hover {
+								background-color: #ddd;
+							}
+						</style>
+						<div class="container_toolbar">
+							<div class="toolbar">
+								<a href="paper.html">期刊</a>
+								<a href="#" onclick="refreshPart('area_conference')">会议</a>
+								<a href="thusigsiclab_articles.xlsx" download="thusigsiclab_articles.xlsx">导出</a>
+							</div>
+						</div>
+						<section class="article" id="baseArea_journal">
 							<style>
 								::marker {
 									content: "[" counter(list-item) "]  ";
@@ -242,8 +266,11 @@
 								.paperp {
 									margin: 0px 13% 0px 3%;
 								}
-							</style>
 
+							</style>
+							<header class="headerNav">
+								<h1>SCI检索期刊论文：</h1>
+							</header>
 							<table border="0" id="journal">
 								<ol>
 									<style>
@@ -507,7 +534,7 @@
 											<li>Yu B, Lu J, <b>Li X</b>, Zhou J. <a
 													href="https://ieeexplore.ieee.org/document/9650907"
 													class="bold font16">Salience-Aware Face Presentation Attack
-													Detection via Deep Reinforcement Learning.[J]</a><b><i>IEEE
+													Detection via Deep Reinforcement Learning[J].</a><b><i>IEEE
 														Transactions on Information Forensics and Security</i></b>, 2022
 												vol.17: 413-427, JCR Q1. WOS:000748395300005.
 												<br /><a href="https://ieeexplore.ieee.org/document/9650907"
@@ -523,7 +550,7 @@
 										<td>
 											<li>Li S, <b>Li X</b>, Lu J, Zhou J. <a href="https://ieeexplore.ieee.org/document/9467321"
 													class="bold font16">Structure-adaptive Neighborhood Preserving
-													Hashing for Scalable Video Search.[J]</a> <b><i>IEEE Transactions on
+													Hashing for Scalable Video Search[J].</a> <b><i>IEEE Transactions on
 														Circuits and Systems for Video Technology</i></b>, 2021, JCR Q1,
 												vol.32, no.4, pp.2441-2454. WOS:000778973700059. EI Accession number: 20213310762010
 												<br /><a href="https://ieeexplore.ieee.org/document/9467321"
@@ -603,7 +630,7 @@
 											<li>Zhang Y, Liu Y, Jiang S, Dixit K, Song P, Zhang X, Ji X, <b>Li X</b>.
 												<a href="https://pubmed.ncbi.nlm.nih.gov/33768741/" class="bold font16">Neural network model assisted Fourier
 													ptychography with Zernike aberration recovery and total variation
-													constraint.[J]</a> <b><i>Journal of Biomedical Optics</i></b>, 2021,
+													constraint[J].</a> <b><i>Journal of Biomedical Optics</i></b>, 2021,
 												26(3) : 036502, JCR Q2. WOS:000636641800015. EI Accession number: 20211510191188
 												<br /><a href="https://pubmed.ncbi.nlm.nih.gov/33768741/"
 													class="bold font16">[Page]</a>
@@ -647,7 +674,7 @@
 											<li>Liu Y, Gu K, Zhang Y, <b>Li X</b>, Zhai G, Zhao D, Gao W. <a href="https://ieeexplore.ieee.org/document/8648473"
 													class="bold font16">Unsupervised Blind Image Quality Evaluation via
 													Statistical Measurements of Structure, Naturalness, and
-													Perception.[J]</a> <b><i>IEEE Transactions on Circuits and Systems for
+													Perception[J].</a> <b><i>IEEE Transactions on Circuits and Systems for
 														Video Technology</i></b>, 2020, 30(4): 929-943, JCR Q1. WOS:000561099300003. EI Accession number: 20201608414474
 												<br /><a href="https://ieeexplore.ieee.org/document/8648473"
 													class="bold font16">[Page]</a>
@@ -726,9 +753,17 @@
 						</tr> -->
 								</ol>
 							</table>
-
+						</section>
+						<section class="article" id="area_conference" style="display: none;">
+							<style>
+								::marker {
+									content: "[" counter(list-item) "]  ";
+								}
+								.paperp {
+									margin: 0px 13% 0px 3%;
+								}
+							</style>
 							<header class="headerNav">
-
 								<h1>会议论文：</h1>
 							</header>
 							<table border="0" id="conference">
@@ -807,18 +842,6 @@
 											</li>
 										</td>
 									</tr>
-									<!-- <tr>
-										<td>
-											<img src="img/conf_eccv_fafa.png" style="width:150px; height:100px;">
-										</td>
-										<td>
-											<li>Jingyi Tang, Gu Wang, Zeyu Chen, Shengquan Li, <b>Xiu Li</b>, and Xiangyang Ji. <a
-													href="https://arxiv.org/abs/2312.10993" class="bold font16">FAFA: Frequency-Aware Flow-Aided Self-Supervision for Underwater Object Pose Estimation[C].</a> <b><i>European
-														Conference on Computer Vision (ECCV-24)</i></b>, 2024.
-												<br />
-											</li>
-										</td>
-									</tr> -->
 									<tr>
 										<td>
 											<img src="img/conf_ECCV_DIKI.jpg" style="width:150px; height:100px;">
@@ -1236,7 +1259,7 @@
 										</td>
 										<td>
 											<li>Y Tang, J Liu, A Liu, B Yang, W Dai, Y Rao, J Lu, J Zhou, <b>X Li</b>.
-												<a href="" class="bold font16">Flag3d: A 3d fitness activity dataset
+												<a href="https://arxiv.org/abs/2212.04638" class="bold font16">Flag3d: A 3d fitness activity dataset
 													with language instruction[C].</a> <b><i>In Proceedings of the
 														IEEE/CVF Conference on Computer Vision and Pattern Recognition
 														(CVPR-23)</i></b>, 2023: 22106-22117. WOS:001062531306042. EI Accession number: 20234114867188
@@ -1252,7 +1275,7 @@
 											<img src="img/conf_OrdinalCLIP.png" style="width:150px; height:100px;">
 										</td>
 										<td>
-											<li>W Li, X Huang, Z Zhu, Y Tang, <b>X Li</b>, J Zhou, J Lu. <a href=""
+											<li>W Li, X Huang, Z Zhu, Y Tang, <b>X Li</b>, J Zhou, J Lu. <a href="https://arxiv.org/abs/2206.02338"
 													class="bold font16">Ordinalclip: Learning rank prompts for
 													language-guided ordinal regression[C].</a> <b><i>Advances in Neural
 														Information Processing Systems (NeurIPS-22)</i></b>, 2022, 35:
@@ -1325,7 +1348,7 @@
 											<img src="img/conf_D2.png" style="width:150px; height:100px;">
 										</td>
 										<td>
-											<li>Z Chen, C Wang, H Zhao, B Yuan, <b>X Li</b>. <a href=""
+											<li>Z Chen, C Wang, H Zhao, B Yuan, <b>X Li</b>. <a href="https://dl.acm.org/doi/10.1145/3503161.3548002"
 													class="bold font16">D2Animator: Dual Distillation of StyleGAN For
 													High-Resolution Face Animation[C].</a> <b><i>In Proceedings of the
 														30th ACM International Conference on Multimedia (ACM
@@ -1396,10 +1419,10 @@
 												style="width:150px; height:100px;">
 										</td>
 										<td>
-											<li>Lyu, J., Ma, X., Yan, J., <b>Li, X</b>. <a
+											<li>Jiafei Lyu, Xiaoteng Ma, Jiangpeng Yan, <b>Xiu Li</b>. <a
 													href="https://ojs.aaai.org/index.php/AAAI/article/view/20732/20491"
 													class="bold font16">Efficient continuous control with double actors
-													and regularized critics.[C]</a> <b><i>In Proceedings of the AAAI
+													and regularized critics[C].</a> <b><i>In Proceedings of the AAAI
 														Conference on Artificial Intelligence (AAAI-22)</i></b>, 2022. WOS:000893639100067. EI Accession number: 20230713576345
 												<br /><a
 													href="https://ojs.aaai.org/index.php/AAAI/article/view/20732/20491"
@@ -1414,9 +1437,9 @@
 											<img src="img/conf_22.jpg" style="width:150px; height:100px;">
 										</td>
 										<td>
-											<li>Li, S., <b>Li, X</b>., Lu, J., & Zhou, J. <a href=""
+											<li>Shuyan Li, <b>Xiu Li</b>, Jiwen Lu, Jie Zhou. <a href="https://ieeexplore.ieee.org/document/9577815"
 													class="bold font16">Self-supervised video hashing via bidirectional
-													transformers.[C]</a> <b><i>In Proceedings of the IEEE/CVF
+													transformers[C].</a> <b><i>In Proceedings of the IEEE/CVF
 														Conference on Computer Vision and Pattern Recognition
 														(CVPR-21)</i></b> 2021:13549-13558. WOS:000742075003074. EI Accession number: 20220411509914
 												<br /><a href="https://ieeexplore.ieee.org/document/9577815"
@@ -1434,9 +1457,9 @@
 												style="width:150px; height:100px;">
 										</td>
 										<td>
-											<li>Wang Z, Zhou L, Wang L, <b>Li X</b>. <a href="" class="bold font16">A
+											<li>Wang Z, Zhou L, Wang L, <b>Li X</b>. <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_A_Self-Boosting_Framework_for_Automated_Radiographic_Report_Generation_CVPR_2021_paper.pdf" class="bold font16">A
 													Self-boosting Framework for Automated Radiographic Report
-													Generation.[C]</a> <b><i>In Proceedings of the IEEE/CVF Conference
+													Generation[C].</a> <b><i>In Proceedings of the IEEE/CVF Conference
 														on Computer Vision and Pattern Recognition (CVPR-21)</i></b>,
 												2021, 2433-2442. WOS:000739917302061. EI Accession number: 20220411509427
 												<br /><a
@@ -1450,13 +1473,13 @@
 											<img src="img/conf_Implicit Feature.png" style="width:150px; height:100px;">
 										</td>
 										<td>
-											<li>Ma, L., Wang, T., Dong, B., Yan, J., <b>Li, X</b>., Zhang, X. <a href=""
+											<li>Lufan Ma, Tiancai Wang, Bin Dong, Jiangpeng Yan, <b>Xiu Li</b>, Xiangyu Zhang. <a href="https://arxiv.org/abs/2112.04709"
 													class="bold font16">Implicit Feature Refinement for Instance
-													Segmentation.[C]</a> <b><i>In Proceedings of the 29th ACM
+													Segmentation[C].</a> <b><i>In Proceedings of the 29th ACM
 														International Conference on Multimedia (ACMMM-21) 2021</i></b>,
 												3088-3096. WOS:001147786903017. EI Accession number: 20214711200146
 												<br /><a
-													href="https://www.semanticscholar.org/paper/Implicit-Feature-Refinement-for-Instance-Ma-Wang/20f9ae00f13ca6c2d4158289b263ea6e3a8001c2"
+													href="https://arxiv.org/abs/2112.04709"
 													class="bold font16">[Page]</a>
 											</li>
 										</td>
@@ -1467,9 +1490,9 @@
 										</td>
 										<td>
 											<li>Xu, Z, Lu D, Wang Y, Luo J, Jayender J, Ma K, Zheng Y, <b>Li X</b>. <a
-													href="" class="bold font16">Noisy labels are treasure:
+													href="https://arxiv.org/abs/2106.01860" class="bold font16">Noisy labels are treasure:
 													mean-teacher-assisted confident learning for hepatic vessel
-													segmentation.[C]</a> <b><i>In Proceedings of the International
+													segmentation[C].</a> <b><i>In Proceedings of the International
 														Conference on Medical Image Computing and Computer-Assisted
 														Intervention (MICCAI-21)</i></b>, 2021, 3-13. WOS:000712019600001. EI Accession number: 20210132011
 												<br /><a href="https://arxiv.org/abs/2106.01860"
@@ -1483,7 +1506,7 @@
 										</td>
 										<td>
 											<li>J Yan, H Chen, K Wang, Y Ji, Y Zhu, J Li, D Xie, Z Xu, J Huang, S Cheng,
-												<b>X Li</b>, J Yao, <a href="" class="bold font16">Hierarchical
+												<b>X Li</b>, J Yao. <a href="https://link.springer.com/chapter/10.1007/978-3-030-87237-3_15" class="bold font16">Hierarchical
 													attention guided framework for multi-resolution collaborative whole
 													slide image segmentation[C].</a> <b><i>In Proceedings of the
 														International Conference on Medical Image Computing and
@@ -1500,9 +1523,9 @@
 											<img src="img/conf_27.png" style="width:150px; height:100px;">
 										</td>
 										<td>
-											<li>Yu B, Li W, <b>Li X</b>, et al. <a href=""
+											<li>Yu B, Li W, <b>Li X</b>, et al. <a href="https://ieeexplore.ieee.org/document/9710661"
 													class="bold font16">Frequency-aware spatiotemporal transformers for
-													video inpainting detection.[C]</a> <b><i>In Proceedings of the IEEE
+													video inpainting detection[C].</a> <b><i>In Proceedings of the IEEE
 														International Conference on Computer Vision (ICCV-21).</i></b>
 												2021: 8188-8197. WOS:000798743206081. EI Accession number: 20221511951865
 												<br /><a href="https://ieeexplore.ieee.org/document/9710661"
@@ -1515,9 +1538,9 @@
 											<img src="img/conf_28.png" style="width:150px; height:100px;">
 										</td>
 										<td>
-											<li>Xu Z, Yan J, Luo J, <b>Li X</b>, et al. <a href=""
+											<li>Xu Z, Yan J, Luo J, <b>Li X</b>, et al. <a href="https://ieeexplore.ieee.org/abstract/document/9414320"
 													class="bold font16">Unsupervised multimodal image registration with
-													adaptative gradient guidance.[C]</a> <b><i>In Proceedings of the IEEE
+													adaptative gradient guidance[C].</a> <b><i>In Proceedings of the IEEE
 														International Conference on Acoustics, Speech and Signal
 														Processing (ICASSP-21)</i></b>. IEEE, 2021: 1225-1229. INSPEC:20226819. EI Accession number: 20213810914669
 												<br /><a href="https://ieeexplore.ieee.org/abstract/document/9414320"
@@ -1530,8 +1553,8 @@
 											<img src="img/conf_29.jpg" style="width:150px; height:100px;">
 										</td>
 										<td>
-											<li>Ma L, Dong B, Yan J, et al. <a href="" class="bold font16">Matting
-													enhanced mask R-CNN.[C]</a> <b><i>In Proceedings of the 2021 IEEE
+											<li>Ma L, Dong B, Yan J, et al. <a href="https://ieeexplore.ieee.org/abstract/document/9428183" class="bold font16">Matting
+													enhanced mask R-CNN[C].</a> <b><i>In Proceedings of the 2021 IEEE
 														International Conference on Multimedia and Expo
 														(ICME-21).</i></b> IEEE, 2021: 1-6. INSPEC:21761707. EI Accession number: 20221211810228
 												<br /><a href="https://ieeexplore.ieee.org/abstract/document/9428183"
@@ -1544,9 +1567,9 @@
 											<img src="img/conf_30.png" style="width:150px; height:100px;">
 										</td>
 										<td>
-											<li>Xu Z, Luo J, Yan J, <b>Li X</b>，et al. <a href=""
+											<li>Xu Z, Luo J, Yan J, <b>Li X</b>，et al. <a href="https://link.springer.com/chapter/10.1007/978-3-030-59716-0_22"
 													class="bold font16">Adversarial uni-and multi-modal stream networks
-													for multimodal image registration.[C]</a> <b><i>In Proceedings of
+													for multimodal image registration[C].</a> <b><i>In Proceedings of
 														the International Conference on Medical Image Computing and
 														Computer-Assisted Intervention (MICCAI-20)</i></b>. 2020:
 												222-232. MEDLINE:33283210. EI Accession number: 20200562212
@@ -1569,6 +1592,14 @@
 							</table>
 						</section>
 						<section class="article" id="filter_medical" style="display: none;">
+							<style>
+								::marker {
+									content: "[" counter(list-item) "]  ";
+								}
+								.paperp {
+									margin: 0px 13% 0px 3%;
+								}
+							</style>
 							<table border="0">
 								<ol>
 									<style>
@@ -1760,6 +1791,14 @@
 							</table>
 						</section>
 						<section class="article" id="filter_multi" style="display: none;">
+							<style>
+								::marker {
+									content: "[" counter(list-item) "]";
+								}
+								.paperp {
+									margin: 0px 13% 0px 3%;
+								}
+							</style>
 							<table border="0">
 								<ol>
 									<style>
@@ -1920,7 +1959,6 @@
 						</section>
 						<section class="article">
 							<header class="headerNav">
-
 								<h1>专利</h1>
 							</header>
 							<ol>
@@ -1978,8 +2016,6 @@
 	</article>
 
 	<footer>
-
-
 		<section class="copyrights">
 			<section class="mainWrap">
 				<span class="info">
@@ -1992,7 +2028,6 @@
 				<span class="copy">版权所有 © 清华大学　　</span>
 			</section>
 		</section>
-
 	</footer>
 	<script>
 		// translate.ignore.tag.push('span');
@@ -2005,9 +2040,47 @@
 	<script>
 		function refreshPart(partId) {
 			var newContent = document.getElementById(partId).innerHTML;
-			document.getElementById('updateArea').innerHTML = newContent;
+			document.getElementById('baseArea_journal').innerHTML = newContent;
 		}
 	</script>
+	<pyscript>
+
+<!--		from bs4 import BeautifulSoup-->
+<!--		import openpyxl-->
+
+		def export_articles():
+			print("hello world")
+<!--			# 解析HTML文件-->
+<!--			with open('paper.html', 'r', encoding='utf-8') as file:-->
+<!--				soup = BeautifulSoup(file, 'html.parser')-->
+
+<!--			# 创建Excel文件和工作表-->
+<!--			wb = openpyxl.Workbook()-->
+<!--			ws = wb.active-->
+<!--			ws.append(['作者', '文章标题', '发表于', '原文链接', '收录于', '通讯作者'])-->
+<!--			# 解析HTML内容并填充到Excel文件中-->
+<!--			for row in soup.find('table', id='journal').find_all('tr'):-->
+<!--				cols = row.find_all('td')-->
+<!--				td_content = cols[1].find('li')-->
+<!--				authors = td_content.get_text().split('.')[0]  # 提取第二个<td>里的内容-->
+<!--				title = td_content.get_text().split('.')[1]-->
+<!--				public_source = td_content.get_text().split('.')[2]-->
+<!--				article_url = td_content.find('a').get('href')-->
+<!--				database_include = "/"  # 记录文章是否被SCI或EI收录-->
+<!--				if "WOS" or "INSPEC" in td_content.get_text():-->
+<!--					database_include = "SCI"-->
+<!--					if "EI" in td_content.get_text():-->
+<!--						database_include = "EI/SCI"-->
+<!--				if "EI" in td_content.get_text():-->
+<!--					database_include = "EI"-->
+<!--					if "WOS" or "INSPEC" in td_content.get_text():-->
+<!--						database_include = "EI/SCI"-->
+
+<!--				ws.append([authors, title, public_source, article_url, database_include, 'Xiu Li'])-->
+
+<!--			# 保存Excel文件-->
+<!--			wb.save('Articles.xlsx')-->
+	</pyscript>
 </body>
 
 </html>
