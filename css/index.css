@@ -142,7 +142,7 @@ ul{padding: 0;}
 
 .content .imgWrap{
 	margin: 0 auto;
-	width: 1200px;
+	width: 1000px;
 	height: auto;
     overflow: hidden;
     position: relative;
@@ -162,7 +162,7 @@ ul{padding: 0;}
 .imgWrap .carousel-caption {
     background: #252525;
     width: 1000px;
-    left: 8.35%;
+    left: 0%;
     opacity: .5;
     bottom: 0;
     text-align: left;
