@@ -2341,7 +2341,7 @@
 			<section class="mainWrap">
 				<span class="info">
 					<span>电话查号台：010-62793001</span>
-					<span>管理员信箱：y-ma21@tsinghua.mails.edu.cn</span>
+					<span>管理员信箱：xiu.li@sz.tsinghua.edu.cn</span>
 					<span>地址：广东省深圳市南山区西丽大学城清华校区</span>
 				</span>
 				<span class="icp">京公网安备 110402430053 号</span>
@@ -2364,44 +2364,6 @@
 			document.getElementById('baseArea_journal').innerHTML = newContent;
 		}
 	</script>
-	<pyscript>
-
-<!--		from bs4 import BeautifulSoup-->
-<!--		import openpyxl-->
-
-		def export_articles():
-			print("hello world")
-<!--			# 解析HTML文件-->
-<!--			with open('paper.html', 'r', encoding='utf-8') as file:-->
-<!--				soup = BeautifulSoup(file, 'html.parser')-->
-
-<!--			# 创建Excel文件和工作表-->
-<!--			wb = openpyxl.Workbook()-->
-<!--			ws = wb.active-->
-<!--			ws.append(['作者', '文章标题', '发表于', '原文链接', '收录于', '通讯作者'])-->
-<!--			# 解析HTML内容并填充到Excel文件中-->
-<!--			for row in soup.find('table', id='journal').find_all('tr'):-->
-<!--				cols = row.find_all('td')-->
-<!--				td_content = cols[1].find('li')-->
-<!--				authors = td_content.get_text().split('.')[0]  # 提取第二个<td>里的内容-->
-<!--				title = td_content.get_text().split('.')[1]-->
-<!--				public_source = td_content.get_text().split('.')[2]-->
-<!--				article_url = td_content.find('a').get('href')-->
-<!--				database_include = "/"  # 记录文章是否被SCI或EI收录-->
-<!--				if "WOS" or "INSPEC" in td_content.get_text():-->
-<!--					database_include = "SCI"-->
-<!--					if "EI" in td_content.get_text():-->
-<!--						database_include = "EI/SCI"-->
-<!--				if "EI" in td_content.get_text():-->
-<!--					database_include = "EI"-->
-<!--					if "WOS" or "INSPEC" in td_content.get_text():-->
-<!--						database_include = "EI/SCI"-->
-
-<!--				ws.append([authors, title, public_source, article_url, database_include, 'Xiu Li'])-->
-
-<!--			# 保存Excel文件-->
-<!--			wb.save('Articles.xlsx')-->
-	</pyscript>
 </body>
 
 </html>
