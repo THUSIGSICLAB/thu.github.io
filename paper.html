@@ -259,11 +259,61 @@
 								/* 小字的字体大小 */
 								font-weight: bold;
 							}
+							.article-link-container {
+								display: flex;
+								justify-content: center;
+								gap: 16px; /* 链接间距 */
+								margin-top: 20px;
+							}
+								/* 基础链接样式（添加唯一前缀 article-） */
+							a.article-link {
+								text-decoration: none;
+								font-family: 'Arial', sans-serif;
+								padding: 8px 16px;
+								border-radius: 6px;
+								display: inline-flex;
+								align-items: center;
+								gap: 8px;
+								font-weight: 500;
+								transition: all 0.3s ease;
+							}
+							
+							/* 期刊文章链接（唯一类名） */
+							a.article-journal {
+								background-color: rgb(102, 8, 116);
+								color: white;
+								box-shadow: 0 2px 4px rgba(102, 8, 116, 0.3);
+							}
+							
+							a.article-journal::before { content: "📄"; }
+							
+							a.article-journal:hover {
+								background-color: rgb(82, 6, 95);
+								transform: translateY(-2px);
+								box-shadow: 0 4px 8px rgba(102, 8, 116, 0.4);
+							}
+							
+							/* 会议文章链接（唯一类名） */
+							a.article-conference {
+								color: rgb(102, 8, 116);
+								border: 2px solid rgb(102, 8, 116);
+								background-color: white;
+							}
+							
+							a.article-conference::before { content: "🏛️"; }
+							
+							a.article-conference:hover {
+								background-color: rgba(102, 8, 116, 0.1);
+								transform: translateY(-2px);
+								box-shadow: 0 4px 8px rgba(102, 8, 116, 0.2);
+							}
 						</style>
 						<div class="container_toolbar">
-							<div class="toolbar">
-								<a href="paper.html">期刊</a>
-								<a href="#" onclick="refreshPart('area_conference')">会议</a>
+							<div class="article-link-container">
+								<a href="paper.html" class="article-link article-journal">期刊论文</a>
+    							<a href="#" class="article-link article-conference" onclick="refreshPart('area_conference')">会议论文</a>
+								<!-- <a href="paper.html">期刊</a> -->
+								<!-- <a href="#" onclick="refreshPart('area_conference')">会议</a> -->
 								<!-- <a href="thusigsiclab_articles.xlsx" download="thusigsiclab_articles.xlsx">导出</a> -->
 							</div>
 						</div>
