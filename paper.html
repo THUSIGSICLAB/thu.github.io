@@ -65,10 +65,11 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="css/education.css" />
+	<link rel="stylesheet" type="text/css" href="css/education.css?v=20260724-3" />
 	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/outcomes-nav.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
@@ -187,37 +188,43 @@
 							</div>
 							<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1"
 								aria-expanded="false">
-								<ul class="navTotal" style="padding:0 ;">
-									<li class="current">
-										<i class="glyphicon glyphicon-minus"></i>
-										<a href="#" onclick="showOutcome('papers', this); return false;">论文</a>
-										<ul>
-											<li>
-												<a href="#" onclick="showOutcome('papers', this); return false;">全部论文</a>
-											</li>
-											<li>
-												<a href="#" onclick="showOutcome('conference', this); return false;">会议论文</a>
-											</li>
-											<li>
-												<a href="#" onclick="showOutcome('journal', this); return false;">期刊论文</a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<i class="glyphicon glyphicon-minus"></i>
-										<a href="#" onclick="showOutcome('patent', this); return false;">专利</a>
-									</li>
-									<li>
-										<i class="glyphicon glyphicon-minus"></i>
-										<a href="#" onclick="showOutcome('project', this); return false;">在研项目</a>
-									</li>
-									<li>
-										<i class="glyphicon glyphicon-minus"></i>
-										<a href="bisai.html">比赛获奖</a>
-									</li>
-									<li>
-										<i class="glyphicon glyphicon-minus"></i>
-										<a href="dataset.html">数据集</a>
+									<ul class="navTotal outcomes-nav" style="padding:0 ;">
+										<li class="current has-subnav">
+											<button class="outcome-nav-toggle" type="button" aria-expanded="true"
+												aria-controls="outcome-paper-subnav">
+												<span aria-hidden="true"></span>
+												<span class="sr-only">收起论文分类</span>
+											</button>
+											<a href="#papers" data-outcome-link="papers"
+												onclick="showOutcome('papers', this);">论文</a>
+											<ul class="outcome-subnav" id="outcome-paper-subnav">
+												<li>
+													<a href="#papers" data-outcome-link="papers"
+														onclick="showOutcome('papers', this);">全部论文</a>
+												</li>
+												<li>
+													<a href="#conference" data-outcome-link="conference"
+														onclick="showOutcome('conference', this);">会议论文</a>
+												</li>
+												<li>
+													<a href="#journal" data-outcome-link="journal"
+														onclick="showOutcome('journal', this);">期刊论文</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="#patent" data-outcome-link="patent"
+												onclick="showOutcome('patent', this);">专利</a>
+										</li>
+										<li>
+											<a href="#project" data-outcome-link="project"
+												onclick="showOutcome('project', this);">在研项目</a>
+										</li>
+										<li>
+											<a href="bisai.html">比赛获奖</a>
+										</li>
+										<li>
+											<a href="dataset.html">数据集</a>
 									</li>
 								</ul>
 							</div>
@@ -2614,15 +2621,32 @@
 				document.querySelectorAll('.navTotal > li').forEach(function (item) {
 					item.classList.remove('current');
 				});
+				document.querySelectorAll('[data-outcome-link]').forEach(function (link) {
+					link.classList.remove('is-selected');
+				});
 				if (activeLink) {
 					var topLevelItem = activeLink.closest('.navTotal > li');
 					if (topLevelItem) {
 						topLevelItem.classList.add('current');
 					}
+					activeLink.classList.add('is-selected');
 				}
 			}
 
-			showOutcome('papers', document.querySelector('.navTotal > li > a'));
+			function showOutcomeFromHash() {
+				var outcome = window.location.hash.slice(1);
+				var validOutcomes = ['papers', 'journal', 'conference', 'patent', 'project'];
+				if (validOutcomes.indexOf(outcome) === -1) {
+					outcome = 'papers';
+				}
+				var activeLink = document.querySelector(
+					'.outcome-subnav [data-outcome-link="' + outcome + '"]'
+				) || document.querySelector('[data-outcome-link="' + outcome + '"]');
+				showOutcome(outcome, activeLink);
+			}
+
+			window.addEventListener('hashchange', showOutcomeFromHash);
+			showOutcomeFromHash();
 		</script>
 </body>
 

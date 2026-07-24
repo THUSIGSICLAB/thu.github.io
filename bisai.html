@@ -39,10 +39,11 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="css/education.css" />
+	<link rel="stylesheet" type="text/css" href="css/education.css?v=20260724-3" />
 	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/outcomes-nav.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
@@ -136,23 +137,33 @@
 									<span class="icon-bar eduicon" style="background-color: white;"></span>
 									<span class="icon-bar eduicon" style="background-color: white;"></span>
 								</button>
-								<a href="" class="navbar-brand edubrand">教育教学</a>
+									<a href="" class="navbar-brand edubrand">成果分类</a>
 							</div>
 							<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1"
 								aria-expanded="false">
-								<ul class="navTotal" style="padding:0 ;">
-									<li>
-										<i class="glyphicon glyphicon-minus"></i>
-										<a href="paper.html">论文专利</span></a>
+								<ul class="navTotal outcomes-nav" style="padding:0 ;">
+									<li class="has-subnav">
+										<button class="outcome-nav-toggle" type="button" aria-expanded="true"
+											aria-controls="outcome-paper-subnav">
+											<span aria-hidden="true"></span>
+											<span class="sr-only">收起论文分类</span>
+										</button>
+										<a href="paper.html#papers">论文</a>
+										<ul class="outcome-subnav" id="outcome-paper-subnav">
+											<li><a href="paper.html#papers">全部论文</a></li>
+											<li><a href="paper.html#conference">会议论文</a></li>
+											<li><a href="paper.html#journal">期刊论文</a></li>
+										</ul>
 									</li>
+									<li><a href="paper.html#patent">专利</a></li>
+									<li><a href="paper.html#project">在研项目</a></li>
 									<li class="current">
-										<i class="glyphicon glyphicon-minus"></i>
 										<a href="bisai.html">比赛获奖</a>
 									</li>
 									<li>
-										<i class="glyphicon glyphicon-minus"></i>
 										<a href="dataset.html">数据集</a>
 									</li>
+								</ul>
 							</div>
 						</nav>
 					</section>

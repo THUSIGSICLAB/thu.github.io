@@ -211,6 +211,43 @@ img {
     bottom: 0;
    }
 .detailContent .leftNav li.current i{background: #f7f7f7;}
+.detailContent .outcomes-nav > li.has-subnav > a {
+    margin-right: 36px;
+}
+.detailContent .outcome-nav-toggle {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 52px;
+    padding: 0;
+    border: 0;
+    border-left: 1px solid #ddd;
+    background: transparent;
+    color: #5c307d;
+    cursor: pointer;
+}
+.detailContent .outcome-nav-toggle span[aria-hidden="true"]::before {
+    content: "\2212";
+    font-size: 16px;
+    line-height: 1;
+}
+.detailContent .outcome-nav-toggle[aria-expanded="false"] span[aria-hidden="true"]::before {
+    content: "+";
+}
+.detailContent .outcome-nav-toggle:hover,
+.detailContent .outcome-nav-toggle:focus-visible,
+.detailContent .outcomes-nav > li.current > .outcome-nav-toggle {
+    background: #f7f7f7;
+}
+.detailContent .outcome-subnav[hidden] {
+    display: none !important;
+}
+.detailContent .outcome-subnav a.is-selected {
+    color: #5c307d;
+    font-weight: 700;
+}
 .leftNav .leftSubnav{display: none;}
 .detailContent .leftNav li.current ul{display: block;}
 .detailContent .leftNav li ul {
@@ -580,6 +617,9 @@ footer .copyrights .icp {
 .detailContent .navTotal {
     margin-top: 0;
     }
+.detailContent .leftNav .navbar-collapse {
+    background: #fff;
+}
 
 .collapse {
     display: none;
