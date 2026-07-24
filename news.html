@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>THUSIGSICLAB</title>
+	<title>新闻动态 | THUSIGSICLAB</title>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
@@ -39,15 +39,15 @@
 	<meta name="viewport"
 		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<meta charset="UTF-8">
-	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="css/education.css" />
+	<link rel="stylesheet" type="text/css" href="css/content-browser.css" />
 	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
-<body>
+<body class="page-news">
 	<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
 	<script src="js/translate.js"></script>
 	<style>
@@ -141,10 +141,31 @@
 							</div>
 							<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1"
 								aria-expanded="false">
-								<ul class="navTotal" style="padding:0 ;">
+								<ul class="navTotal news-filter-list" style="padding:0 ;">
 									<li class="current">
 										<i class="glyphicon glyphicon-minus"></i>
-										<a href="#">新 闻</span></a>
+										<a href="#" data-news-category="" aria-current="true">全部新闻 <span class="filter-count"></span></a>
+									</li>
+									<li>
+										<a href="#" data-news-category="科研成果">科研成果 <span class="filter-count"></span></a>
+									</li>
+									<li>
+										<a href="#" data-news-category="毕业微展">毕业微展 <span class="filter-count"></span></a>
+									</li>
+									<li>
+										<a href="#" data-news-category="师生活动">师生活动 <span class="filter-count"></span></a>
+									</li>
+									<li>
+										<a href="#" data-news-category="学术交流">学术交流 <span class="filter-count"></span></a>
+									</li>
+									<li>
+										<a href="#" data-news-category="荣誉奖励">荣誉奖励 <span class="filter-count"></span></a>
+									</li>
+									<li>
+										<a href="#" data-news-category="招聘信息">招聘信息 <span class="filter-count"></span></a>
+									</li>
+									<li>
+										<a href="#" data-news-category="其他">其他 <span class="filter-count"></span></a>
 									</li>
 
 
@@ -154,31 +175,26 @@
 					</section>
 				</div>
 				<div class="col_2">
-					<article class="mainContent">
+					<article class="mainContent news-content">
 						<header class="headerNav">
 							<nav class="hnav">
 								<a>首页.</a>
 								<a>课题组新闻.</a>
 								<a>新闻</a>
 							</nav>
-							<h1>目录</h1>
+							<h1>新闻动态</h1>
 						</header>
-						<style>
-							.small-text {
-								position: relative;
-								top: -5px;
-								/* 向上移动小字 */
-								right: -5px;
-								/* 向右移动小字 */
-								font-size: 12px;
-								/* 小字的字体大小 */
-								font-style: italic;
-								/* 字体倾斜 */
-								color: red;
-								/* 小字的颜色 */
-							}
-						</style>
-						<section class="article"></section>
+						<div class="news-tools" aria-label="新闻筛选">
+							<label class="news-search" for="news-search">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+								<input id="news-search" type="search" aria-label="搜索新闻" placeholder="搜索标题、作者或关键词" autocomplete="off">
+							</label>
+							<select class="news-year" id="news-year" aria-label="按年份筛选">
+								<option value="">全部年份</option>
+							</select>
+						</div>
+						<div class="news-summary" id="news-summary" aria-live="polite"></div>
+						<section class="article news-list" id="news-list">
 						<a href="https://mp.weixin.qq.com/s/E3l02T5HQVWA1BzcyPw_zw">【毕业微展】2026-07-05
 							杨昱：基于多场景融合的个性化推荐算法研究<span class="small-text">new~</span></a> <br>
 						<a href="https://mp.weixin.qq.com/s/DWSFC1narxZZ8ijChUsnEA">【毕业微展】2026-07-03
@@ -427,6 +443,8 @@
 						<a href="https://mp.weixin.qq.com/s/5D3VPNZr2qy73U8qI2W4jg">【科研成果】2021-11-03 ICCV视频多模态理解VALUE
 							Challenge 冠军方案</a><br>
 		</section>
+		<div class="news-empty" id="news-empty" hidden>没有找到符合条件的新闻，请调整分类、年份或关键词。</div>
+		<nav class="browser-pagination" id="news-pagination" aria-label="新闻分页"></nav>
 
 
 	</article>
@@ -463,6 +481,7 @@
 		// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
 		translate.execute();
 	</script>
+	<script src="js/news-browser.js" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>
