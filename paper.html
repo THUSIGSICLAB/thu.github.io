@@ -65,7 +65,7 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="css/education.css?v=20260724-3" />
+	<link rel="stylesheet" type="text/css" href="css/education.css?v=20260724-6" />
 	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
@@ -2601,13 +2601,10 @@
 		translate.execute();
 		</script>
 		<script>
-			function scrollToOutcomeTop() {
-				var content = document.querySelector('.mainContent');
-				if (!content) {
-					return;
-				}
-				var top = content.getBoundingClientRect().top + window.pageYOffset;
-				window.scrollTo(0, top);
+			function scrollToPageTop() {
+				document.documentElement.scrollTop = 0;
+				document.body.scrollTop = 0;
+				window.scrollTo(0, 0);
 			}
 
 			function showOutcome(outcome, activeLink, skipHistoryUpdate) {
@@ -2643,7 +2640,7 @@
 				if (!skipHistoryUpdate && window.location.hash !== '#' + outcome) {
 					window.history.replaceState(null, '', '#' + outcome);
 				}
-				window.requestAnimationFrame(scrollToOutcomeTop);
+				window.requestAnimationFrame(scrollToPageTop);
 			}
 
 			function showOutcomeFromHash() {
