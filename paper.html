@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>成果展示 | THUSIGSICLAB</title>
+	<title>THUSIGSICLAB</title>
 	<style>
 		#backToTop {
 			display: none;
@@ -63,15 +63,15 @@
 	<meta name="viewport"
 		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<meta charset="UTF-8">
+	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="css/education.css" />
-	<link rel="stylesheet" type="text/css" href="css/content-browser.css" />
 	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
-<body class="page-publications">
+<body>
 	<!-- <script src="http://res.zvo.cn/translate/translate.js"></script> -->
 	<script src="js/translate.js"></script>
 	<style>
@@ -187,27 +187,31 @@
 							</div>
 							<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1"
 								aria-expanded="false">
-								<ul class="navTotal publication-nav" style="padding:0 ;">
+								<ul class="navTotal" style="padding:0 ;">
 									<li class="current">
-										<a href="#" data-publication-target="baseArea_journal" aria-current="true">期刊论文 <span class="tab-count filter-count"></span></a>
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="paper.html">论文专利</span></a>
+										<ul>
+											<li>
+<!--												<i class="glyphicon glyphicon-minus"></i>-->
+												<a href="#"
+													onclick="refreshPart('filter_medical')">医学影像</a>
+											</li>
+											<li>
+<!--												<i class="glyphicon glyphicon-minus"></i>-->
+												<a href="#"
+													onclick="refreshPart('filter_multi')">多模态及大模型</a>
+											</li>
+										</ul>
 									</li>
 									<li>
-										<a href="#" data-publication-target="area_conference">会议论文 <span class="tab-count filter-count"></span></a>
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="bisai.html">比赛获奖</a>
 									</li>
 									<li>
-										<a href="#" data-publication-target="filter_medical">医学影像 <span class="tab-count filter-count"></span></a>
+										<i class="glyphicon glyphicon-minus"></i>
+										<a href="dataset.html">数据集</a>
 									</li>
-									<li>
-										<a href="#" data-publication-target="filter_multi">多模态与大模型 <span class="tab-count filter-count"></span></a>
-									</li>
-									<li>
-										<a href="#" data-publication-target="area_patent">专利 <span class="tab-count filter-count"></span></a>
-									</li>
-									<li>
-										<a href="#" data-publication-target="area_project">科研项目 <span class="tab-count filter-count"></span></a>
-									</li>
-									<li><a href="bisai.html">比赛获奖</a></li>
-									<li><a href="dataset.html">数据集</a></li>
 								</ul>
 							</div>
 						</nav>
@@ -216,15 +220,103 @@
 				</div>
 				<div class="col_2">
 					<article class="mainContent">
-						<header class="publication-titlebar">
+						<header class="headerNav">
 							<nav class="hnav">
 								<a>首页.</a>
 								<a>成果展示.</a>
 								<a>论文专利</a>
 							</nav>
-							<h1>成果展示</h1>
 						</header>
-						<div class="publication-summary" id="publication-summary" aria-live="polite"></div>
+						<style>
+							.container_toolbar {
+								width: fit-content;
+								margin: 0 auto; /* 水平居中 */
+								}
+								.toolbar {
+								/* width: fit-content; */
+								text-align: center;
+								background-color: rgb(102, 8, 116);
+								border-radius: 5px;
+								}
+								.toolbar a {
+								text-decoration: none;
+								display: inline-block;
+								padding: 10px;
+								margin: 0 5px;
+								color: white;
+								background-color: rgb(102, 8, 116);
+								}
+								.toolbar a:hover {
+								background-color: #ddd;
+							}
+							.small-text {
+								position: relative;
+								top: -7px;
+								/* 向上移动小字 */
+								right: -1px;
+								/* 向右移动小字 */
+								font-size: 10px;
+								/* 小字的字体大小 */
+								font-weight: bold;
+							}
+							.article-link-container {
+								display: flex;
+								justify-content: center;
+								gap: 16px; /* 链接间距 */
+								margin-top: 20px;
+							}
+								/* 基础链接样式（添加唯一前缀 article-） */
+							a.article-link {
+								text-decoration: none;
+								font-family: 'Arial', sans-serif;
+								padding: 8px 16px;
+								border-radius: 6px;
+								display: inline-flex;
+								align-items: center;
+								gap: 8px;
+								font-weight: 500;
+								transition: all 0.3s ease;
+							}
+							
+							/* 期刊文章链接（唯一类名） */
+							a.article-journal {
+								background-color: rgb(102, 8, 116);
+								color: white;
+								box-shadow: 0 2px 4px rgba(102, 8, 116, 0.3);
+							}
+							
+							a.article-journal::before { content: "📄"; }
+							
+							a.article-journal:hover {
+								background-color: rgb(82, 6, 95);
+								transform: translateY(-2px);
+								box-shadow: 0 4px 8px rgba(102, 8, 116, 0.4);
+							}
+							
+							/* 会议文章链接（唯一类名） */
+							a.article-conference {
+								color: rgb(102, 8, 116);
+								border: 2px solid rgb(102, 8, 116);
+								background-color: white;
+							}
+							
+							a.article-conference::before { content: "🏛️"; }
+							
+							a.article-conference:hover {
+								background-color: rgba(102, 8, 116, 0.1);
+								transform: translateY(-2px);
+								box-shadow: 0 4px 8px rgba(102, 8, 116, 0.2);
+							}
+						</style>
+						<div class="container_toolbar">
+							<div class="article-link-container">
+								<a href="paper.html" class="article-link article-journal">期刊论文</a>
+    							<a href="#" class="article-link article-conference" onclick="refreshPart('area_conference')">会议论文</a>
+								<!-- <a href="paper.html">期刊</a> -->
+								<!-- <a href="#" onclick="refreshPart('area_conference')">会议</a> -->
+								<!-- <a href="thusigsiclab_articles.xlsx" download="thusigsiclab_articles.xlsx">导出</a> -->
+							</div>
+						</div>
 						<section class="article" id="baseArea_journal">
 							<style>
 								::marker {
@@ -2476,7 +2568,7 @@
 								</ol>
 							</table>
 						</section>
-						<section class="article" id="area_patent" style="display: none;">
+						<section class="article">
 							<header class="headerNav">
 								<h1>专利</h1>
 							</header>
@@ -2529,8 +2621,7 @@
 								<li>李秀；闫天翔；高福信；余瑾；一种从非关系型数据库到关系型数据库的数据迁移方法，中国，ZL201310443352.X<br></li>
 								<li>李秀；黄容生；郭振华；马辉；用于海底观测网仪器智能配置的云配置方法，中国，ZL201310467742.0<br></li>
 							</ol>
-						</section>
-						<section class="article" id="area_project" style="display: none;">
+
 							<header class="headerNav">
 
 								<h1>在研国家级重大科研项目</h1>
@@ -2543,8 +2634,6 @@
 								<li>国家自然科学基金项目，项目名称：水下影像智能处理的关键技术研究 项目负责人：李秀。执行期：2019-2022<br></li>
 							</ol>
 						</section>
-						<div class="publication-empty" id="publication-empty" hidden>该栏目暂无成果。</div>
-						<nav class="browser-pagination" id="publication-pagination" aria-label="成果分页"></nav>
 					</article>
 				</div>
 			</div>
@@ -2574,7 +2663,12 @@
 		// translate.listener.start();	//开启html页面变化的监控，对变化部分会进行自动翻译。注意，这里变化区域，是指使用 translate.setDocuments(...) 设置的区域。如果未设置，那么为监控整个网页的变化
 		translate.execute();
 	</script>
-	<script src="js/publication-browser.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		function refreshPart(partId) {
+			var newContent = document.getElementById(partId).innerHTML;
+			document.getElementById('baseArea_journal').innerHTML = newContent;
+		}
+	</script>
 </body>
 
 </html>
