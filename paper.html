@@ -196,29 +196,29 @@
 												<span class="sr-only">收起论文分类</span>
 											</button>
 											<a href="#papers" data-outcome-link="papers"
-												onclick="showOutcome('papers', this);">论文</a>
+												onclick="showOutcome('papers', this); return false;">论文</a>
 											<ul class="outcome-subnav" id="outcome-paper-subnav">
 												<li>
 													<a href="#papers" data-outcome-link="papers"
-														onclick="showOutcome('papers', this);">全部论文</a>
+														onclick="showOutcome('papers', this); return false;">全部论文</a>
 												</li>
 												<li>
 													<a href="#conference" data-outcome-link="conference"
-														onclick="showOutcome('conference', this);">会议论文</a>
+														onclick="showOutcome('conference', this); return false;">会议论文</a>
 												</li>
 												<li>
 													<a href="#journal" data-outcome-link="journal"
-														onclick="showOutcome('journal', this);">期刊论文</a>
+														onclick="showOutcome('journal', this); return false;">期刊论文</a>
 												</li>
 											</ul>
 										</li>
 										<li>
 											<a href="#patent" data-outcome-link="patent"
-												onclick="showOutcome('patent', this);">专利</a>
+												onclick="showOutcome('patent', this); return false;">专利</a>
 										</li>
 										<li>
 											<a href="#project" data-outcome-link="project"
-												onclick="showOutcome('project', this);">在研项目</a>
+												onclick="showOutcome('project', this); return false;">在研项目</a>
 										</li>
 										<li>
 											<a href="bisai.html">比赛获奖</a>
@@ -267,7 +267,7 @@
 							<header class="headerNav">
 								<h1>SCI检索期刊论文：</h1>
 							</header>
-							<table border="0" id="journal">
+							<table border="0" id="journal-table">
 								<ol>
 									<style>
 										td {
@@ -854,7 +854,7 @@
 							<header class="headerNav">
 								<h1>会议论文：</h1>
 							</header>
-							<table border="0" id="conference">
+							<table border="0" id="conference-table">
 								<ol>
 									<tr>
 										<td>
@@ -2601,7 +2601,16 @@
 		translate.execute();
 		</script>
 		<script>
-			function showOutcome(outcome, activeLink) {
+			function scrollToOutcomeTop() {
+				var content = document.querySelector('.mainContent');
+				if (!content) {
+					return;
+				}
+				var top = content.getBoundingClientRect().top + window.pageYOffset;
+				window.scrollTo(0, top);
+			}
+
+			function showOutcome(outcome, activeLink, skipHistoryUpdate) {
 				var visibleOutcomes = outcome === 'papers'
 					? ['journal', 'conference']
 					: [outcome];
@@ -2631,6 +2640,10 @@
 					}
 					activeLink.classList.add('is-selected');
 				}
+				if (!skipHistoryUpdate && window.location.hash !== '#' + outcome) {
+					window.history.replaceState(null, '', '#' + outcome);
+				}
+				window.requestAnimationFrame(scrollToOutcomeTop);
 			}
 
 			function showOutcomeFromHash() {
@@ -2642,7 +2655,7 @@
 				var activeLink = document.querySelector(
 					'.outcome-subnav [data-outcome-link="' + outcome + '"]'
 				) || document.querySelector('[data-outcome-link="' + outcome + '"]');
-				showOutcome(outcome, activeLink);
+				showOutcome(outcome, activeLink, true);
 			}
 
 			window.addEventListener('hashchange', showOutcomeFromHash);
