@@ -15,11 +15,6 @@
         return value.replace(/\s+/g, " ").trim();
     }
 
-    function itemYear(text) {
-        var matches = text.match(/20(?:1\d|2[0-6])/g) || [];
-        return matches.length ? matches[0] : "";
-    }
-
     function createPageButton(label, page, active, disabled, title) {
         var button = document.createElement("button");
         button.type = "button";
@@ -48,9 +43,6 @@
             var rows = Array.prototype.slice.call(section.querySelectorAll("tr"));
             var items = rows.length ? rows : Array.prototype.slice.call(section.querySelectorAll(":scope > ol > li"));
             items.forEach(function (item) {
-                var text = normalizeText(item.textContent);
-                item.dataset.search = text.toLowerCase();
-                item.dataset.year = itemYear(text);
                 if (item.tagName === "TR") {
                     var links = Array.prototype.slice.call(item.querySelectorAll("a.bold"));
                     links.forEach(function (link, index) {
@@ -67,13 +59,11 @@
         });
 
         var tabs = Array.prototype.slice.call(document.querySelectorAll("[data-publication-target]"));
-        var searchInput = document.getElementById("publication-search");
-        var yearSelect = document.getElementById("publication-year");
         var summary = document.getElementById("publication-summary");
         var empty = document.getElementById("publication-empty");
         var pagination = document.getElementById("publication-pagination");
 
-        if (!tabs.length || !searchInput || !yearSelect || !summary || !pagination) {
+        if (!tabs.length || !summary || !pagination) {
             return;
         }
 
@@ -85,25 +75,8 @@
             }
         });
 
-        var years = new Set();
-        Object.keys(sections).forEach(function (id) {
-            sections[id].items.forEach(function (item) {
-                if (item.dataset.year) {
-                    years.add(item.dataset.year);
-                }
-            });
-        });
-        Array.from(years).sort().reverse().forEach(function (year) {
-            var option = document.createElement("option");
-            option.value = year;
-            option.textContent = year + " 年";
-            yearSelect.appendChild(option);
-        });
-
         var state = {
             section: "baseArea_journal",
-            year: "",
-            query: "",
             page: 1
         };
 
@@ -133,11 +106,7 @@
                 return;
             }
 
-            var matched = active.items.filter(function (item) {
-                var yearMatches = !state.year || item.dataset.year === state.year;
-                var queryMatches = !state.query || item.dataset.search.indexOf(state.query) !== -1;
-                return yearMatches && queryMatches;
-            });
+            var matched = active.items;
 
             var pageCount = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
             state.page = Math.min(state.page, pageCount);
@@ -169,27 +138,17 @@
             tabs.forEach(function (tab) {
                 var active = tab.dataset.publicationTarget === sectionId;
                 tab.classList.toggle("is-active", active);
-                tab.setAttribute("aria-selected", active ? "true" : "false");
+                tab.parentElement.classList.toggle("current", active);
+                tab.setAttribute("aria-current", active ? "true" : "false");
             });
             render();
         }
 
         tabs.forEach(function (tab) {
-            tab.addEventListener("click", function () {
+            tab.addEventListener("click", function (event) {
+                event.preventDefault();
                 activate(tab.dataset.publicationTarget);
             });
-        });
-
-        searchInput.addEventListener("input", function () {
-            state.query = normalizeText(searchInput.value).toLowerCase();
-            state.page = 1;
-            render();
-        });
-
-        yearSelect.addEventListener("change", function () {
-            state.year = yearSelect.value;
-            state.page = 1;
-            render();
         });
 
         pagination.addEventListener("click", function (event) {
@@ -199,7 +158,7 @@
             }
             state.page = Number(button.dataset.page);
             render();
-            document.querySelector(".publication-browser").scrollIntoView({ behavior: "smooth", block: "start" });
+            document.querySelector(".publication-titlebar").scrollIntoView({ behavior: "smooth", block: "start" });
         });
 
         window.showPublicationView = activate;

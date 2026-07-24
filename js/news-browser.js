@@ -25,8 +25,6 @@
         var article = document.createElement("article");
         article.className = "news-item";
         article.dataset.category = item.category;
-        article.dataset.year = item.year;
-        article.dataset.search = (item.category + " " + item.rawCategory + " " + item.title).toLowerCase();
 
         var link = document.createElement("a");
         link.className = "news-main-link";
@@ -103,14 +101,12 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         var list = document.getElementById("news-list");
-        var searchInput = document.getElementById("news-search");
-        var yearSelect = document.getElementById("news-year");
         var summary = document.getElementById("news-summary");
         var empty = document.getElementById("news-empty");
         var pagination = document.getElementById("news-pagination");
         var filterLinks = Array.prototype.slice.call(document.querySelectorAll("[data-news-category]"));
 
-        if (!list || !searchInput || !yearSelect || !summary || !pagination) {
+        if (!list || !summary || !pagination) {
             return;
         }
 
@@ -129,7 +125,6 @@
                     rawCategory: rawCategory,
                     category: categoryGroups[rawCategory] || "其他",
                     date: match[2],
-                    year: match[2].slice(0, 4),
                     title: match[3],
                     href: element.getAttribute("href"),
                     isNew: Boolean(element.querySelector(".small-text")),
@@ -149,14 +144,6 @@
         list.appendChild(fragment);
 
         var cards = Array.prototype.slice.call(list.querySelectorAll(".news-item"));
-        var years = Array.from(new Set(parsed.map(function (item) { return item.year; }))).sort().reverse();
-        years.forEach(function (year) {
-            var option = document.createElement("option");
-            option.value = year;
-            option.textContent = year + " 年";
-            yearSelect.appendChild(option);
-        });
-
         var categoryCounts = parsed.reduce(function (counts, item) {
             counts[item.category] = (counts[item.category] || 0) + 1;
             return counts;
@@ -173,8 +160,6 @@
 
         var state = {
             category: "",
-            year: "",
-            query: "",
             page: 1
         };
 
@@ -198,10 +183,7 @@
 
         function render() {
             var matched = cards.filter(function (card) {
-                var categoryMatches = !state.category || card.dataset.category === state.category;
-                var yearMatches = !state.year || card.dataset.year === state.year;
-                var searchMatches = !state.query || card.dataset.search.indexOf(state.query) !== -1;
-                return categoryMatches && yearMatches && searchMatches;
+                return !state.category || card.dataset.category === state.category;
             });
 
             var pageCount = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
@@ -234,18 +216,6 @@
                 });
                 render();
             });
-        });
-
-        searchInput.addEventListener("input", function () {
-            state.query = normalizeText(searchInput.value).toLowerCase();
-            state.page = 1;
-            render();
-        });
-
-        yearSelect.addEventListener("change", function () {
-            state.year = yearSelect.value;
-            state.page = 1;
-            render();
         });
 
         pagination.addEventListener("click", function (event) {

@@ -187,31 +187,27 @@
 							</div>
 							<div class="collapse navbar-collapse collapse" id="example-navbar-collapse-1"
 								aria-expanded="false">
-								<ul class="navTotal" style="padding:0 ;">
+								<ul class="navTotal publication-nav" style="padding:0 ;">
 									<li class="current">
-										<i class="glyphicon glyphicon-minus"></i>
-										<a href="#" onclick="showPublicationView('baseArea_journal'); return false;">论文专利</a>
-										<ul>
-											<li>
-<!--												<i class="glyphicon glyphicon-minus"></i>-->
-												<a href="#"
-													onclick="showPublicationView('filter_medical'); return false;">医学影像</a>
-											</li>
-											<li>
-<!--												<i class="glyphicon glyphicon-minus"></i>-->
-												<a href="#"
-													onclick="showPublicationView('filter_multi'); return false;">多模态及大模型</a>
-											</li>
-										</ul>
+										<a href="#" data-publication-target="baseArea_journal" aria-current="true">期刊论文 <span class="tab-count filter-count"></span></a>
 									</li>
 									<li>
-										<i class="glyphicon glyphicon-minus"></i>
-										<a href="bisai.html">比赛获奖</a>
+										<a href="#" data-publication-target="area_conference">会议论文 <span class="tab-count filter-count"></span></a>
 									</li>
 									<li>
-										<i class="glyphicon glyphicon-minus"></i>
-										<a href="dataset.html">数据集</a>
+										<a href="#" data-publication-target="filter_medical">医学影像 <span class="tab-count filter-count"></span></a>
 									</li>
+									<li>
+										<a href="#" data-publication-target="filter_multi">多模态与大模型 <span class="tab-count filter-count"></span></a>
+									</li>
+									<li>
+										<a href="#" data-publication-target="area_patent">专利 <span class="tab-count filter-count"></span></a>
+									</li>
+									<li>
+										<a href="#" data-publication-target="area_project">科研项目 <span class="tab-count filter-count"></span></a>
+									</li>
+									<li><a href="bisai.html">比赛获奖</a></li>
+									<li><a href="dataset.html">数据集</a></li>
 								</ul>
 							</div>
 						</nav>
@@ -228,26 +224,7 @@
 							</nav>
 							<h1>成果展示</h1>
 						</header>
-						<div class="publication-browser">
-							<div class="publication-tabs" role="tablist" aria-label="成果类型">
-								<button type="button" class="is-active" role="tab" aria-selected="true" data-publication-target="baseArea_journal">期刊论文 <span class="tab-count"></span></button>
-								<button type="button" role="tab" aria-selected="false" data-publication-target="area_conference">会议论文 <span class="tab-count"></span></button>
-								<button type="button" role="tab" aria-selected="false" data-publication-target="filter_medical">医学影像 <span class="tab-count"></span></button>
-								<button type="button" role="tab" aria-selected="false" data-publication-target="filter_multi">多模态与大模型 <span class="tab-count"></span></button>
-								<button type="button" role="tab" aria-selected="false" data-publication-target="area_patent">专利 <span class="tab-count"></span></button>
-								<button type="button" role="tab" aria-selected="false" data-publication-target="area_project">科研项目 <span class="tab-count"></span></button>
-							</div>
-							<div class="publication-tools" aria-label="成果筛选">
-								<label class="publication-search" for="publication-search">
-									<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-									<input id="publication-search" type="search" aria-label="搜索成果" placeholder="搜索论文、作者、会议或项目" autocomplete="off">
-								</label>
-								<select class="publication-year" id="publication-year" aria-label="按年份筛选">
-									<option value="">全部年份</option>
-								</select>
-							</div>
-							<div class="publication-summary" id="publication-summary" aria-live="polite"></div>
-						</div>
+						<div class="publication-summary" id="publication-summary" aria-live="polite"></div>
 						<section class="article" id="baseArea_journal">
 							<style>
 								::marker {
@@ -2566,7 +2543,7 @@
 								<li>国家自然科学基金项目，项目名称：水下影像智能处理的关键技术研究 项目负责人：李秀。执行期：2019-2022<br></li>
 							</ol>
 						</section>
-						<div class="publication-empty" id="publication-empty" hidden>没有找到符合条件的成果，请调整类型、年份或关键词。</div>
+						<div class="publication-empty" id="publication-empty" hidden>该栏目暂无成果。</div>
 						<nav class="browser-pagination" id="publication-pagination" aria-label="成果分页"></nav>
 					</article>
 				</div>
