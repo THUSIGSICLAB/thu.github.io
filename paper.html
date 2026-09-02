@@ -195,13 +195,9 @@
 												<span aria-hidden="true"></span>
 												<span class="sr-only">收起论文分类</span>
 											</button>
-											<a href="#papers" data-outcome-link="papers"
-												onclick="showOutcome('papers', this); return false;">论文</a>
+											<a href="#journal"
+												onclick="showOutcome('journal', document.querySelector('.outcome-subnav [data-outcome-link=journal]')); return false;">论文</a>
 											<ul class="outcome-subnav" id="outcome-paper-subnav">
-												<li>
-													<a href="#papers" data-outcome-link="papers"
-														onclick="showOutcome('papers', this); return false;">全部论文</a>
-												</li>
 												<li>
 													<a href="#conference" data-outcome-link="conference"
 														onclick="showOutcome('conference', this); return false;">会议论文</a>
@@ -871,6 +867,22 @@
 							</header>
 							<table border="0" id="conference-table">
 								<ol>
+									<tr>
+										<td>
+											<img src="img/eccv20261.jpg" style="width:150px; height:100px; padding-right: 25px;">
+										</td>
+										<td>
+											<li>Youliang Zhang, Zhengguang Zhou, Zhentao Yu, Ziyao Huang, Teng Hu, Sen Liang, Guozhen Zhang, Ziqiao Peng, Shunkai Li, Yi Chen, Zixiang Zhou, Yuan Zhou, Qinglin Lu<span class="small-text">†</span>, <b>Xiu Li<span class="small-text">†</span></b>. <a
+													href="https://arxiv.org/pdf/2602.01538"
+													class="bold font16">Making Avatars Interact: Towards Text-Driven Human-Object Interaction for Controllable Talking Avatars[C].</a> <b><i>European
+														Conference on Computer Vision (ECCV-26)</i></b>, 2026.
+												<a href="https://arxiv.org/pdf/2602.01538"
+													class="bold font16">[Page]</a> <a
+													href="https://interactavatar.github.io/"
+													class="bold font16">[Project]</a>
+											</li>
+										</td>
+									</tr>
 									<tr>
 										<td>
 											<img src="img/1767582348430.jpg" style="width:150px; height:100px; padding-right: 25px;">
@@ -2623,11 +2635,12 @@
 			}
 
 			function showOutcome(outcome, activeLink, skipHistoryUpdate) {
-				var visibleOutcomes = outcome === 'papers'
-					? ['journal', 'conference']
-					: [outcome];
+				if (outcome === 'papers') {
+					outcome = 'journal';
+					activeLink = document.querySelector('.outcome-subnav [data-outcome-link="journal"]') || activeLink;
+				}
+				var visibleOutcomes = [outcome];
 				var labels = {
-					papers: '论文',
 					journal: '期刊论文',
 					conference: '会议论文',
 					patent: '专利',
@@ -2662,7 +2675,7 @@
 				var outcome = window.location.hash.slice(1);
 				var validOutcomes = ['papers', 'journal', 'conference', 'patent', 'project'];
 				if (validOutcomes.indexOf(outcome) === -1) {
-					outcome = 'papers';
+					outcome = 'journal';
 				}
 				var activeLink = document.querySelector(
 					'.outcome-subnav [data-outcome-link="' + outcome + '"]'
